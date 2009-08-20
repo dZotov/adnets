@@ -1,0 +1,40 @@
+
+.red {
+	color: #FF0000;
+}
+
+.green {
+	color: #009900;
+}
+
+.or {
+	color: orange;
+}
+
+.mandatory {
+	color: red;
+}
+
+.reenter {
+	color: red;
+}
+
+.blue {
+	color:#00a2de;
+}
+
+.bg_black {
+	background-color: #000000;
+}
+
+.rose {
+	color:#ff85d8;	
+}
+
+.gray {
+	color: #cccccc;	
+}
+
+.black {
+	color: #000000;	
+}
