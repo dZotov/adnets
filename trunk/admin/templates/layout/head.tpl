@@ -13,6 +13,12 @@
 	<script src="./js/jquery.js"></script>
 	<script src="./js/jquery.form.js"></script>
 	<script src="./js/scripts.js"></script>
-	
+	<script src="./js/scripts.js"></script>
+	<script src="./js/tiny_mce/tiny_mce.js"></script>
+	{literal}
+		<script>
+			tiny_init();
+		</script>
+	{/literal}
 </head>
 <body>

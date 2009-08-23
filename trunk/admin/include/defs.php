@@ -3,6 +3,7 @@
 define('AUTO', 0);
 define('TADWERTS', 'adwerts');
 define('TSITES', 'sites');
+define('TNEWS', 'news');
 
 // Таблицы
 $IMG_MIME_TYPE = array(
@@ -24,5 +25,10 @@ $STATUS_LIST = array(
 	STATE_INACTIVE => 'Неактивная',
 	STATE_ACTIVE => 'Активная',
 );
+
+$TYPE_LIST=array(
+	1=>'Вебмастерам',
+	2=>'Рекламодателям',
+)
 
 ?>
