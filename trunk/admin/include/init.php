@@ -78,7 +78,7 @@ $MENU_SELLER = array();
 	$MENU[] = array('name' => 'tiz', 'title' => 'Тизеры', 'url' => 'tisers.php');
 	$MENU[] = array('name' => 'pay', 'title' => 'Выплаты', 'url' => 'pay.php');
 	
-	$MENU_SELLER[] = array('name' => 'recs', 'title' => 'Реклаподатели', 'url' => 'recs.php');
+	
 	$MENU_SELLER[] = array('name' => 'rstat', 'title' => 'Статистика', 'url' => 'rstat.php');
 	$MENU_SELLER[] = array('name' => 'rnews', 'title' => 'Новости', 'url' => 'rnews.php');
 	$MENU_SELLER[] = array('name' => 'rtiz', 'title' => 'Тизеры', 'url' => 'rtisers.php');

@@ -22,9 +22,8 @@
 					</span>
 				{/if}
 			</td>
-			<td>
-				{$i.regdate|date}
-			</td>
+			<td>{$i.regdate|date}</td>
+			<td>{$i.balance}</td>
 			<td>
 				<a href="edit_adw.php?id={$i.id}">редакт.</a>
 			</td>

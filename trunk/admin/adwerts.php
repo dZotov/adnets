@@ -9,7 +9,8 @@ $cols = array(
 	2 => 'Email|email',
 	3 => 'Статус|status',
 	4 => 'Дата регистрации'.'|regdate',
-	5 => 'Действие',
+	5 => 'Баланс'.'|balance',
+	6 => 'Действие',
 );
 
 $a=$ad->GetSortTable("1",$cols, get_get('sort', 1), get_get('page', 1), get_get('perpage', 25));
