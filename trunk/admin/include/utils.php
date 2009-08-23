@@ -436,4 +436,9 @@ function from_url($url,$cat,$name)
 	}
 }
 
+function script_name()
+{
+	$temp=explode("/",$_SERVER['REQUEST_URI']);
+	return $temp[count($temp)-1];
+}
 ?>

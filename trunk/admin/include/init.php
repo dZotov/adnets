@@ -68,19 +68,35 @@ $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('HEAD_ICON', $HEAD_ICON);
 $smarty->assign_by_ref('HEAD_TITLE', $HEAD_TITLE);
 
-$MENU = array();
+$MENU_WEB = array();
+$MENU_SELLER = array();
 
-	$MENU[] = array('name' => 'cat', 'title' => 'Категории', 'url' => 'cat.php');
-	$MENU[] = array('name' => 'temp', 'title' => 'Шаблоны', 'url' => 'temp.php');
-	$MENU[] = array('name' => 'add_temp', 'title' => 'Добавить шаблон', 'url' => 'add_temp.php');
+	$MENU[] = array('name' => 'adw', 'title' => 'Партнеры', 'url' => 'adwerts.php');
+	$MENU[] = array('name' => 'sites', 'title' => 'Сайты', 'url' => 'sites.php');
 	$MENU[] = array('name' => 'stat', 'title' => 'Статистика', 'url' => 'stat.php');
-	$MENU[] = array('name' => 'det_stat', 'title' => 'Подробная статистика', 'url' => 'detail_stat.php');
-	$MENU[] = array('name' => 'logout', 'title' => 'Выход', 'url' => 'logout.php');
+	$MENU[] = array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php');
+	$MENU[] = array('name' => 'tiz', 'title' => 'Тизеры', 'url' => 'tisers.php');
+	$MENU[] = array('name' => 'pay', 'title' => 'Выплаты', 'url' => 'pay.php');
+	
+	$MENU_SELLER[] = array('name' => 'recs', 'title' => 'Реклаподатели', 'url' => 'recs.php');
+	$MENU_SELLER[] = array('name' => 'rstat', 'title' => 'Статистика', 'url' => 'rstat.php');
+	$MENU_SELLER[] = array('name' => 'rnews', 'title' => 'Новости', 'url' => 'rnews.php');
+	$MENU_SELLER[] = array('name' => 'rtiz', 'title' => 'Тизеры', 'url' => 'rtisers.php');
+	
+
 
 foreach ($MENU as $k => $v)
 	if ($v['url'] && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false)
 		$smarty->assign('MENU_SD', $v['name']);
+foreach ($MENU_SELLER as $k => $v)
+	if ($v['url'] && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false)
+		$smarty->assign('MENU_SD', $v['name']);
+				
+		
+$SCRIPT_NAME=script_name();		
+$smarty->assign('SCRIPT_NAME', $SCRIPT_NAME);
 $smarty->assign('MENU', $MENU);
+$smarty->assign('MENU_SELLER', $MENU_SELLER);
 
 $smarty->assign('YEAR', date("Y"));
 $smarty->assign('SERVER_TIME', sqlDateTime());

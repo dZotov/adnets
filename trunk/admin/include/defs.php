@@ -1,9 +1,8 @@
 <?
 
 define('AUTO', 0);
-define('TCAT', '_cat');
-define('TAVATAR', '_avatar');
-define('TSMS', '_sms');
+define('TADWERTS', 'adwerts');
+define('TSITES', 'sites');
 
 // Таблицы
 $IMG_MIME_TYPE = array(
