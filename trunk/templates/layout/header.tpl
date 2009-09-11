@@ -4,9 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=cp1251" />
 <title>{$PAGE_TITLE}</title>
 <link href="./style/style.css" rel="stylesheet" type="text/css" />
-<script src="./js/jquery.js"></script>
-<script src="./js/jquery.form.js"></script>
-<script src="./js/scripts.js"></script>
+{foreach from=$JS item=js}
+<script src="./js/{$js}"></script>
+{/foreach}
 </head>
 <body>
-<div id="full_screen"></div>
+<div id="main">
+	<div id="header">
+		<h1><a href="index.php"><span></span>adnets.ru</a></h1>
+	</div>
+	<div id="content">

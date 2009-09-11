@@ -12,11 +12,10 @@
 			{/foreach}
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Геристрация" id="registration" /></td>
+				<td><input type="submit" value=" Регистрация " id="registration" /></td>
 			</tr>	
 		</table>
 	</form>
 </div>
-
 
 {include file="layout/footer.tpl"}

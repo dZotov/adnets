@@ -33,7 +33,7 @@ error_reporting(E_ALL);
 
 require_once ROOT_PATH.'include/utils.php';
 require_once ROOT_PATH.'include/defs.php';
-//~ require_once ROOT_PATH.'include/db.php';
+require_once ROOT_PATH.'include/db.php';
 
 $DB_QUERY =  0; 
 
@@ -52,6 +52,8 @@ $smarty->assign('SITE_URL', SITE_URL);
 
 $JS = array();
 $JS[] = 'scripts.js';
+$JS[] = 'jquery.js';
+$JS[] = 'jquery.form.js';
 
 $ERRORS = array();
 $PAGE_TITLE = 'Page title';
