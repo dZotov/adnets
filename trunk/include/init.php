@@ -51,13 +51,13 @@ define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST'].$SCRIPTPATH);
 $smarty->assign('SITE_URL', SITE_URL);
 
 $JS = array();
-$JS[] = 'scripts.js';
 $JS[] = 'jquery.js';
 $JS[] = 'jquery.form.js';
+$JS[] = 'scripts.js';
 
 $ERRORS = array();
-$PAGE_TITLE = 'Page title';
-$PAGE_DESC = 'desc';
+$PAGE_TITLE = 'ADNets.ru - сервис тизерной рекламы';
+$PAGE_DESC = 'ADNets.ru - сервис тизерной рекламы';
 $smarty->assign_by_ref('ERRORS', $ERRORS);
 $smarty->assign_by_ref('PAGE_TITLE', $PAGE_TITLE);
 $smarty->assign_by_ref('PAGE_DESC', $PAGE_DESC);

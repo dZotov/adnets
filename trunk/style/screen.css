@@ -4,7 +4,14 @@ a:hover { text-decoration: none;}
 	strong { color: #2374c6;}
  
 .exit { background: #488bd0 url(../images/b_right.jpg) no-repeat right top; padding: 0 2px 0 0; height: 16px; overflow: hidden;} 
-	a.button, a.button:visited { color: #fff; background: url(../images/b_left.jpg) no-repeat left top; padding: 0 3px 0 5px;}
+a.button, a.button:visited { 
+	color: #fff; background: url(../images/b_left.jpg) no-repeat left top; 
+	padding: 0 3px 0 5px;
+	font-size: 11px;
+	text-decoration: none;\
+	width: 100px;
+	height: 15px;
+}
 
 html{ height: 100%;}
 		 
