@@ -2,10 +2,6 @@
 include("./include/init.php");
 
 
-$adw=new Adwerts();
-$f = new Form('reg',$adw);
-require_once('./form/registration.php');
-
-$smarty->assign('FORM', $f->HTML);
+$smarty->assign('PAGE_TITLE', "AdNets.ru Регистрация");
 Display("registration.tpl");
 ?>

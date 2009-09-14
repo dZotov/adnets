@@ -1,7 +1,75 @@
 $(document).ready(function(){
-	
 
+	$("#hide").click(function(){
+		if($(this).attr("checked"))
+			$("#login_in_top").attr("disabled","disabled");
+		else
+			$("#login_in_top").attr("disabled","");
+	});
+	
 });
+
+function registration()
+{
+	var email =$("#email").attr('value');
+	var password =$("#password").attr('value');
+	var re_password =$("#repeat_password").attr('value');
+	var wmr =$("#wmr").attr('value');
+	var flag=1;
+	if(!email)
+	{
+			flag=0;
+			error_show("email_error","Введите email");
+	}
+	if((!password || !re_password) || password!=re_password)
+	{
+			flag=0;
+			error_show("password_error","Заполните поля верно");
+			error_show("repeat_password_error","Пароли не совпадают");
+	}
+	if(!wmr)
+	{
+			flag=0;
+			error_show("wmr_error","Введите Ваш WMR - кошелек");
+	}
+	if(flag)
+	{
+		$.ajax({
+			type:"POST",
+			url: 'ajax.php',
+			data:"email="+email+"&password="+password+"&wmr="+wmr+"&start="+$("#work_as").attr("value")+"&act=registration",
+			
+			beforeSend: function(){
+				$("#registr").hide();
+				$("#loader").show();
+			},
+			
+			success: function(data){
+				$("#loader").hide();
+				if(data=='ok')
+				{
+					$('#reg').hide();
+					$('#suc').show();
+				}
+				else
+				{
+					$("#registr").show();
+					error_show("reg_error","Ощибка регистрации. Такой аккаунт уже зарегестрирован");					
+				}
+			},
+			error: function() {return;}
+	
+		});
+	}
+	
+}
+
+
+function error_show(el,value)
+{
+	$("#"+el).empty();
+	$("#"+el).append(value);
+}
 
 function show_hide(el)
 {
@@ -11,6 +79,10 @@ function show_hide(el)
 		$('#'+el).fadeOut();
 	
 }	
+function Submit(form) {
+	f = document.forms[form];
+	f.submit();
+}
 
 function redirect(url) {
 	window.location = url;

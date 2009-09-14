@@ -5,19 +5,12 @@ a, a:visited { text-decoration: underline; color: #2374c6;}
 a:hover { text-decoration: none;} 
 	strong { color: #2374c6;}
  
-.exit { background: #488bd0 url(../images/b_right.jpg) no-repeat right top; padding: 0 2px 0 0; height: 16px; overflow: hidden;} 
-a.button, a.button:visited { 
-	color: #fff; background: url(../images/b_left.jpg) no-repeat left top; 
-	padding: 0 3px 0 5px;
-	font-size: 11px;
-	text-decoration: none;\
-	width: 100px;
-	height: 15px;
-}
+.exit { background: #488bd0 url(../img/b_right.jpg) no-repeat right top; padding: 0 2px 0 0; height: 16px; overflow: hidden;} 
+	a.button, a.button:visited { color: #fff; background: url(../img/b_left.jpg) no-repeat left top; padding: 0 3px 0 5px;}
 
 html{ height: 100%;}
 		 
-body { background: #fff url(../images/header_bg.jpg) repeat-x top; height: 100%; color: #666;}
+body { background: #fff url(../img/header_bg.jpg) repeat-x top; height: 100%; color: #666;}
 	#main { width: 980px; margin: 0 auto; position: relative; min-height: 90%;}
 	#content { float: right; width: 830px; padding-top: 45px;}
 	#menu { width: 130px; padding-top: 45px; height: 100%;}
@@ -25,7 +18,7 @@ body { background: #fff url(../images/header_bg.jpg) repeat-x top; height: 100%;
 h1 { position: absolute; width: 114px; height: 35px; top: 0; left: 0;}
 	h1 a, h1 a:visited { font-size: 1.4em; color: #333; overflow: hidden; width: 114px; height: 35px;}
 	h1 a:hover { text-decoration: underline;}
-		h1 a span, h1 a:visited span { width: 114px; cursor: pointer; height: 35px; position: absolute; top: 0; left: 0; background: url(../images/1main_logo.gif) no-repeat;}
+		h1 a span, h1 a:visited span { width: 114px; cursor: pointer; height: 35px; position: absolute; top: 0; left: 0; background: url(../img/logo.jpg) no-repeat;}
 
 #sub_menu { font-size: 1.2em;}
 	#sub_menu .balanc { position: absolute; top: 10px; left: 150px;}
@@ -36,7 +29,7 @@ h1 { position: absolute; width: 114px; height: 35px; top: 0; left: 0;}
 	#sub_menu .email { position: absolute; top: 10px; right: 60px;}	
 	#sub_menu .user_type { position: absolute; top: 10px; right: 265px;}	
 	
-	#sub_menu .registration { position: absolute; top: 10px; right: 400px; background: #488bd0 url(../images/b_right.jpg) no-repeat right top; padding: 0 2px 0 0; height: 16px; overflow: hidden;}
+	#sub_menu .registration { position: absolute; top: 10px; right: 400px; background: #488bd0 url(../img/b_right.jpg) no-repeat right top; padding: 0 2px 0 0; height: 16px; overflow: hidden;}
 	#login_m { position: absolute; top: 7px; right: 60px;}
 		#login_m input { width: 100px;}
 		#login_m label { position: relative; top: 3px; padding-left: 15px;}
@@ -51,7 +44,7 @@ h1 { position: absolute; width: 114px; height: 35px; top: 0; left: 0;}
 	h3 { font-size: 1.8em; color: #2374c6; padding-bottom: 10px;}
 	h4 { font-size: 1.2em; color: #333; padding: 0 0 3px 0; font-weight: bold;}
 #content { position: relative; zoom: 1;}
-	#content .add_site, #content .change_pass { position: absolute; top: 50px; left: 100px; font-size: 1.2em; background: #488bd0 url(../images/b_right.jpg) no-repeat right top; padding: 0 2px 0 0; height: 16px; overflow: hidden;}
+	#content .add_site, #content .change_pass { position: absolute; top: 50px; left: 100px; font-size: 1.2em; background: #488bd0 url(../img/b_right.jpg) no-repeat right top; padding: 0 2px 0 0; height: 16px; overflow: hidden;}
 	#content .anotation { padding: 0 0 10px 0; font-size: 1.4em;}
 
 	#content .small_anotation { padding: 0 0 30px 0; font-size: 1.2em;}
@@ -65,7 +58,7 @@ h1 { position: absolute; width: 114px; height: 35px; top: 0; left: 0;}
 		#content th.status, #content th.category, #content th.blocks, #content th.filters, #content th.options { width: 15%;}	
 		#content th.category { width: 10%;}	
 		#content th.filters, #content th.blocks { width: 20%;}
-			#content th.name a, #content th.name a:visited, #stat th.date a, #stat th.date a:visited, #tickets_table th.date a:visited,  #tickets_table th.date a { text-decoration: none; position: relative; top: -1px; background: 0px 8px no-repeat url(../images/sort.jpg); padding-left: 12px; color: #333;}
+			#content th.name a, #content th.name a:visited, #stat th.date a, #stat th.date a:visited, #tickets_table th.date a:visited,  #tickets_table th.date a { text-decoration: none; position: relative; top: -1px; background: 0px 8px no-repeat url(../img/sort.jpg); padding-left: 12px; color: #333;}
 			#content th.name a:hover { text-decoration: underline;}
 			#content td { padding: 2px 5px; border-bottom: 1px solid #e6e6e6; border-right: 1px solid #fff; font-size: 1.2em;} 
 			#content td p { text-align: center; padding: 2px 0;}
@@ -76,8 +69,8 @@ h1 { position: absolute; width: 114px; height: 35px; top: 0; left: 0;}
 	#content tr:hover { background: #efe;}
 
 		
-	#menu ul li { padding: 5px 0 0 10px; background: url(../images/list_bg.jpg) no-repeat 1px 13px; font-size: 1.6em;}
-		#menu ul li.active { background: url(../images/list_bg.jpg) no-repeat 1px -32px;}
+	#menu ul li { padding: 5px 0 0 10px; background: url(../img/list_bg.jpg) no-repeat 1px 13px; font-size: 1.6em;}
+		#menu ul li.active { background: url(../img/list_bg.jpg) no-repeat 1px -32px;}
 	#menu ul li.active a, #menu ul li.active a:visited { color: #666;}
 		#menu .exit { margin: 10px 10px 0 0; font-size: 1.2em;}
 			#menu .exit a, #menu .exit a:visited { text-align: center; display: block;}

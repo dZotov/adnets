@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<title>Статистика adnets.ru</title>
+<link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div id="main">
+		<div id="header">
+			<h1><a href="/"><span></span>adnets.ru</a></h1>
+		</div>
+				
+		<div id="content">
+			<h3>Статистика за текущий платежный период</h3>
+			
+			<ul id="types_of_statistic">
+				<li><a href="#n" class="inactive">Блоки</a></li>
+				<li><a href="#n">Ссылки</a></li>
+				<li><a href="#n">Рефералы</a></li>
+			</ul>
+			
+			<form id="choose_period">
+				<select name="period">
+					<option>Текущий платежный период</option>
+				</select>
+				
+				<label for="from_date">c </label><input type="text" name="from_date" id="from_date" value="01.01.01" />
+				<label for="to_date">до </label><input type="text" name="to_date" id="to_date" value="31.01.01" />
+				
+				<input type="submit" id="accept" name="accept" value="Применить" />
+			</form>	
+			
+			<ul id="switch_type">
+				<li class="active">Общая <a href="#n">>>>></a></li>
+				<li><a href="#n">По блокам</a></li>
+				<li><a href="#n">По площадкам</a></li>
+				<li><a href="#n">По тематикам</a></li>
+				
+			</ul>
+			
+			<table id="stat">
+				<tr>
+					<th class="date"><a href="#n">Дата</a></th>
+					<th class="views_blocks">Показов блоков</th>
+					<th class="views_ads">Показов объявлений</th>
+					<th class="clicks">Клики</th>
+					<th class="ctr_blocks">CTR блока</th>
+					<th class="ctr_ads">CTR объявления</th>
+					<th class="money">Деньги</th>
+				</tr>
+				<tr>
+					<td>13.01.09</td>
+					<td>100</td>
+					<td>300</td>
+					<td>10</td>
+					<td>10%</td>
+					<td>3.3%</td>
+					<td>100</td>
+				</tr>
+				<tr class="invert">
+					<td>13.01.09</td>
+					<td>100</td>
+					<td>300</td>
+					<td>10</td>
+					<td>10%</td>
+					<td>3.3%</td>
+					<td>100</td>
+				</tr>
+				<tr>
+					<td>13.01.09</td>
+					<td>100</td>
+					<td>300</td>
+					<td>10</td>
+					<td>10%</td>
+					<td>3.3%</td>
+					<td>100</td>
+				</tr>
+				<tr class="invert">
+					<td>13.01.09</td>
+					<td>100</td>
+					<td>300</td>
+					<td>10</td>
+					<td>10%</td>
+					<td>3.3%</td>
+					<td>100</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="menu">
+			<div class="border_t"></div>
+			<div class="side_borders">
+				<h2>Ваше меню:</h2>
+				<ul>
+					<li><a href="playgrounds.html">Площадки</a></li>
+					<li class="active"><a href="statistics.html">Статистика</a></li>
+					<li><a href="payment.html">Выплаты</a></li>
+					<li><a href="tickets.html">Тикеты</a></li>
+					<li><a href="profile.html">Профиль</a></li>
+					<li><a href="news.html">Новости</a></li>
+					<li><a href="top10.html">Топ 10</a></li>
+				</ul>
+				<p class="exit"><a class="button" href="#n">Выйти</a></p>
+			</div>
+			<div class="border_b"></div>			
+		</div>
+		
+		<div id="sub_menu">
+			<p class="registration"><a class="button" href="registration.html">Регистрация</a></p>
+			<form id="login_m">
+				<label for="e_mail_m">e-mail </label>
+				<input type="text" name="e_mail_m" id="e_mail_m" />
+				<label for="password_m">Пароль </label><a href="#n" id="remember_password">?</a>
+				<input type="text" name="password_m" id="password_m" />
+			</form>
+			<p class="exit"><a class="button" href="#n">Войти</a></p>
+		</div>
+
+<!--
+		<div id="sub_menu">
+			<p class="balanc"><span>0</span>руб. на балансе</p>
+			<ul>
+				<li><a href="#n">Справка</a></li>
+				<li><a href="#n">Контакты</a></li>
+				<li><a href="#n">Модерация сайтов</a></li>
+			</ul>
+			<p class="user_type">Веб-мастер: <a href="#n">Рекламодатель</a></p>
+			<p class="email">email@mail.ru</p>
+			<p class="exit"><a class="button" href="#n">Выйти</a></p>
+		</div>
+-->
+	</div>
+
+	<div id="footer">
+		<p>© <a href="/">adnets.ru</a> 2009</p>
+	</div>
+</body>
+</html>

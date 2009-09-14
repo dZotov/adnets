@@ -1,6 +1,6 @@
 <?
 
-class Sites extends Entity
+class Playgrounds extends Entity
 {
 
 	var $table = TSITES;
