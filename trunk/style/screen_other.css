@@ -78,7 +78,7 @@ font-size: 2em; color: #2374c6;
 
 }
 
-#container_registr_logon {position:absolute; top:50%; left:50%; width: 583px; height: 300px; margin-top:-192px;margin-left:-342px; background: url(../images/reg_bg.gif); border: 1px solid #aca7a7;}
+#container_registr_logon {position:absolute; top:50%; left:50%; width: 600px; height: 300px; margin-top:-192px;margin-left:-342px; background: url(../images/reg_bg.gif); border: 1px solid #aca7a7;}
 	#container_registr_logon h1 { float: right; font-size: 2em; overflow: hidden; width: 217px; height: 46px; position: relative; right: -2px; top: -2px;}
 	#container_registr_logon h1 span { width: 217px; height: 46px; position: absolute; top: 0; left: 0; background: url(../images/reg_r_t_border.gif) no-repeat;}
 	#container_registr_logon h1 a, #container_registr_logon h1 a:visited { width: 217px; height: 46px; display: block;}
@@ -87,8 +87,8 @@ font-size: 2em; color: #2374c6;
 	#container_registr_logon h2 { font-size: 2em; color: #2374c6; background: url(../images/reg_l_t_border.gif) no-repeat; position: relative; top: -2px; padding: 25px 0 10px 25px; margin: 0 300px 0 0;}	
 	#container_registr_logon h3 { font-size: 1.4em; color: #666; padding: 0 0 10px 25px;}	
 		
-	#container_registr_logon label { display: block; font-size: 20px; color: #666; padding: 0 0 5px 150px;}
-	#container_registr_logon input { font-size: 25px; color: #2374c6; margin: 0 0 15px 25px; width: 300px; height:30px}
+	#container_registr_logon label { display: block; font-size: 20px; color: #666; padding: 0 0 5px 145px;}
+	#container_registr_logon input { font-size: 25px; color: #2374c6; margin: 0 0 15px 0px; width: 300px; height:30px}
 	#container_registr_logon #work_as { position: relative;}
 		#container_registr_logon #work_as .block { position: relative; float: left;}
 		#container_registr_logon #work_as input { margin: 0 130px 0 0; width: auto; position: relative; left: 25px;}
