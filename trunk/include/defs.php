@@ -2,8 +2,9 @@
 
 define('AUTO', 0);
 define('TADWERTS', 'adwerts');
-define('TSITES', 'sites');
+define('TSITES', 'Playgrounds');
 define('TNEWS', 'news');
+define('TPAYMENTS', 'payments');
 
 // Таблицы
 $IMG_MIME_TYPE = array(
@@ -19,11 +20,19 @@ $IMG_MIME_TYPE = array(
 
 define('STATE_ACTIVE', 1); // Активный 
 define('STATE_INACTIVE', -1); // Не активный
+define('STATE_BAN', 2); // Не активный
 
 
 $STATUS_LIST = array(
-	STATE_INACTIVE => 'Неактивная',
+	STATE_INACTIVE => 'На модерации',
 	STATE_ACTIVE => 'Активная',
+	STATE_BAN => 'Забаненная',
+);
+
+$PAY_STATUS=array(
+	STATE_INACTIVE => 'В обработке',
+	STATE_ACTIVE => 'Выплачено',
+
 );
 
 $TYPE_LIST=array(

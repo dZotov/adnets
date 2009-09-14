@@ -53,8 +53,12 @@ $smarty->assign('SITE_URL', SITE_URL);
 $JS = array();
 $JS[] = 'jquery.js';
 $JS[] = 'jquery.form.js';
+<<<<<<< .mine
+$JS[] = 'scripts.js';
+=======
 $JS[] = 'scripts.js';
 
+>>>>>>> .r21
 $ERRORS = array();
 $PAGE_TITLE = 'ADNets.ru - сервис тизерной рекламы';
 $PAGE_DESC = 'ADNets.ru - сервис тизерной рекламы';
@@ -64,14 +68,20 @@ $smarty->assign_by_ref('PAGE_DESC', $PAGE_DESC);
 $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('DB_QUERY', $DB_QUERY);
 
-$MENU = array(
-	array('name' => 'index', 'title' => 'index', 'url' => 'index.php'),
+$MENU_WEB= array(
+	array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php'),
+	array('name' => 'play_gr', 'title' => 'Площадки', 'url' => 'playgrounds.php'),
+	array('name' => 'stat', 'title' => 'Статистика', 'url' => 'statistic.php'),
+	array('name' => 'payments', 'title' => 'Выплаты', 'url' => 'payments.php'),
+	array('name' => 'profile', 'title' => 'Профиль', 'url' => 'profile.php'),
+	array('name' => 'top', 'title' => 'Топ', 'url' => 'top.php'),
+	array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
 );
-foreach ($MENU as $k => $v) {
+foreach ($MENU_WEB as $k => $v) {
 	if (get($v, 'url') && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false) {
 		$smarty->assign('MENU_SD', $v['name']);
 	}
 }
-$smarty->assign('MENU', $MENU);
+$smarty->assign('MENU_WEB', $MENU_WEB);
 
 ?>

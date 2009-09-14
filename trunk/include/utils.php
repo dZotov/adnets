@@ -151,102 +151,21 @@ function EndScript() {
 	return $return;
 }
 
-function check_auth($auth) {
+function check_auth() {
 	global $smarty;
 	
 	$account_id = get($_SESSION, 'account_id');
-	//~ $hash = get($_COOKIE, 'hash');
-	//~ if ($hash && !$account_id) {
-		//~ $acc = new Account();
-		//~ $acc->LoadByCond("hash = '{$hash}' AND type = 1");
-		//~ if ($acc->GetId()) {
-			//~ SetCookie('account_id', $acc->GetId());
-			//~ $_SESSION['account_id'] = $acc->GetId();
-			//~ $GLOBALS['account_id'] = $acc->GetId();
-			//~ redirect(get($_SERVER, 'REQUEST_URI'));
-		//~ }
-	//~ }
-	
-	$acc = new Account($account_id);
-	if($acc->GetId()) {
-		$GLOBALS['account_id'] = $acc->GetId();
-		$GLOBALS['account'] = $acc;
-		$smarty->assign('ACCOUNT_ID', $acc->GetId());
-		$smarty->assign('ACCOUNT', $acc->attr);
 		
-		$acc->Set("user_status", 0);
-		$acc->Set("model_id", 0);
-		$acc->Save();
-		
-		//~ $hash = get($_COOKIE, 'hash');
-		$hash = $acc->Get('hash');
-		$o = new Online();
-		$o->LoadByCond("account_id = '{$acc->GetId()}'");	
-		
-		$o->Set("account_id", $acc->GetId());
-		$o->Set("hash", $hash);
-		$o->Set("ip", IP());
-		$o->Set("date", sqlDateTime());
-		$o->Set("type", USER);
-		$o->Save();
-		//~ echo "1 - {$hash}";
+	$ad = new Adwerts($account_id);
+	if($ad->GetId()) 
+	{
+		$GLOBALS['account_id'] = $ad->GetId();
+		$GLOBALS['account'] = $ad;
+		$smarty->assign('ACCOUNT_ID', $ad->GetId());
+		$smarty->assign('ACCOUNT', $ad->attr);
 		return true;
-	} else {
-		$hash = get($_COOKIE, 'hash');
-		if (!$hash || !eregi("guest", $hash)) {
-			$hash = "GUEST_".md5(IP().sqldateTime());
-			SetCookie('hash', $hash);
-			SetCookie('account_id', 0);
-		}
-		
-		// Записываем в базу 
-		$o = new Online();
-		$o->LoadByCond("hash = '{$hash}'");	
-		$o->Set("account_id", 0);
-		$o->Set("hash", $hash);
-		$o->Set("ip", ip());
-		$o->Set("date", sqlDateTime());
-		$o->Set("type", GUEST); // гость - 0, 1 - юзер, 2- модель
-		$o->Save();
-	}
-	
-	if ($auth == 'free') {
-		$GLOBALS['account_id'] = NULL;
-		$GLOBALS['account'] = NULL;
-		return true;
-	}
-	
+	} 		
 	redirect('logon.php');
-}
-
-function Logon($account_id, $auth = GUEST) {
-	global $COUNTRY_ID;
-	
-	$acc = new Account($account_id);
-	
-	$hash = "U".md5($acc->GetId().sqlDateTime());
-		
-	SetCookie('hash', $hash, time() + 3600 * 24 * 365);
-	$acc->Set('hash', $hash);
-	$acc->Set('user_status', 0);
-	$acc->Set('country_id', $COUNTRY_ID);
-	$acc->Save();
-			
-	$o = new Online();
-	$o->DeleteByCond("account_id='".$acc->GetId()."'");
-	$o->DeleteByCond("hash LIKE '{$hash}'");
-	
-	$o = new Online();
-	$o->LoadByCond("account_id = '{$acc->GetId()}' AND hash = '{$hash}'");	
-	$o->Set("account_id", (int) $acc->GetId());
-	$o->Set("hash", $hash);
-	$o->Set("ip", IP());
-	$o->Set("date", sqlDateTime());
-	$o->Set("type", $auth);
-	$o->Save();
-		
-	$_SESSION['account_id'] = $acc->GetId();
-	$_SESSION['uid'] = $acc->Get('hash');
 }
 
 function gen_dir($path) {
