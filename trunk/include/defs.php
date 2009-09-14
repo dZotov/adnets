@@ -2,7 +2,7 @@
 
 define('AUTO', 0);
 define('TADWERTS', 'adwerts');
-define('TSITES', 'Playgrounds');
+define('TSITES', 'playgrounds');
 define('TNEWS', 'news');
 define('TPAYMENTS', 'payments');
 
