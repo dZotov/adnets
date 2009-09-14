@@ -7,4 +7,3 @@
 	</ul>	
 </div>
 {include file="layout/footer_l.tpl"}
-{include file="layout/header.tpl"}
