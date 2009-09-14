@@ -53,12 +53,7 @@ $smarty->assign('SITE_URL', SITE_URL);
 $JS = array();
 $JS[] = 'jquery.js';
 $JS[] = 'jquery.form.js';
-<<<<<<< .mine
 $JS[] = 'scripts.js';
-=======
-$JS[] = 'scripts.js';
-
->>>>>>> .r21
 $ERRORS = array();
 $PAGE_TITLE = 'ADNets.ru - сервис тизерной рекламы';
 $PAGE_DESC = 'ADNets.ru - сервис тизерной рекламы';
