@@ -43,5 +43,6 @@
 	<div id="footer">
 		<p>&copy; <a href="/">adnets.ru</a> 2009</p>
 	</div>
+	<div id="show_error"></div>
 </body>
 </html>

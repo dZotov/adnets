@@ -18,7 +18,7 @@ if($pl->Getid())
 		if(in_array($v['id'],$cats_sel))
 			$c[$k]['selected']=1;
 	}
-	
+	$smarty->assign("EDIT_SITE","Изменить");
 }
 
 $smarty->assign("PAGE_TITLE","AdNets.ru Редактирование площадок");

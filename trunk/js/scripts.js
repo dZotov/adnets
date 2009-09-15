@@ -9,6 +9,14 @@ $(document).ready(function(){
 	
 });
 
+function show_error(message)
+{
+	$("#show_error").empty(message);
+	$("#show_error").append(message);
+	$("#show_error").show();
+	setTimeout($("#show_error").fadeOut('slow'),2000);
+}
+
 function registration()
 {
 	var email =$("#email").attr('value');

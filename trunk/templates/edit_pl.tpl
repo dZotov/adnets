@@ -8,15 +8,18 @@
 	<input type="text" name="url" id="url" value="{$DATA.url}" />
 	
 	<label for="cat">Категории</label>
-	<select name="cat" id="cat" multiple>
+	<select name="cat" id="cat">
+		{foreach from=$CAT item=c}
+			<option value="{$c.id}">-{$c.title}</option>
+		{/foreach}
+	</select>
+	<label for="ignore">Отметьте запрещенные к показу тематики</label>
+	<select name="ignore" id="ignore" class="select_ignore" multiple>
 		{foreach from=$CAT item=c}
 			<option value="{$c.id}" {if $c.selected}selected{/if}>-{$c.title}</option>
 		{/foreach}
-	</select>			
+	</select>
+	<p class="btn"><a class="button" href="edit_playground.php">{$EDIT_SITE|default:"Добавить сайт"}</a></p>
 </div>
-<div id="blocks">
-	<label for="block">Добавить блок</label>
-	<div>
-	</div>
-</div>
+
 {include file="layout/footer.tpl"}

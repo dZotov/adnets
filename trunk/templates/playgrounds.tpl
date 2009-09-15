@@ -27,10 +27,15 @@
 				<p><a href="edit_playground.php?id={$i.id}">Авто/мото</a></p>
 			</td>
 			<td>
-				<p class="spec_blocks"><a href="edit_playground.php?id={$i.id}">Добавить блок</a></p>
+				<p class="spec_blocks">
+					<a href="javascript: show_hide('')">Добавить блок</a> ()
+						<div class="">
+							asdadasd
+						</div>
+				</p>
 			</td>
 			<td>
-				<p class="spec_blocks"><a href="edit_playground.php?id={$i.id}">По тематикам</a>  81</p>
+				<p class="spec_blocks"><a href="javascript: show_hide('')">По тематикам</a>  ()</p>
 				<p class="spec_blocks"><a class="alert" href="edit_playground.php?id={$i.id}">Добавить стоп-фильтр</a></p>
 			</td>
 		</tr>
