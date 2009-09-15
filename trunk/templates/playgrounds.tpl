@@ -24,14 +24,18 @@
 				<p>{$STATUS_LIST[$i.status]}</p>
 			</td>
 			<td>
-				<p><a href="edit_playground.php?id={$i.id}">Авто/мото</a></p>
+				<p><a href="edit_playground.php?id={$i.id}">{$i.cat_title}</a></p>
 			</td>
 			<td>
 				<p class="spec_blocks">
-					<a href="javascript: show_hide('')">Добавить блок</a> ()
-						<div class="">
-							asdadasd
-						</div>
+					<a href="javascript: show_hide('blocks_{$i.id}')">Блоки</a> ({$i.num_blocks})
+					<div class="pl_show" id="blocks_{$i.id}">
+						{foreach from=$i.blocks item=b}
+							Блок: {$b.settings.size} Тизары: {$b.settings.size_tizer} <a href="blocks.php?id={$b.id}">редактировать</a>
+						{/foreach}
+						<br />
+					</div>
+					<a href="blocks.php">Добавить блок</a>
 				</p>
 			</td>
 			<td>

@@ -11,7 +11,7 @@
 	<select name="cat" id="cat">
 		<option value="0">-Выберите-</option>
 		{foreach from=$CAT item=c}
-			<option value="{$c.id}">-{$c.title}</option>
+			<option value="{$c.id}" {if $c.id==$DATA.category}selected{/if}>-{$c.title}</option>
 		{/foreach}
 	</select>
 	<label for="ignore">Отметьте запрещенные к показу тематики</label>
@@ -21,6 +21,7 @@
 		{/foreach}
 	</select>
 	<p class="btn"><a class="button" href="javascript:add_playdround();">{$EDIT_SITE|default:"Добавить сайт"}</a></p>
+	<span id="loader" style="display:none;"> <img src="./images/loading.gif"></span>
 </div>
 
 {include file="layout/footer.tpl"}

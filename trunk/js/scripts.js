@@ -38,7 +38,32 @@ function add_playdround()
 		show_error(error);
 	else
 	{
-		
+		$.ajax({
+			type:"POST",
+			url: 'ajax.php',
+			data:"title="+title+"&url="+url+"&cat="+cat+"&ignore="+ignore+"&act=add_pl",
+			
+			beforeSend: function(){
+				$("#registr").hide();
+				$("#loader").show();
+			},
+			
+			success: function(data){
+				$("#loader").hide();
+				if(data=='ok')
+				{
+					$('#reg').hide();
+					$('#suc').show();
+				}
+				else
+				{
+					$("#registr").show();
+					error_show("reg_error","Ощибка регистрации. Такой аккаунт уже зарегестрирован");					
+				}
+			},
+			error: function() {return;}
+	
+		});
 	}
 }
 
