@@ -13,8 +13,8 @@ if(get_post("update"))
 		if(get_post("login_in_top"))
 			$ad->Set('intop',get_post("login_in_top"));
 		$ad->Save();
-		
 	}
+	redirect("profile.php");
 }
 
 $smarty->assign("PAGE_TITLE","AdNets.ru Профиль");

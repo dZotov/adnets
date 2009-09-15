@@ -22,6 +22,7 @@ body{height: 100%; width:  100%;}
 	#container_registr h1 span { width: 217px; height: 46px; position: absolute; top: 0; left: 0; background: url(../images/reg_r_t_border.gif) no-repeat;}
 	#container_registr h1 a, #container_registr h1 a:visited { width: 217px; height: 46px; display: block;}
 	#container_registr h1 a:hover { cursor: pointer;}
+	#container_registr strong {color: #2374c6; font-size:16px}
 	
 	#container_registr h2 { font-size: 2em; color: #2374c6; background: url(../images/reg_l_t_border.gif) no-repeat; position: relative; top: -2px; padding: 25px 0 10px 25px; margin: 0 300px 0 0;}	
 	#container_registr h3 { font-size: 1.4em; color: #666; padding: 0 0 10px 25px;}	
@@ -40,7 +41,10 @@ body{height: 100%; width:  100%;}
 	#container_registr a#registr:hover { background-position: bottom right; text-decoration: none;}
 	
 	* html a#registr { left: 427px; top: 309px;}
-	
+
+.btn span { font-size: 1.8em; padding: 18px 0 0 0; margin-right: 20px; text-align: center; display: block;}
+.btn a :hover { background-position: bottom right; text-decoration: none;}
+.btn a { position: absolute; bottom: 0; right: -2px; background: url(../images/reg_r_b_border.gif) no-repeat top right; width: 258px; height: 74px; display: block; overflow: hidden; color: #fff; text-decoration: underline; font-weight: bold;}
 	
 .errors{
 	color:#ff1800;

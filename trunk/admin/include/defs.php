@@ -2,8 +2,10 @@
 
 define('AUTO', 0);
 define('TADWERTS', 'adwerts');
-define('TSITES', 'sites');
+define('TSITES', 'playgrounds');
 define('TNEWS', 'news');
+define('TPAYMENTS', 'payments');
+define('TTOP', 'top');
 
 // Таблицы
 $IMG_MIME_TYPE = array(

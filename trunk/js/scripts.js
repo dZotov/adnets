@@ -15,6 +15,7 @@ function registration()
 	var password =$("#password").attr('value');
 	var re_password =$("#repeat_password").attr('value');
 	var wmr =$("#wmr").attr('value');
+	var owner_id =$("#owner").attr('value');
 	var flag=1;
 	if(!email)
 	{
@@ -37,7 +38,7 @@ function registration()
 		$.ajax({
 			type:"POST",
 			url: 'ajax.php',
-			data:"email="+email+"&password="+password+"&wmr="+wmr+"&start="+$("#work_as").attr("value")+"&act=registration",
+			data:"email="+email+"&password="+password+"&wmr="+wmr+"&start="+$("#work_as").attr("value")+"&act=registration"+"&owner_id="+owner_id,
 			
 			beforeSend: function(){
 				$("#registr").hide();

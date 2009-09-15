@@ -5,6 +5,9 @@ define('TADWERTS', 'adwerts');
 define('TSITES', 'playgrounds');
 define('TNEWS', 'news');
 define('TPAYMENTS', 'payments');
+define('TTOP', 'top');
+define('TCAT', 'category');
+define('TBLOCKS', 'blocks');
 
 // Таблицы
 $IMG_MIME_TYPE = array(

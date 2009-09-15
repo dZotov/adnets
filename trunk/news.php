@@ -1,6 +1,6 @@
 <?
 include("./include/init.php");
-
+check_auth();
 $news= new News();
 $account_id=1;
 $n=$news->GetManyByCond("status='".STATE_ACTIVE."' AND type=1");

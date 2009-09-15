@@ -8,6 +8,7 @@
 <form id="registration">
 	<div id="reg">
 		<span class="errors" id="reg_error"></span>
+		<input type="hidden" name="owner" id="owner" value="{$smarty.cookies.ref_id}">
 		<label for="email">Адрес электронной почты </label> <span class="errors" id="email_error"></span>
 		<input type="text" name="email" id="email" value="" />
 		
@@ -36,8 +37,8 @@
 		<span id="loader" style="display:none;"> <img src="./images/loading.gif"></span>
 	</div>
 	<div id="suc">
-		<span>Вы успешно зарегестрировались!</span>
-		{button href="index.php" title="OK"}
+		<strong>Вы успешно зарегестрировались!</strong>
+			<a href="index.php" class="btn"><span>Ok</span></a>
 	</div>
 </form>	
 </div>		

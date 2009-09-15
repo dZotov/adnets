@@ -2,7 +2,7 @@
 //$AUTH = 'member';
 include('./include/init.php');
 
-$site= new Sites();
+$site= new Playgrounds();
 
 $cols = array(
 	1 => 'ID|id',

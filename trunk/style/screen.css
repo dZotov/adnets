@@ -117,6 +117,15 @@ table#tickets_table { width: 70%; margin: 0;}
 		form#profile input {display: block; font-size: 1.2em; font-weight: bold; width: 70%}
 		form#profile #accept { float: right; width: auto; margin: 20px 0 20px 0;}
 		
+		#playground {float:left; width:300px;}
+		#playground  label {display: block; font-size: 1.2em; font-weight: bold; padding: 3px 0 2px 0;}
+		#playground  input {display: block; font-size: 1.2em; font-weight: bold; width: 100%}
+		#playground  select {display: block; font-size: 1.2em; font-weight: bold; width: 70%; height:250px;}
+		
+		#blocks {float:left; width:400px;  padding-left:20px;}
+		#blocks  label {display: block; font-size: 1.2em; font-weight: bold; padding: 3px 0 2px 0;}
+		#blocks  div {display: block; font-size: 1.2em; font-weight: bold; padding: 3px 0 2px 0;}
+		
 	#hide_block { float: right; width: 80px; overflow: hidden; position: relative; right: 100px;}	
 		#hide_block input#hide { display: inline; width: auto; position: absolute; top: 0; left: 0;}
 		#hide_block label { display: inline; float: right; padding: 0; width: auto;}

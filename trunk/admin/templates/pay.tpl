@@ -11,8 +11,8 @@
 		<tr class="ac {cycle values='t1, t2'}">
 			<td>{$i.id}.</td>
 			<td>{$i.adid}</td>
-			<td>{$i.title}</td>
-			<td>{$i.url}</td>
+			<td>{$i.wmr}</td>
+			<td>{$i.sum}</td>
 			<td>
 				{if $i.status==$smarty.const.STATE_ACTIVE}
 					<span class="green">
@@ -26,9 +26,6 @@
 			</td>
 			<td>
 				{$i.date|date}
-			</td>
-			<td>
-				<a href="edit_site.php?id={$i.id}">редакт.</a>
 			</td>
 		</tr>
 		{/foreach}
