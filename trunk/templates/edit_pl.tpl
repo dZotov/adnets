@@ -19,7 +19,7 @@
 			<option value="{$c.id}" {if $c.selected}selected{/if}>-{$c.title}</option>
 		{/foreach}
 	</select>
-	<p class="btn"><a class="button" href="edit_playground.php">{$EDIT_SITE|default:"Добавить сайт"}</a></p>
+	<p class="btn"><a class="button" href="javascript:show_error('asdasdsasa');">{$EDIT_SITE|default:"Добавить сайт"}</a></p>
 </div>
 
 {include file="layout/footer.tpl"}
