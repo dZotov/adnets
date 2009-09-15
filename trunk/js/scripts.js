@@ -9,12 +9,33 @@ $(document).ready(function(){
 	
 });
 
+
+
 function show_error(message)
 {
 	$("#show_error").empty(message);
 	$("#show_error").append(message);
 	$("#show_error").show();
 	setTimeout("$('#show_error').fadeOut('slow')",2000);
+		
+}
+
+function add_playdround()
+{
+	var error='';
+	var title=$("#title").attr('value');
+	var url=$("#url").attr('value');
+	var cat=$("#cat").attr('value');
+	var ignore=$("#ignore").attr('value');
+	
+	if(!title)
+		error +="Нет названия площадки<br />";
+	if(!url)
+		error +="Введите URL площадки<br />";
+	if(cat==0)
+		error +="Выберите категорию площадки<br />";
+	if(error!='')
+		show_error(error);
 	
 }
 
