@@ -36,7 +36,10 @@ function add_playdround()
 		error +="Выберите категорию площадки<br />";
 	if(error!='')
 		show_error(error);
-	
+	else
+	{
+		
+	}
 }
 
 function registration()
