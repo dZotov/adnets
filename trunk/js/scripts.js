@@ -27,7 +27,8 @@ function add_playdround()
 	var url=$("#url").attr('value');
 	var cat=$("#cat").attr('value');
 	var ignore=$("#ignore").attr('value');
-	
+	var id=$("#pl_id").attr('value');
+	var adid=$("#adid").attr('value');
 	if(!title)
 		error +="Нет названия площадки<br />";
 	if(!url)
@@ -41,10 +42,10 @@ function add_playdround()
 		$.ajax({
 			type:"POST",
 			url: 'ajax.php',
-			data:"title="+title+"&url="+url+"&cat="+cat+"&ignore="+ignore+"&act=add_pl",
+			data:"title="+title+"&url="+url+"&cat="+cat+"&ignore="+ignore+"&act=add_pl"+"&id="+id+"&adid="+adid,
 			
 			beforeSend: function(){
-				$("#registr").hide();
+				$("#btn").hide();
 				$("#loader").show();
 			},
 			
@@ -52,13 +53,12 @@ function add_playdround()
 				$("#loader").hide();
 				if(data=='ok')
 				{
-					$('#reg').hide();
-					$('#suc').show();
+					redirect('playgrounds.php');
 				}
 				else
 				{
-					$("#registr").show();
-					error_show("reg_error","Ощибка регистрации. Такой аккаунт уже зарегестрирован");					
+					$("#btn").show();
+					show_error(data);					
 				}
 			},
 			error: function() {return;}

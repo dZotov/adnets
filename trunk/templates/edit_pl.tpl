@@ -1,6 +1,8 @@
 {include file="layout/header.tpl"}
 <h3>Редактирование площадок</h3>
 <div id="playground">
+	<input type="hidden" id="pl_id" value="{$smarty.get.id}">
+	<input type="hidden" id="adid" value="{$ACCOUNT_ID}">
 	<label for="title">Название площадки</label>
 	<input type="text" name="title" id="title" value="{$DATA.title}" />
 	

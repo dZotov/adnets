@@ -1,6 +1,7 @@
 <?
 include("./include/init.php");
 
+
 $errors=array();
 
 if(get_post('act')=='registration')
@@ -25,4 +26,40 @@ if(get_post('act')=='registration')
 		echo "error";
 	
 }
+if(get_post("act")=='add_pl')
+{
+	$mess="ok";
+	if(get_post('id')=='undefined')
+	{
+		$pl = new Playgrounds();
+		if(!$pl->ExistsByCond("url='".str_replace(array("http://","/"),"",get_post('url'))."'"))
+		{
+			$pl->Set('title',trim(get_post('title')));
+			$pl->Set('url',trim(get_post('url')));
+			$pl->Set('category',(int)get_post('cat'));
+			$pl->Set('exclude',get_post('ignore'));
+			$pl->Set('adid',get_post('adid'));
+			$pl->Save();
+		}
+		else
+			$mess="Площадка уже существует";
+	}
+	else
+	{
+		$pl = new Playgrounds(get_post('id'));
+		if($pl->GetId())
+		{
+			$pl->Set('title',trim(get_post('title')));
+			$pl->Set('url',trim(get_post('url')));
+			$pl->Set('category',(int)get_post('cat'));
+			$pl->Set('exclude',get_post('ignore'));
+			$pl->Save();
+		}
+		else
+			$mess="Произошла ошибка. Если она сново вопториться- обратитесь в службу поддержки";
+	}
+	
+	echo $mess;
+}
+
 ?>
