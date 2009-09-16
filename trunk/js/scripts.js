@@ -75,24 +75,39 @@ function registration()
 	var wmr =$("#wmr").attr('value');
 	var owner_id =$("#owner").attr('value');
 	var flag=1;
-	if(!email)
+	if(!email.match("/^[0-9A-Za-z\._-]+@([0-9a-z\._-]+\.)+[a-z]{2,4}$/i"))
 	{
 			flag=0;
-			error_show("email_error","Введите email");
+			error_show("email_error","Заполните поле корректно <br />(пример: test@example.com)");
 	}
+	else
+		$("#email_error").empty();
+	
 	if((!password || !re_password) || password!=re_password)
 	{
 			flag=0;
 			error_show("password_error","Заполните поля верно");
 			error_show("repeat_password_error","Пароли не совпадают");
 	}
-	if(!wmr)
+	else
+	{
+		$("#password_error").empty();
+		$("#repeat_password_error").empty();
+	}
+	
+	if(!wmr.match("/^R[0-9]$/i"))
 	{
 			flag=0;
-			error_show("wmr_error","Введите Ваш WMR - кошелек");
+			error_show("wmr_error","Введите Ваш WMR - кошелек <br />(пример: R123456789012)");
 	}
+	else
+		$("#wmr_error").empty();
 	if(flag)
 	{
+		error_show("email_error",'');
+		error_show("password_error","");
+		error_show("repeat_password_error","");
+		error_show("wmr_error","");
 		$.ajax({
 			type:"POST",
 			url: 'ajax.php',
@@ -113,7 +128,7 @@ function registration()
 				else
 				{
 					$("#registr").show();
-					error_show("reg_error","Ощибка регистрации. Такой аккаунт уже зарегестрирован");					
+					error_show("reg_error","Ощибка регистрации. Пожалуйста повторите попытку или обратитесь в слубу поддержки");					
 				}
 			},
 			error: function() {return;}

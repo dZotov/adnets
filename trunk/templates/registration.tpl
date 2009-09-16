@@ -19,7 +19,7 @@
 		<input type="password" name="repeat_password" id="repeat_password" value="" />
 					
 		<label for="wmr">WMR </label> <span class="errors" id="wmr_error"></span>
-		<input type="text" name="wmr" id="wmr" value="" />
+		<input type="text" name="wmr" id="wmr" value="R" />
 					
 		<div id="work_as">
 			<h3>Начать работу</h3>
