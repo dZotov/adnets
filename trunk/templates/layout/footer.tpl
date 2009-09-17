@@ -4,7 +4,7 @@
 			<div class="side_borders">
 				<h2>Ваше меню:</h2>
 				<ul>
-					{foreach from=$MENU_WEB item=m name=menu}
+					{foreach from=$MENU item=m name=menu}
 					<li {if $MENU_SD==$m.name}class="active"{/if}><a href="{$m.url}">{$m.title}</a></li>
 					{/foreach}
 				</ul>
@@ -21,7 +21,11 @@
 				<li><a href="contacts.php">Контакты</a></li>
 				<li><a href="faq.php">FAQ</a></li>
 			</ul>
-			<p class="user_type">Веб-мастер: <a href="#n">Рекламодатель</a></p>
+			{if $smarty.cookies.user_type==2}
+			<p class="user_type"><a href="?user_type=1">Веб-мастер</a> Рекламодатель:</p>
+			{else}
+			<p class="user_type">Веб-мастер: <a href="?user_type=2">Рекламодатель</a></p>
+			{/if}
 			<p class="email"><a href="profile.php">профиль {$ACCOUNT.email}</a></p>
 			<p class="exit"><a class="button" href="logout.php">Выйти</a></p>
 			{else}

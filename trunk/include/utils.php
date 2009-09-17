@@ -533,10 +533,15 @@ function ru2en($st) {
 	return $st;
 }
 
-function debug($array)
-{
+function debug($array) {
 	echo "<pre>";
 	print_r($array);
 	echo "</pre>";
 }
+
+function IsAdv() {
+	global $USER_TYPE;
+	return ($USER_TYPE == 2);
+}
+
 ?>

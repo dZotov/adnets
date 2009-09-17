@@ -37,6 +37,16 @@ require_once ROOT_PATH.'include/db.php';
 
 $DB_QUERY =  0; 
 
+$user_type = get_get('user_type');
+if ($user_type) { // 1 - вебмастер, 2 - рекламодатель
+	SetCookie("user_type", $user_type, time() + 3600*360, "/");
+	redirect(get($_SERVER, 'HTTP_REFERER', 'index.php'));
+}
+$USER_TYPE = (int) get($_COOKIE, 'user_type');
+if (!$USER_TYPE || !array_key_exists($USER_TYPE, $TYPE_LIST)) {
+	redirect("index.php?user_type=1");
+}
+
 require_once ROOT_PATH.'./include/smarty/Smarty.class.php';
 $smarty = new Smarty;
 $smarty->template_dir = ROOT_PATH."templates";
@@ -72,11 +82,22 @@ $MENU_WEB= array(
 	array('name' => 'top', 'title' => 'Топ', 'url' => 'top.php'),
 	array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
 );
-foreach ($MENU_WEB as $k => $v) {
+$MENU_ADV= array(
+	array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php'),
+	array('name' => 'company', 'title' => 'Компании', 'url' => 'companies.php'),
+	array('name' => 'stat', 'title' => 'Статистика', 'url' => 'advstat.php'),
+	array('name' => 'balance', 'title' => 'Баланс', 'url' => 'balance.php'),
+	array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
+);
+$MENU = $MENU_WEB;
+if (IsAdv()) {
+	$MENU = $MENU_ADV;
+}
+foreach ($MENU as $k => $v) {
 	if (get($v, 'url') && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false) {
 		$smarty->assign('MENU_SD', $v['name']);
 	}
 }
-$smarty->assign('MENU_WEB', $MENU_WEB);
+$smarty->assign('MENU', $MENU);
 
 ?>
