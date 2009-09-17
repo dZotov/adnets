@@ -1,6 +1,5 @@
 {include file="layout/header.tpl"}
 
-<h3>Новости</h3>
 {if !$DATA}
 <p class="anotation"><strong>Новостей нет</strong></p>	
 {else}

@@ -66,9 +66,11 @@ $JS[] = 'jquery.form.js';
 $JS[] = 'scripts.js';
 $ERRORS = array();
 $PAGE_TITLE = 'ADNets.ru - сервис тизерной рекламы';
+$HEAD_TITLE = "";
 $PAGE_DESC = 'ADNets.ru - сервис тизерной рекламы';
 $smarty->assign_by_ref('ERRORS', $ERRORS);
 $smarty->assign_by_ref('PAGE_TITLE', $PAGE_TITLE);
+$smarty->assign_by_ref('HEAD_TITLE', $HEAD_TITLE);
 $smarty->assign_by_ref('PAGE_DESC', $PAGE_DESC);
 $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('DB_QUERY', $DB_QUERY);
@@ -96,6 +98,7 @@ if (IsAdv()) {
 foreach ($MENU as $k => $v) {
 	if (get($v, 'url') && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false) {
 		$smarty->assign('MENU_SD', $v['name']);
+		$HEAD_TITLE = $v['title'];
 	}
 }
 $smarty->assign('MENU', $MENU);
