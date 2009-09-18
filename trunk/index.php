@@ -1,4 +1,5 @@
 <?
+$AUTH = 'free';
 include("./include/init.php");
 
 if(get_get('owner_id'))
@@ -7,9 +8,11 @@ if(get_get('owner_id'))
 	redirect("index.php");
 }	
 
-
-if(isset($account_id))
-	redirect('playgrounds.php');
+if ($account_id) {
+	$url = "playgrounds.php";
+	if (IsAdv()) $url = "companies.php";
+	redirect($url);
+}
 
 Display("index.tpl");
 ?>

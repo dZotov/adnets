@@ -14,4 +14,6 @@
 		<h1><a href="index.php"><img src="./images/logo.jpg" /></a></h1>
 	</div>
 	<div id="content">
-		<h3>{$HEAD_TITLE}</h3>
+		<div class="padb15">
+			<h3>{$HEAD_TITLE}</h3>
+		</div>	

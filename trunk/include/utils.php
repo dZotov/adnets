@@ -151,20 +151,20 @@ function EndScript() {
 	return $return;
 }
 
-function check_auth() {
+function check_auth($auth = NULL) {
 	global $smarty;
 	
 	$account_id = get($_SESSION, 'account_id');
-		
+	
 	$ad = new Adwerts($account_id);
-	if($ad->GetId()) 
-	{
-		$GLOBALS['account_id'] = $ad->GetId();
-		$GLOBALS['account'] = $ad;
-		$smarty->assign('ACCOUNT_ID', $ad->GetId());
-		$smarty->assign('ACCOUNT', $ad->attr);
-		return true;
-	} 		
+	$GLOBALS['account_id'] = $ad->GetId();
+	$GLOBALS['account'] = $ad->attr;
+	$smarty->assign('ACCOUNT_ID', $ad->GetId());
+	$smarty->assign('ACCOUNT', $ad->attr);
+	if ($ad->GetId()) return true;
+
+	if ($auth == 'free') return true;
+	
 	redirect('logon.php');
 }
 

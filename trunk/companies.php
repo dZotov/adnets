@@ -1,7 +1,7 @@
 <?
-include("./include/init.php");
-check_auth();
+include("./include/init.php");	
 
+if (!IsAdv()) redirect("playgrounds.php");
 
 
 $PAGE_TITLE = "Рекламные компании";

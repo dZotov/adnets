@@ -1,6 +1,6 @@
 <?
 include("./include/init.php");
-check_auth();
+
 $pay= new Payments();
 
 $p=$pay->GetManyByCond("adid='{$account_id}'","date DESC");

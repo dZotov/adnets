@@ -1,6 +1,6 @@
 <?
 include("./include/init.php");
-check_auth();
+
 $top= new Top();
 
 $t=$top->GetManyByCond("1");

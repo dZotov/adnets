@@ -1,10 +1,12 @@
 <?
 include("./include/init.php");
-check_auth();
-$pl= new Playgrounds();
 
-$p=$pl->GetManyByCond("adid='{$account_id}'");
+//~ print_r($_COOKIE)
 
+if (IsAdv()) redirect("companies.php");
+
+$pl = new Playgrounds();
+$p = $pl->GetManyByCond("adid='{$account_id}'");
 
 foreach($p as $k=>$v)
 {
@@ -20,7 +22,6 @@ foreach($p as $k=>$v)
 		$p[$k]['blocks'][$counter]['settings']=unserialize($bv['settings']);
 	}
 }
-
 
 $smarty->assign("DATA",$p);
 $smarty->assign("MENU_SD",'play_gr');

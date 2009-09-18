@@ -1,6 +1,6 @@
 <?
 include("./include/init.php");
-check_auth();
+
 $id=(int)get_get('id');
 $pl= new Playgrounds($id);
 if($pl->Get('adid')!=$account_id && $id)

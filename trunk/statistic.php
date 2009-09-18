@@ -1,8 +1,7 @@
 <?
 include("./include/init.php");
-check_auth();
 
 
-$smarty->assign("PAGE_TITLE","AdNets.ru Статистика");
+$PAGE_TITLE = "Статистика";
 Display("stat.tpl");
 ?>

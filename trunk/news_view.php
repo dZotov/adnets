@@ -1,4 +1,5 @@
 <?
+$AUTH = 'free';
 include("./include/init.php");
 check_auth();
 $id= (int) get_get('id');

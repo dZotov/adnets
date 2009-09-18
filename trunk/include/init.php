@@ -35,18 +35,6 @@ require_once ROOT_PATH.'include/utils.php';
 require_once ROOT_PATH.'include/defs.php';
 require_once ROOT_PATH.'include/db.php';
 
-$DB_QUERY =  0; 
-
-$user_type = get_get('user_type');
-if ($user_type) { // 1 - вебмастер, 2 - рекламодатель
-	SetCookie("user_type", $user_type, time() + 3600*360, "/");
-	redirect(get($_SERVER, 'HTTP_REFERER', 'index.php'));
-}
-$USER_TYPE = (int) get($_COOKIE, 'user_type');
-if (!$USER_TYPE || !array_key_exists($USER_TYPE, $TYPE_LIST)) {
-	redirect("index.php?user_type=1");
-}
-
 require_once ROOT_PATH.'./include/smarty/Smarty.class.php';
 $smarty = new Smarty;
 $smarty->template_dir = ROOT_PATH."templates";
@@ -54,6 +42,25 @@ $smarty->compile_dir = ROOT_PATH."templates_c";
 $smarty->cache_dir = ROOT_PATH."templates_c/cache";
 $smarty->cache_lifetime = 60 * 10; // 10 мин
 $smarty->plugins_dir = array('mysmarty', 'plugins');
+
+$DB_QUERY =  0; 
+
+$account_id = get($_SESSION, 'account_id');
+
+if (!isset($AUTH)) $AUTH = "member";
+check_auth($AUTH);
+
+$user_type = get_get('user_type');
+if ($user_type) { // 1 - вебмастер, 2 - рекламодатель
+	SetCookie("user_type", $user_type, time() + 3600*360, "/");
+	redirect("index.php");
+}
+$USER_TYPE = (int) get($_COOKIE, 'user_type');
+if (!$USER_TYPE || !array_key_exists($USER_TYPE, $TYPE_LIST)) {
+	redirect("index.php?user_type=1");
+}
+
+
 
 $SCRIPTNAME = substr(strrchr($_SERVER['SCRIPT_NAME'], '/'), 1);
 $SCRIPTPATH = substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/")+1);

@@ -1,7 +1,5 @@
 <?
 include("./include/init.php");
-check_auth();
-
 
 if(get_post("update"))
 {
