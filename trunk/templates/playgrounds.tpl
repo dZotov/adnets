@@ -1,6 +1,4 @@
 {include file="layout/header.tpl"}
-
-<h3>Площадки</h3>
 <p class="add_site"><a class="button" href="edit_playground.php">Добавить сайт</a></p>
 
 {if !$DATA}
@@ -31,11 +29,11 @@
 					<a href="javascript: show_hide('blocks_{$i.id}')">Блоки</a> ({$i.num_blocks})
 					<div class="pl_show" id="blocks_{$i.id}">
 						{foreach from=$i.blocks item=b}
-							Блок: {$b.settings.size} Тизары: {$b.settings.size_tizer} <a href="blocks.php?id={$b.id}">редактировать</a>
+							Блок: {$b.settings.size} Тизеры: {$b.settings.size_tizer} <a href="blocks.php?id={$b.id}">редактировать</a>
 						{/foreach}
 						<br />
 					</div>
-					<a href="blocks.php">Добавить блок</a>
+					<img src="./images/add.gif" alt="Добавить" /><a href="blocks.php">Добавить блок</a>
 				</p>
 			</td>
 			<td>

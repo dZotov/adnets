@@ -103,3 +103,7 @@ font-size: 2em; color: #2374c6;
 	#container_registr_logon a#registr, #container_registr_logon a#registr:visited { position: absolute; bottom: 0; right: -2px; background: url(../images/reg_r_b_border.gif) no-repeat top right; width: 258px; height: 74px; display: block; overflow: hidden; color: #fff; text-decoration: underline; font-weight: bold;}
 		#container_registr_logon a#registr span { font-size: 1.8em; padding: 18px 0 0 0; margin-right: 20px; text-align: center; display: block;} 
 	#container_registr_logon a#registr:hover { background-position: bottom right; text-decoration: none;}
+
+	
+	
+	

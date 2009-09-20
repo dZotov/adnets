@@ -4,6 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=cp1251" />
 <title>Adnets.ru {if $PAGE_TITLE} - {$PAGE_TITLE}{/if}</title>
 <link href="./style/screen.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="./style/colorpicker.css" type="text/css" />
+<style>
+{literal}
+#colorSelector {
+height:20px;
+position:relative;
+width:20px;
+border:2px solid grey;
+}
+{/literal}
+</style>
 {foreach from=$JS item=js}
 <script src="./js/{$js}"></script>
 {/foreach}

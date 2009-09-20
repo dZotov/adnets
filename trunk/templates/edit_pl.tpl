@@ -17,7 +17,7 @@
 		{/foreach}
 	</select>
 	<label for="ignore">Отметьте запрещенные к показу тематики</label>
-	<select name="ignore" id="ignore" class="select_ignore" multiple>
+	<select name="ignore[]" id="ignore[]" class="select_ignore" multiple>
 		{foreach from=$CAT item=c}
 			<option value="{$c.id}" {if $c.selected}selected{/if}>-{$c.title}</option>
 		{/foreach}

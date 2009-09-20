@@ -1,10 +1,6 @@
 <?
-
 class Playgrounds extends Entity
 {
-
-	var $table = TSITES;
-
+var $table = TSITES;
 }
-
 ?>

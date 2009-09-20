@@ -70,6 +70,7 @@ $smarty->assign('SITE_URL', SITE_URL);
 $JS = array();
 $JS[] = 'jquery.js';
 $JS[] = 'jquery.form.js';
+$JS[] = 'colorpicker.js';
 $JS[] = 'scripts.js';
 $ERRORS = array();
 $PAGE_TITLE = 'ADNets.ru - сервис тизерной рекламы';

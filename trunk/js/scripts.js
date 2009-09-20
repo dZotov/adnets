@@ -7,6 +7,23 @@ $(document).ready(function(){
 			$("#login_in_top").attr("disabled","");
 	});
 	
+	$('#colorSelector').ColorPicker({
+		color: '#0000ff',
+		onShow: function (colpkr) {
+			$(colpkr).fadeIn(500);
+			return false;
+		},
+		onHide: function (colpkr) {
+			$(colpkr).fadeOut(500);
+			return false;
+		},
+		onChange: function (hsb, hex, rgb) {
+			$('#colorSelector').css('background', '#' + hex);
+			$('#colorpickerField').attr('value', '#' + hex);
+	}
+
+	});
+	
 });
 
 
@@ -26,7 +43,9 @@ function add_playdround()
 	var title=$("#title").attr('value');
 	var url=$("#url").attr('value');
 	var cat=$("#cat").attr('value');
-	var ignore=$("#ignore").attr('value');
+	var ignore=$("#ignore[]").attr('value');
+	
+	alert(ignore);
 	var id=$("#pl_id").attr('value');
 	var adid=$("#adid").attr('value');
 	if(!title)
