@@ -1,5 +1,4 @@
 {include file="layout/header.tpl"}
-<h3>Профиль</h3>
 <p class="anotation">Для изменения остальных данных обратитесь в <strong><a href="contacts.php">слубу поддержки</a></strong></p>
 <form id="profile" action="" method="post" name="profile">
 	<input type="hidden" name="update" value="1">			

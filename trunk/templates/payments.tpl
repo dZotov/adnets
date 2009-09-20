@@ -1,6 +1,5 @@
 {include file="layout/header.tpl"}
 
-<h3>Выплаты</h3>
 <p class="anotation">Ваш баланс на текущий момент - <strong>{$ACCOUNT.balance} руб.</strong></p>
 
 {if !$DATA}

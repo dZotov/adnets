@@ -1,5 +1,4 @@
 {include file="layout/header.tpl"}
-<h3>Топ вебместеров</h3>
 {if !$DATA}
 <p class="anotation"><strong>Тот вебмастеров еще не сформирован!</strong></p>	
 {else}

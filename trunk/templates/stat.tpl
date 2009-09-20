@@ -1,5 +1,4 @@
 {include file="layout/header.tpl"}
-<h3>Статистика за текущий платежный период</h3>
 			
 <ul id="types_of_statistic">
 	<li><a href="#n" class="inactive">Блоки</a></li>
