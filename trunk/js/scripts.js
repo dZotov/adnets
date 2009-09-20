@@ -40,7 +40,12 @@ function colorselector(id ,defcolor)
 	});
 }
 
-
+function show_abs()
+{
+	$("#show_abs").css("height",window.innerHeight+"px");
+	$("#show_abs").css("width","100%");
+	$("#show_abs").show();
+}
 
 function show_error(message)
 {

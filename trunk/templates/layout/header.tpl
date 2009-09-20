@@ -14,7 +14,7 @@
 {/foreach}
 </head>
 <body>
-<div id="main">
+	<div id="main">
 	<div id="header">
 		<h1><a href="index.php"><img src="./images/logo.jpg" /></a></h1>
 	</div>

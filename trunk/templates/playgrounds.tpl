@@ -16,13 +16,13 @@
 		<tr {if $smarty.foreach.data.iteration %2==0}class="invert"{/if}>
 			<td>
 				<h4>{$i.title}</h4>
-				<p class="url"><a href="http://{$i.url}" target="_blank">{$i.url}</a></p>
+				<p class="url"><a href="http://{$i.url}" target="_blank">{$i.url}</a> [<a href="edit_playground.php?id={$i.id}">ред.</a>]</p>
 			</td>
-			<td>
-				<p>{$STATUS_LIST[$i.status]}</p>
+			<td class="vam">
+				<p {if $i.status=='-1'} style="color:red"{else} style="color:green"{/if}>{$STATUS_LIST[$i.status]}</p>
 			</td>
-			<td>
-				<p><a href="edit_playground.php?id={$i.id}">{$i.cat_title}</a></p>
+			<td class="vam">
+				<p><a href="edit_playground.php?id={$i.id}">{$i.cat_title}</a> </p>
 			</td>
 			<td>
 				<p class="spec_blocks">
@@ -30,15 +30,16 @@
 					<div class="pl_show" id="blocks_{$i.id}">
 						{foreach from=$i.blocks item=b}
 							Блок: {$b.settings.size} Тизеры: {$b.settings.size_tizer} <a href="blocks.php?id={$b.id}">редактировать</a>
+							<br /><br />
 						{/foreach}
-						<br />
+						
 					</div>
 					<img src="./images/add.gif" alt="Добавить" /><a href="blocks.php">Добавить блок</a>
 				</p>
 			</td>
 			<td>
 				<p class="spec_blocks"><a href="javascript: show_hide('')">По тематикам</a>  ()</p>
-				<p class="spec_blocks"><a class="alert" href="edit_playground.php?id={$i.id}">Добавить стоп-фильтр</a></p>
+				<p class="spec_blocks"><a class="alert" href="javascript:show_abs();">Добавить стоп-фильтр</a></p>
 			</td>
 		</tr>
 	{/foreach}

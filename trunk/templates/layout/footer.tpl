@@ -48,5 +48,6 @@
 		<p>&copy; <a href="/">adnets.ru</a> 2009</p>
 	</div>
 	<div id="show_error"></div>
+	<div id="show_abs"></div>
 </body>
 </html>

@@ -178,4 +178,15 @@ table#tickets_table { width: 70%; margin: 0;}
 	
 	.ed_blocks #block_titile {width:80%;}
 	
+	.vam {vertical-align:middle;}
+	
+	#show_abs{
+		display:none;
+		background:#b2afaf;
+		position:absolute;
+		filter:alpha(opacity=60);
+		-moz-opacity: 0.6;
+		opacity: 0.6;	
+		
+	}
 	
