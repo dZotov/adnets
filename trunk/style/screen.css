@@ -165,7 +165,7 @@ table#tickets_table { width: 70%; margin: 0;}
 	.color_block_field{float:left; padding-left:10px;}
 	
 	.color_bl{width:20px; height:20px; position:relative;}
-	.color_block_selector{ padding-left:10px; float:left; padding-top:5px;}
+	.color_block_selector{ padding-left:10px; float:left;}
 	.ed_blocks   label {display: block; font-size: 1.2em; font-weight: bold; padding: 3px 0 2px 0;}
 	.ed_blocks   span {font-size: 13px; color:#2374c6;}
 	.ed_blocks   table {border:0px; !important;} 

@@ -44,10 +44,10 @@
 				</td>
 				<td>
 					<div class="color_block">
-						<input id="field_fon" type="text" value="#00ff00" class="blocksfield" />
+						<input id="field_fon" type="text" value="#f0f0f0" class="blocksfield" />
 					</div>
 					<div class="color_block_selector">
-						<div class="color_block_s" id="fon" onclick="javascript:colorselector('fon','#00ff00')"></div>
+						<div class="color_block_s" id="fon" onclick="javascript:colorselector('fon','#f0f0f0')"></div>
 					</div>
 				</td>
 			</tr>
@@ -69,10 +69,10 @@
 						</select>
 					</div>
 					<div class="color_block">
-						<input id="field_brd" type="text" value="#00ff00" class="blocksfield" />
+						<input id="field_brd" type="text" value="#f0f0f0" class="blocksfield" />
 					</div>
 					<div class="color_block_selector">
-						<div class="color_block_s" id="brd" onclick="javascript:colorselector('brd','#00ff00')"></div>
+						<div class="color_block_s" id="brd" onclick="javascript:colorselector('brd','#f0f0f0')"></div>
 					</div>
 				</td>
 			</tr>
@@ -90,10 +90,10 @@
 				</td>
 				<td>
 					<div class="color_block">
-						<input id="filed_colorfon" type="text" value="#00ff00" class="blocksfield" />
+						<input id="field_colorfon" type="text" value="#f0f0f0" class="blocksfield" />
 					</div>
 					<div class="color_block_selector">
-						<div class="color_block_s" id="colorfon" onclick="javascript:colorselector('colorfon','#00ff00')"></div>
+						<div class="color_block_s" id="colorfon" onclick="javascript:colorselector('colorfon','#f0f0f0')"></div>
 					</div>
 				</td>
 			</tr>
@@ -115,10 +115,10 @@
 						</select>
 					</div>
 					<div class="color_block">
-						<input id="field_bbrd" type="text" value="#00ff00" class="blocksfield" />
+						<input id="field_bbrd" type="text" value="#f0f0f0" class="blocksfield" />
 					</div>
 					<div class="color_block_selector">
-						<div class="color_block_s" id="bbrd" onclick="javascript:colorselector('bbrd','#00ff00')"></div>
+						<div class="color_block_s" id="bbrd" onclick="javascript:colorselector('bbrd','#f0f0f0')"></div>
 					</div>
 				</td>
 			</tr>
@@ -170,10 +170,10 @@
 						</select>
 					</div>
 					<div class="color_block">
-						<input id="field_norm" type="text" value="#00ff00" class="blocksfield" />
+						<input id="field_norm" type="text" value="#f0f0f0" class="blocksfield" />
 					</div>
 					<div class="color_block_selector">
-						<div class="color_block_s" id="norm" onclick="javascript:colorselector('norm','#00ff00')"></div>
+						<div class="color_block_s" id="norm" onclick="javascript:colorselector('norm','#f0f0f0')"></div>
 					</div>
 					<div class="clear"></div>
 					<span>При наведении</span>
