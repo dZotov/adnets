@@ -7,12 +7,6 @@
 <link rel="stylesheet" href="./style/colorpicker.css" type="text/css" />
 <style>
 {literal}
-#colorSelector {
-height:20px;
-position:relative;
-width:20px;
-border:2px solid grey;
-}
 {/literal}
 </style>
 {foreach from=$JS item=js}

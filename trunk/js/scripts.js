@@ -7,8 +7,23 @@ $(document).ready(function(){
 			$("#login_in_top").attr("disabled","");
 	});
 	
-	$('#colorSelector').ColorPicker({
-		color: '#0000ff',
+	$("div.color_block_s").each(
+		function()
+		{
+			var divid=$(this).attr('id');
+			var color=$("#field_"+divid).attr('value');
+			$(this).css("background-color", color);
+		}
+	);
+
+	
+});
+
+
+function colorselector(id ,defcolor)
+{
+	$('#'+id).ColorPicker({
+		color: '#'+defcolor,
 		onShow: function (colpkr) {
 			$(colpkr).fadeIn(500);
 			return false;
@@ -18,13 +33,12 @@ $(document).ready(function(){
 			return false;
 		},
 		onChange: function (hsb, hex, rgb) {
-			$('#colorSelector').css('background', '#' + hex);
-			$('#colorpickerField').attr('value', '#' + hex);
+			$('#'+id).css('background', '#' + hex);
+			$('#field_'+id).attr('value', '#' + hex);
 	}
 
 	});
-	
-});
+}
 
 
 
