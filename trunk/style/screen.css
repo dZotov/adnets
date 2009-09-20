@@ -172,7 +172,7 @@ table#tickets_table { width: 70%; margin: 0;}
 	.ed_blocks  .pxtext {width:15px;}
 	.ed_blocks  #width {width:30px;}
 	
-	.ed_blocks{width:70%; border:1px solid #000000; background:#f3f3f3; }
+	.ed_blocks{width:55%; border:1px solid #000000; background:#f3f3f3; }
 	.clear {clear:both; line-height:0; height:0; font-size:1px;}
 	.m10{margin:10px;}
 	

@@ -216,7 +216,9 @@
 				</td>
 			</tr>
 		</table>
+		<input type="submit" value="Добавить/Изменить блок">
 	</div>
+	
 </div>
 
 {include file="layout/footer.tpl"}
