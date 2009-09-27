@@ -1,4 +1,5 @@
 <?
+$AUTH = 'free';
 include("./include/init.php");
 
 $news = new News();

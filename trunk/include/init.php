@@ -60,8 +60,6 @@ if (!$USER_TYPE || !array_key_exists($USER_TYPE, $TYPE_LIST)) {
 	redirect("index.php?user_type=1");
 }
 
-
-
 $SCRIPTNAME = substr(strrchr($_SERVER['SCRIPT_NAME'], '/'), 1);
 $SCRIPTPATH = substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/")+1);
 define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST'].$SCRIPTPATH);
@@ -83,7 +81,16 @@ $smarty->assign_by_ref('PAGE_DESC', $PAGE_DESC);
 $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('DB_QUERY', $DB_QUERY);
 
-$MENU_WEB= array(
+$MENU_GUEST = array(
+	array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php'),
+	array('name' => 'logon', 'title' => 'Войти', 'url' => 'logon.php'),
+	array('name' => 'register', 'title' => 'Регистрация', 'url' => 'registration.php'),
+	array('name' => 'top', 'title' => 'Топ', 'url' => 'top.php'),
+	array('name' => 'forum', 'title' => 'Форум', 'url' => 'forum/'),
+	array('name' => 'about', 'title' => 'О нас', 'url' => 'about.php'),
+	array('name' => 'contact', 'title' => 'Контакты', 'url' => 'contact.php'),
+);
+$MENU_WEB = array(
 	array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php'),
 	array('name' => 'play_gr', 'title' => 'Площадки', 'url' => 'playgrounds.php'),
 	array('name' => 'stat', 'title' => 'Статистика', 'url' => 'statistic.php'),
@@ -92,17 +99,21 @@ $MENU_WEB= array(
 	array('name' => 'top', 'title' => 'Топ', 'url' => 'top.php'),
 	array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
 );
-$MENU_ADV= array(
+$MENU_ADV = array(
 	array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php'),
 	array('name' => 'company', 'title' => 'Компании', 'url' => 'companies.php'),
 	array('name' => 'stat', 'title' => 'Статистика', 'url' => 'advstat.php'),
 	array('name' => 'balance', 'title' => 'Баланс', 'url' => 'balance.php'),
 	array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
 );
-$MENU = $MENU_WEB;
-if (IsAdv()) {
-	$MENU = $MENU_ADV;
+$MENU = $MENU_GUEST;
+if ($account_id) {
+	$MENU = $MENU_WEB;
+	if (IsAdv()) {
+		$MENU = $MENU_ADV;
+	}
 }
+
 foreach ($MENU as $k => $v) {
 	if (get($v, 'url') && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false) {
 		$smarty->assign('MENU_SD', $v['name']);

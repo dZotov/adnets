@@ -45,7 +45,18 @@
 	</div>
 
 	<div id="footer">
-		<p>&copy; <a href="/">adnets.ru</a> 2009</p>
+		<div class="pad5">
+			<table border="0" width="100%">
+				<tr>
+					<td>&copy; <a href="/">adnets.ru</a> 2009</td>
+					<td class="ar padr15" >
+						<!-- begin WebMoney Transfer : accept label -->
+		<a href="http://www.webmoney.ru/" target="_blank"><img src="http://www.megastock.ru/Doc/88x31_accept/blue_rus.gif" alt="www.webmoney.ru" border="0"></a>
+		<!-- end WebMoney Transfer : accept label -->
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<div id="show_error"></div>
 	<div id="show_abs"></div>
