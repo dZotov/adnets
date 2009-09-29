@@ -76,7 +76,7 @@ h1 { position: absolute; width: 114px; height: 35px; top: 0; left: 0;}
 		#menu .exit { margin: 10px 10px 0 0; font-size: 1.2em;}
 			#menu .exit a, #menu .exit a:visited { text-align: center; display: block;}
 			
-#footer { clear: both; border-top: 1px solid #b4d0ec; margin: 20px 0 0 0;}
+#footer { clear: both; border-top: 1px solid #b4d0ec; margin: 5px 0 0 0;}
 	#footer p { padding: 10px 0; text-align: center; padding-left: 810px; font-size: 1.2em;}
 
 #main:after, #content:after, #new_tickets_block:after { content: "."; height: 1px; visibility: hidden; display: block; clear: both;}
