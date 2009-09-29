@@ -48,12 +48,13 @@
 		<div class="pad5">
 			<table border="0" width="100%">
 				<tr>
-					<td>&copy; <a href="/">adnets.ru</a> 2009</td>
-					<td class="ar padr15" >
+					<td>
 						<!-- begin WebMoney Transfer : accept label -->
 		<a href="http://www.webmoney.ru/" target="_blank"><img src="http://www.megastock.ru/Doc/88x31_accept/blue_rus.gif" alt="www.webmoney.ru" border="0"></a>
 		<!-- end WebMoney Transfer : accept label -->
 					</td>
+					
+					<td  class="ar padr15">&copy; <a href="/">adnets.ru</a> 2009</td>
 				</tr>
 			</table>
 		</div>
