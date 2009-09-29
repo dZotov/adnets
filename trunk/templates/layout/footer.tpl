@@ -17,8 +17,8 @@
 			{if $ACCOUNT}
 			<p class="balanc"><b><span>{$ACCOUNT.balance}</span>руб.</b> на балансе</p>
 			<ul>
-				<li><a href="help.php">Справка</a></li>
-				<li><a href="contacts.php">Контакты</a></li>
+				<li><a href="about.php">Справка</a></li>
+				<li><a href="contact.php">Контакты</a></li>
 				<li><a href="faq.php">FAQ</a></li>
 			</ul>
 			{if $smarty.cookies.user_type==2}
