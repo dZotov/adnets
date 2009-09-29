@@ -15,6 +15,14 @@ foreach($p as $k=>$v)
 	$bl= new Blocks();
 	$b=$bl->GetManyByCond("pl_id='{$v['id']}'");
 	$p[$k]['num_blocks']=sizeof($b);
+	
+	$exclude_cat=explode(",",$v['exclude']);
+	$p[$k]['num_exclude']=sizeof($exclude_cat);
+	$cat= new Cat();
+	
+	$cat_exclude_arr=$cat->GetManyByCond("id IN({$v['exclude']})");
+	$p[$k]['cat_exclude']=$cat_exclude_arr;
+	
 	$counter=0;
 	foreach($b as $bk=>$bv)
 	{
@@ -27,6 +35,6 @@ foreach($p as $k=>$v)
 $smarty->assign("DATA",$p);
 $smarty->assign("MENU_SD",'play_gr');
 $smarty->assign("STATUS_LIST",$STATUS_LIST);
-$smarty->assign("PAGE_TITLE","AdNets.ru Площадки");
+$smarty->assign("PAGE_TITLE","Площадки");
 Display("playgrounds.tpl");
 ?>

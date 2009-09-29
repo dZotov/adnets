@@ -22,7 +22,7 @@
 				<p {if $i.status=='-1'} style="color:red"{else} style="color:green"{/if}>{$STATUS_LIST[$i.status]}</p>
 			</td>
 			<td class="vam">
-				<p><a href="edit_playground.php?id={$i.id}">{$i.cat_title}</a> [<a href="edit_playground.php?id={$i.id}">ред.</a>]</p>
+				<p>{$i.cat_title} [<a href="edit_playground.php?id={$i.id}">ред.</a>]</p>
 			</td>
 			<td>
 				<p class="spec_blocks">
@@ -38,8 +38,14 @@
 				</p>
 			</td>
 			<td>
-				<p class="spec_blocks"><a href="javascript: show_hide('')">По тематикам</a>  ()</p>
-				<p class="spec_blocks"><img src="./images/add.gif" alt="Добавить" /><a class="alert" href="javascript:show_abs();">Добавить стоп-фильтр</a></p>
+				<p class="spec_blocks"><a href="javascript: show_hide('blocks_ex_{$i.id}')">По тематикам</a>  ({$i.num_exclude})</p>
+				<div class="pl_show" id="blocks_ex_{$i.id}">
+					{foreach from=$i.cat_exclude item=ex}
+						{$ex.title} <a href="#"><img src="./images/cross.gif"></a><br />
+					{/foreach}
+					<br />
+				</div>
+				<p class="spec_blocks"><img src="./images/add.gif" alt="Добавить" /><a class="alert" href="edit_playground.php?id={$i.id}">Добавить стоп-фильтр</a></p>
 			</td>
 		</tr>
 	{/foreach}
