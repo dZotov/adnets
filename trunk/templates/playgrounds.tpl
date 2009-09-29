@@ -29,12 +29,12 @@
 					<a href="javascript: show_hide('blocks_{$i.id}')">Блоки</a> ({$i.num_blocks})
 					<div class="pl_show" id="blocks_{$i.id}">
 						{foreach from=$i.blocks item=b}
-							Блок: {$b.settings.size} Тизеры: {$b.settings.size_tizer} <a href="blocks.php?id={$b.id}">редактировать</a>
+							Блок: {$b.settings.block_text_size}x{$b.settings.block_text_size} Тизеры: {$b.settings.hor_tiser_count}x{$b.settings.vert_tiser_count} <a href="blocks.php?id={$b.id}&sid={$i.id}">редактировать</a>
 							<br /><br />
 						{/foreach}
 						
 					</div>
-					<img src="./images/add.gif" alt="Добавить" /><a href="blocks.php">Добавить блок</a>
+					<img src="./images/add.gif" alt="Добавить" /><a href="blocks.php?sid={$i.id}">Добавить блок</a>
 				</p>
 			</td>
 			<td>

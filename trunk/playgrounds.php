@@ -20,6 +20,7 @@ foreach($p as $k=>$v)
 	{
 		$p[$k]['blocks'][$counter]['id']=$bv['id'];
 		$p[$k]['blocks'][$counter]['settings']=unserialize($bv['settings']);
+		$counter++;
 	}
 }
 
