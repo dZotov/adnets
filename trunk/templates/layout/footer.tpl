@@ -15,7 +15,7 @@
 		
 		<div id="sub_menu">
 			{if $ACCOUNT}
-			<p class="balanc"><span>{$ACCOUNT.balance}</span>руб. на балансе</p>
+			<p class="balanc"><b><span>{$ACCOUNT.balance}</span>руб.</b> на балансе</p>
 			<ul>
 				<li><a href="help.php">Справка</a></li>
 				<li><a href="contacts.php">Контакты</a></li>

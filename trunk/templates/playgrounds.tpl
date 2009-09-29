@@ -22,7 +22,7 @@
 				<p {if $i.status=='-1'} style="color:red"{else} style="color:green"{/if}>{$STATUS_LIST[$i.status]}</p>
 			</td>
 			<td class="vam">
-				<p><a href="edit_playground.php?id={$i.id}">{$i.cat_title}</a> </p>
+				<p><a href="edit_playground.php?id={$i.id}">{$i.cat_title}</a> [<a href="edit_playground.php?id={$i.id}">ред.</a>]</p>
 			</td>
 			<td>
 				<p class="spec_blocks">
@@ -39,7 +39,7 @@
 			</td>
 			<td>
 				<p class="spec_blocks"><a href="javascript: show_hide('')">По тематикам</a>  ()</p>
-				<p class="spec_blocks"><a class="alert" href="javascript:show_abs();">Добавить стоп-фильтр</a></p>
+				<p class="spec_blocks"><img src="./images/add.gif" alt="Добавить" /><a class="alert" href="javascript:show_abs();">Добавить стоп-фильтр</a></p>
 			</td>
 		</tr>
 	{/foreach}

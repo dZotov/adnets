@@ -82,12 +82,11 @@ $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('DB_QUERY', $DB_QUERY);
 
 $MENU_GUEST = array(
-	array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php'),
 	array('name' => 'logon', 'title' => 'Войти', 'url' => 'logon.php'),
 	array('name' => 'register', 'title' => 'Регистрация', 'url' => 'registration.php'),
-	array('name' => 'top', 'title' => 'Топ', 'url' => 'top.php'),
 	array('name' => 'forum', 'title' => 'Форум', 'url' => 'forum/'),
 	array('name' => 'about', 'title' => 'О нас', 'url' => 'about.php'),
+	array('name' => 'faq', 'title' => 'FAQ', 'url' => 'faq.php'),
 	array('name' => 'contact', 'title' => 'Контакты', 'url' => 'contact.php'),
 );
 $MENU_WEB = array(
