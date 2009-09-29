@@ -41,7 +41,7 @@
 				<p class="spec_blocks"><a href="javascript: show_hide('blocks_ex_{$i.id}')">По тематикам</a>  ({$i.num_exclude})</p>
 				<div class="pl_show" id="blocks_ex_{$i.id}">
 					{foreach from=$i.cat_exclude item=ex}
-						{$ex.title} <a href="#"><img src="./images/cross.gif"></a><br />
+						{$ex.title} <a href="javascript:del_denay_cat('{$ACCOUNT_ID}','{$i.id}','{$ex.id}');"><img src="./images/cross.gif"></a><br />
 					{/foreach}
 					<br />
 				</div>

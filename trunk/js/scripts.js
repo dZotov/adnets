@@ -19,6 +19,12 @@ $(document).ready(function(){
 	
 });
 
+function del_denay_cat(account_id,site_id,cat_id)
+{
+	if(confirm("Вы уверены что хотите удалить из списка фильтнов эту категорию?"))
+		redirect("playgrounds.php?&sid="+site_id+"&cat="+cat_id+"&act=del_cat");
+	
+}
 
 function colorselector(id ,defcolor)
 {
@@ -205,9 +211,6 @@ function if_confirm(url) {
 	if(confirm(text_are_you_sure))
 		redirect(url);
 }
-
-
-
 
 function popup(link, width, height, resizable, scroll) {
     if (!window.focus) 
