@@ -114,8 +114,8 @@ font-size: 2em; color: #2374c6;
 	
 }
 	
-.mainfoot a{color:#b5b5b5; text-decoration:underline;}
-.mainfoot a:hover{color:#2374c6}
-.mainfoot a:visited{color:#f3f3f3}
+.mainfoothref a{color:#b5b5b5;}
+.mainfoothref a:hover{color:#2374c6;text-decoration:underline;}
+.mainfoothref a:visited{color:#b5b5b5}
 
 .copy{font-size:12px; padding-top:10px; color:#2374c6}
