@@ -104,6 +104,18 @@ font-size: 2em; color: #2374c6;
 		#container_registr_logon a#registr span { font-size: 1.8em; padding: 18px 0 0 0; margin-right: 20px; text-align: center; display: block;} 
 	#container_registr_logon a#registr:hover { background-position: bottom right; text-decoration: none;}
 
+.mainfoot{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	padding-right:20px;
+	font-size:12px;
+	color:#b5b5b5;
 	
+}
 	
-	
+.mainfoot a{color:#b5b5b5; text-decoration:underline;}
+.mainfoot a:hover{color:#2374c6}
+.mainfoot a:visited{color:#f3f3f3}
+
+.copy{font-size:12px; padding-top:10px; color:#2374c6}
