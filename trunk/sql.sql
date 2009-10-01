@@ -205,3 +205,19 @@ CREATE TABLE `top` (
 -- 
 
 INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `crt`, `balance`) VALUES (1, 'Test', 123, 12312, 2, '123.00');
+
+
+-- 
+-- Структура таблицы `balance`
+-- 
+
+DROP TABLE IF EXISTS `balance`;
+CREATE TABLE `balance` (
+  `id` int(15) NOT NULL auto_increment,
+  `adid` int(11) default '0',
+  `sum` decimal(10,2) default '0.00',
+  `wmr` varchar(50) default NULL,
+  `status` int(1) default '0',
+  `date` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

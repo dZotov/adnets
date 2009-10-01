@@ -16,7 +16,7 @@ if(get_post('act')=='registration')
 		$ad->Set("wmr",get_post('wmr'));
 		$ad->Set("status",1);
 		$ad->Set("owner_id",(int)get_post('owner_id'));
-		$ad->Set("regdate",SqlDateTime());
+		$ad->Set("regdate", sqlDateTime());
 		$ad->Save();
 		setcookie("mode",get_post("start"),time()+99999,"/");
 		

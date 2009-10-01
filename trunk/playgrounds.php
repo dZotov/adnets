@@ -44,8 +44,10 @@ foreach($p as $k=>$v)
 	$p[$k]['num_exclude']=sizeof($exclude_cat);
 	$cat= new Cat();
 	
-	$cat_exclude_arr=$cat->GetManyByCond("id IN({$v['exclude']})");
-	$p[$k]['cat_exclude']=$cat_exclude_arr;
+	if ($v['exclude']) {
+		$cat_exclude_arr=$cat->GetManyByCond("id IN({$v['exclude']})");
+		$p[$k]['cat_exclude']=$cat_exclude_arr;
+	}
 	
 	$counter=0;
 	foreach($b as $bk=>$bv)
