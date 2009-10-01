@@ -19,9 +19,14 @@
 	<input type="hidden" name="LMI_PAYMENT_AMOUNT" value="{$BALANCE.sum}" />
 	<input type="hidden" name="LMI_PAYMENT_DESC" value="Adnets.ru | {$ACCOUNT.email}" />
 	<input type="hidden" name="LMI_PAYMENT_NO" value="{$BALANCE.id}" />
-	<input type="hidden" name="LMI_PAYEE_PURSE" value="{$BALANCE.wmr}" />
+	<input type="hidden" name="LMI_PAYEE_PURSE" value="R122684558758" />
 	<input type="hidden" name="LMI_SIM_MODE" value="0">
-	<input type="submit" />
+	<p class="anotation">
+	Вы хотите выполнить платёж <br /><br />
+	Сумма платежа: {$BALANCE.sum} <br />
+	Назначение платежа: "Пополнение баланса для аккаунта {$ACCOUNT.email}"
+	</p>	
+	<input type="submit" value=" Перейти к оплате " />
 	</form>
 </div>
 {/if}

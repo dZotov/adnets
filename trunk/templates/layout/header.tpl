@@ -22,3 +22,4 @@
 		<div class="padb15">
 			<h3>{$HEAD_TITLE}</h3>
 		</div>	
+		

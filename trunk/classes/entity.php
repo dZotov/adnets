@@ -430,6 +430,11 @@ class Entity
 		}
 		$this->UpdateByCond("id IN ({$ids})", "status = '".STATE_BUFFER."', buffer = NOW()");
 	}	
+	
+	function IsMy() {
+		global $account_id;
+		return ($this->Get('adid') == $account_id);
+	}
 		
 }
 ?>
