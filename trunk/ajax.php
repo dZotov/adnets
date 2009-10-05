@@ -1,7 +1,5 @@
 <?
 include("./include/ajax_init.php");
-
-
 $errors=array();
 
 if(get_post('act')=='registration')
@@ -40,6 +38,7 @@ if(get_post("act")=='add_pl')
 			$pl->Set('exclude',get_post('ignore'));
 			$pl->Set('adid',get_post('adid'));
 			$pl->Save();
+			
 		}
 		else
 			$mess="Площадка уже существует";

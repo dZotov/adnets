@@ -43,19 +43,6 @@ $DB_QUERY =  0;
 
 $account_id = get($_SESSION, 'account_id');
 
-if (!isset($AUTH)) $AUTH = "member";
-check_auth($AUTH);
-
-$user_type = get_get('user_type');
-if ($user_type) { // 1 - вебмастер, 2 - рекламодатель
-	SetCookie("user_type", $user_type, time() + 3600*360, "/");
-	redirect("index.php");
-}
-$USER_TYPE = (int) get($_COOKIE, 'user_type');
-if (!$USER_TYPE || !array_key_exists($USER_TYPE, $TYPE_LIST)) {
-	redirect("index.php?user_type=1");
-}
-
 $SCRIPTNAME = substr(strrchr($_SERVER['SCRIPT_NAME'], '/'), 1);
 $SCRIPTPATH = substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/")+1);
 define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST'].$SCRIPTPATH);
@@ -70,4 +57,4 @@ $ERRORS = array();
 $smarty->assign_by_ref('ERRORS', $ERRORS);
 $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('DB_QUERY', $DB_QUERY);
->
+?>

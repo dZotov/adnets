@@ -23,6 +23,6 @@
 		{/foreach}
 	</div>
 	<p class="btn"><a class="button" href="javascript:add_playdround();">{$EDIT_SITE|default:"Добавить сайт"}</a></p>
-	<span id="loader" style="display:none;"> <img src="./images/loading.gif"></span>
+	<span id="loader" style="display:none;"><img src="./images/loading.gif"></span>
 </div>
 {include file="layout/footer.tpl"}

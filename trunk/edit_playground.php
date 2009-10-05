@@ -12,7 +12,7 @@ $c=$cat->GetManyByCond("status='".STATE_ACTIVE."'");
 
 if($pl->Getid())
 {
-	$cats_sel=explode(",",$pl->Get('category'));
+	$cats_sel=explode(",",$pl->Get('exclude'));
 	foreach($c as $k=>$v)
 	{
 		if(in_array($v['id'],$cats_sel))

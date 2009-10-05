@@ -76,7 +76,7 @@ function add_playdround()
 	$("input.ign").each(
 		function()
 		{
-			if($(this).attr('checked')=="checked")
+			if($(this).attr('checked'))
 			{
 				if(ignore!='')
 					ignore +=","+$(this).attr("value");
@@ -88,7 +88,6 @@ function add_playdround()
 			
 	);
 	
-	alert(ignore);
 	var id=$("#pl_id").attr('value');
 	var adid=$("#adid").attr('value');
 	if(!title)
@@ -115,7 +114,7 @@ function add_playdround()
 				$("#loader").hide();
 				if(data=='ok')
 				{
-					redirect('playgrounds.php');
+					show_error('Информация изменена!');
 				}
 				else
 				{
