@@ -122,7 +122,7 @@ if(get_get('id'))
 
 $smarty->assign("TISER_COUNT",$tiser_count);
 $smarty->assign("TISER_BORDER",$tiser_border);
-
+$smarty->assign("MENU_SD","play_gr");
 $smarty->assign("PAGE_TITLE","AdNets.ru Добавить/Резактировать блоки");
 Display("blocks.tpl");
 ?>

@@ -55,10 +55,14 @@ function show_abs()
 
 function show_error(message)
 {
-	$("#show_error").empty(message);
-	$("#show_error").append(message);
-	$("#show_error").show();
-	setTimeout("$('#show_error').fadeOut('slow')",2000);
+	$.jGrowl(message, { 
+		theme: 'smoke',
+		sticky: false,
+		speed: 2000,
+		speed: 'slow',
+		closer: false
+					
+	});
 		
 }
 
@@ -68,7 +72,21 @@ function add_playdround()
 	var title=$("#title").attr('value');
 	var url=$("#url").attr('value');
 	var cat=$("#cat").attr('value');
-	var ignore=$("#ignore[]").attr('value');
+	var ignore='';
+	$("input.ign").each(
+		function()
+		{
+			if($(this).attr('checked')=="checked")
+			{
+				if(ignore!='')
+					ignore +=","+$(this).attr("value");
+				else	
+					ignore=$(this).attr("value");
+					
+			}
+		}
+			
+	);
 	
 	alert(ignore);
 	var id=$("#pl_id").attr('value');

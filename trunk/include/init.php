@@ -68,6 +68,8 @@ $smarty->assign('SITE_URL', SITE_URL);
 $JS = array();
 $JS[] = 'jquery.js';
 $JS[] = 'jquery.form.js';
+$JS[] = 'jquery.ui.all.js';
+$JS[] = 'jquery.jgrowl.js';
 $JS[] = 'colorpicker.js';
 $JS[] = 'scripts.js';
 $ERRORS = array();

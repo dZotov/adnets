@@ -1,5 +1,5 @@
 <?
-include("./include/init.php");
+include("./include/ajax_init.php");
 
 
 $errors=array();

@@ -3,12 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=cp1251" />
 <title>Adnets.ru {if $PAGE_TITLE} - {$PAGE_TITLE}{/if}</title>
-<link href="./style/screen.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="./style/colorpicker.css" type="text/css" />
-<style>
-{literal}
-{/literal}
-</style>
+<link rel="stylesheet" href="./style/jquery.jgrowl.css" type="text/css" />
+<link href="./style/screen.css" rel="stylesheet" type="text/css" />
 {foreach from=$JS item=js}
 <script src="./js/{$js}"></script>
 {/foreach}
