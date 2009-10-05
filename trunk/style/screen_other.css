@@ -113,6 +113,14 @@ font-size: 2em; color: #2374c6;
 	color:#b5b5b5;
 	
 }
+.webmoney{
+	position:absolute;
+	bottom:10px;
+	left:10px;
+	padding-right:20px;
+	font-size:12px;
+	color:#b5b5b5;
+}
 	
 .mainfoothref a{color:#b5b5b5;}
 .mainfoothref a:hover{color:#2374c6;text-decoration:underline;}
