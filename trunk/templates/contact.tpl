@@ -2,8 +2,9 @@
 
 <p class="anotation">
 	По всем вопросам обращайтесь: <br />
-	ICQ: 373-024-03 <br />
-	Email: support@adnets.ru <br />
+	<img src="./images/icq.gif"> 598361437 <br /> <br />
+	<img src="./images/skype.gif"> adnets_support <br /> <br />
+	<img src="./images/email.gif"> support@adnets.ru  <br />
 </p>
 
 
