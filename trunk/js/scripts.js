@@ -136,10 +136,10 @@ function registration()
 	var wmr =$("#wmr").attr('value');
 	var owner_id =$("#owner").attr('value');
 	var flag=1;
-	if(!email.match("/^[0-9A-Za-z\._-]+@([0-9a-z\._-]+\.)+[a-z]{2,4}$/i"))
+	if(!email)
 	{
-			flag=0;
-			error_show("email_error","Заполните поле корректно <br />(пример: test@example.com)");
+		flag=0;
+		error_show("email_error","Заполните поле корректно <br />(пример: test@example.com)");
 	}
 	else
 		$("#email_error").empty();
@@ -156,10 +156,10 @@ function registration()
 		$("#repeat_password_error").empty();
 	}
 	
-	if(!wmr.match("/^R[0-9]$/i"))
+	if(!wmr || wmr=='R')
 	{
-			flag=0;
-			error_show("wmr_error","Введите Ваш WMR - кошелек <br />(пример: R123456789012)");
+		flag=0;
+		error_show("wmr_error","Введите Ваш WMR - кошелек <br />(пример: R123456789012)");
 	}
 	else
 		$("#wmr_error").empty();
