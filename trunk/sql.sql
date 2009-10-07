@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Хост: localhost
--- Время создания: Окт 05 2009 г., 21:13
--- Версия сервера: 5.0.16
+-- Время создания: Окт 07 2009 г., 22:36
+-- Версия сервера: 5.0.18
 -- Версия PHP: 5.1.1
 -- 
 -- БД: `adnets`
@@ -36,8 +36,8 @@ CREATE TABLE `adwerts` (
 -- Дамп данных таблицы `adwerts`
 -- 
 
-INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `wmr`, `regdate`, `balance`, `intop`) VALUES (1, 0, '2freak@inbox.ru', '123456', '202cb962ac59075b964b07152d234b70', 1, 'R1234567890', '2009-08-23 14:34:49', '0.00', ''),
-(6, 1, 'for.Zotov@inbox.ru', '', '202cb962ac59075b964b07152d234b70', 1, 'R123', '2009-09-14 22:49:31', '0.00', '');
+INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `wmr`, `regdate`, `balance`, `intop`) VALUES (1, 0, '2freak@inbox.ru', '123456', '202cb962ac59075b964b07152d234b70', 1, 'R1234567890', '2009-08-23 14:34:49', '0.00', '');
+INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `wmr`, `regdate`, `balance`, `intop`) VALUES (6, 1, 'for.Zotov@inbox.ru', '', '202cb962ac59075b964b07152d234b70', 1, 'R123', '2009-09-14 22:49:31', '0.00', '');
 
 -- --------------------------------------------------------
 
@@ -102,33 +102,33 @@ CREATE TABLE `category` (
 -- Дамп данных таблицы `category`
 -- 
 
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (1, 'Авто/мото', '0.26', 1),
-(2, 'Афиша', '2.10', 1),
-(3, 'Бизнес, финансы', '2.00', 1),
-(4, 'Гороскопы, эзотерика', '0.00', 1),
-(5, 'Дети', '0.00', 1),
-(6, 'Дом, хобби', '0.00', 1),
-(7, 'Здоровье, фитнес', '0.00', 1),
-(8, 'Знакомства без эро-фото', '0.00', 1),
-(9, 'Знаменитости', '0.00', 1),
-(10, 'Карьера, трудоустройство', '0.00', 1),
-(11, 'Кино и ТВ', '0.00', 1),
-(12, 'Красота, косметика, уход за собой', '0.00', 1),
-(13, 'Кулинария, рецепты', '0.00', 1),
-(14, 'Мода, одежда, шоппинг', '0.00', 1),
-(15, 'Недвижимость', '0.00', 1),
-(16, 'Новости', '0.00', 1),
-(17, 'Новости (без эро)', '0.00', 1),
-(18, 'Общество', '0.00', 1),
-(19, 'Отношения', '0.00', 1),
-(20, 'Подарки', '0.00', 1),
-(21, 'Программы', '0.00', 1),
-(22, 'Секс, cтатьи', '0.00', 1),
-(23, 'Секс-знакомства', '0.00', 1),
-(24, 'Спорт', '0.00', 1),
-(25, 'Товары', '0.00', 1),
-(26, 'Туризм', '0.00', 1),
-(27, 'Эротика', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (1, 'Авто/мото', '0.26', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (2, 'Афиша', '2.10', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (3, 'Бизнес, финансы', '2.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (4, 'Гороскопы, эзотерика', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (5, 'Дети', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (6, 'Дом, хобби', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (7, 'Здоровье, фитнес', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (8, 'Знакомства без эро-фото', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (9, 'Знаменитости', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (10, 'Карьера, трудоустройство', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (11, 'Кино и ТВ', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (12, 'Красота, косметика, уход за собой', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (13, 'Кулинария, рецепты', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (14, 'Мода, одежда, шоппинг', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (15, 'Недвижимость', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (16, 'Новости', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (17, 'Новости (без эро)', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (18, 'Общество', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (19, 'Отношения', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (20, 'Подарки', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (21, 'Программы', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (22, 'Секс, cтатьи', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (23, 'Секс-знакомства', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (24, 'Спорт', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (25, 'Товары', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (26, 'Туризм', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (27, 'Эротика', '0.00', 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +241,7 @@ CREATE TABLE `top` (
   `ad_top_name` varchar(100) default NULL,
   `shows` int(11) default '0',
   `clicks` int(11) default '0',
-  `crt` int(11) default '0',
+  `ctr` int(11) default '0',
   `balance` decimal(10,2) default '0.00',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
@@ -250,4 +250,4 @@ CREATE TABLE `top` (
 -- Дамп данных таблицы `top`
 -- 
 
-INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `crt`, `balance`) VALUES (1, 'Test', 123, 12312, 2, '123.00');
+INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `ctr`, `balance`) VALUES (1, 'Test', 123, 12312, 2, '123.00');
