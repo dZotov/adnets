@@ -180,23 +180,12 @@
 					break;
                     
 				case FORM_SELECT:
-					$control_html = '<table cellpadding="0"><tr>';
-					
 					$disabled = get($options,'disabled');
 					if($disabled)
 						$options['style']= 'background-color:#E8E8E8';
 					
-					$pre_label = get($options,'_prelabels');
-					if($pre_label)
-						$control_html .= '<td class="padl3">'.$pre_label.'</td>';
+					$control_html = $this->Select($name, $value, $options);
 					
-					$control_html .= '<td>'.$this->Select($name, $value, $options).'</td>';
-					
-					$post_label = get($options,'_postlabels');
-					if($post_label)
-						$control_html .= '<td class="padl3">'.$post_label.'</td>';
-						
-					$control_html .= '</tr></table>';
 					break;
 
 				case FORM_CHECKBOX:

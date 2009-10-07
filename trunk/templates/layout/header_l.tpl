@@ -10,4 +10,3 @@
 {/foreach}
 </head>
 <body>
-
