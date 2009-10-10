@@ -251,3 +251,25 @@ CREATE TABLE `top` (
 -- 
 
 INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `ctr`, `balance`) VALUES (1, 'Test', 123, 12312, 2, '123.00');
+
+-- 
+-- Структура таблицы `company`
+-- 
+
+DROP TABLE IF EXISTS `company`;
+CREATE TABLE `company` (
+  `id` int(11) NOT NULL auto_increment,
+  `adid` int(11) default '0',
+  `title` varchar(255) character set cp1251 default NULL,
+  `category` int(5) default '0',
+  `status` int(1) default '0',
+  `days` varchar(255) default NULL,
+  `hours` varchar(255) default NULL,
+  `day_limit` int(15) default '0',
+  `limit` int(15) default '0',
+  `maxrun` int(15) default '0',
+  `price` decimal(10,2) default '0.00',
+  `date` datetime default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `adid` (`adid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя' AUTO_INCREMENT=2 ;

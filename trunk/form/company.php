@@ -34,10 +34,32 @@ for($i = 0; $i < 24; $i++) {
 
 $f->Field(FORM_MULTIPLE, 'Часы', 'hours', array(
 		'_list' => $HOURS_LIST,
-		'size' => 7,
+		'size' => 24,
 		'style' => 'width: 80px;',
 	)
 );
+
+$f->Field(FORM_TEXT, 'Стоимость перехода', 'price', array(
+		'_def' => $min_price,
+	)
+);
+
+$f->Field(FORM_TEXT, 'Максимальное количество переходов в день', 'maxrun', array(
+	
+	)
+);
+
+$f->Field(FORM_TEXT, 'Лимит бюджета кампании в день', 'day_limit', array(
+		
+	)
+);
+
+$f->Field(FORM_TEXT, 'Лимит бюджета кампании в целом', 'limit', array(
+	
+	)
+);
+
+
 
 
 
