@@ -256,6 +256,10 @@ INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `ctr`, `balance`) VAL
 -- Структура таблицы `company`
 -- 
 
+-- 
+-- Структура таблицы `company`
+-- 
+
 DROP TABLE IF EXISTS `company`;
 CREATE TABLE `company` (
   `id` int(11) NOT NULL auto_increment,
@@ -269,7 +273,10 @@ CREATE TABLE `company` (
   `limit` int(15) default '0',
   `maxrun` int(15) default '0',
   `price` decimal(10,2) default '0.00',
+  `categories` varchar(255) default NULL,
+  `exceptions` text,
+  `no_ero` int(1) default '0',
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `adid` (`adid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя';
