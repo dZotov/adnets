@@ -106,6 +106,31 @@
 		</div>
 	</div>
 	
+	<div class="padt8 anotation">
+		<div><a href="javascript: show_hide('_exceptions_settings');">Исключения</a></div>
+			
+		<div id="_exceptions_settings" style="display: none;">
+			<table>
+				<tr>
+					<td>{$FORM.exceptions.title}</td> 	
+					<td>
+						Исключить показ на площадках(каждая площадка с новой строки)
+						{$FORM.exceptions.field}
+						<div>
+						
+						</div>
+					</td> 	
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						{$FORM.no_ero.field}{$FORM.no_ero.title}
+					</td>
+				</tr>	
+			</table>	
+		</div>
+	</div>
+	
 	
 	<div class="padt15">
 		<a class="button" href="companies.php">Отменить</a> &nbsp;

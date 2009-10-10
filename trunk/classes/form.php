@@ -95,8 +95,12 @@
 				return $value;
 			}
 			if ($type==FORM_DATE) return get_param_date($name,$default);
-            if ($type==FORM_CHECKBOX) return get_param_checkbox($name,$default);
-            if ($type==FORM_MULTIPLE) {
+            if ($type==FORM_CHECKBOX) {
+				$value = get_param_checkbox($name,$default);
+            	if ($value == 'on') $value = 1;
+				return $value;
+			}
+			if ($type==FORM_MULTIPLE) {
 				$value = get_param($name, $default);
 				if (is_array($value)) {
 					foreach($value as $k => $v) {
@@ -240,13 +244,13 @@
 						unset($options['checked']);
 						
 					$control_html = $this->Input('checkbox',$name,NULL,$options);
-					$control_html = '<table><tr>';
-					$control_html .= '<td>'.$this->Input('checkbox',$name,NULL,$options).'</td>';
+					//~ $control_html = '<table><tr>';
+					//~ $control_html .= '<td>'.$this->Input('checkbox',$name,NULL,$options).'</td>';
 						
-					if(isset($options['_postlabels'])) {
-						$control_html .= '<td>'.$options['_postlabels'].'</td>';
-					}
-					$control_html .= '</tr></table>';
+					//~ if(isset($options['_postlabels'])) {
+						//~ $control_html .= '<td>'.$options['_postlabels'].'</td>';
+					//~ }
+					//~ $control_html .= '</tr></table>';
 					break;
 
 				case FORM_RADIO:

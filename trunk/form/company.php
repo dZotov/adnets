@@ -66,6 +66,17 @@ $f->Field(FORM_CB_ARRAY, 'Категории', 'categories', array(
 	)
 );
 
+$f->Field(FORM_MEMO, 'Исключения', 'exceptions', array(
+		'rows' => 4,
+		'cols' => 50,
+	)
+);
+
+$f->Field(FORM_CHECKBOX, "не показывать на площадках эротического содержания", 'no_ero', array(
+	
+	)
+);
+
 
 
 
