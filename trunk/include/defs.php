@@ -9,6 +9,7 @@ define('TCAT', 'category');
 define('TBLOCKS', 'blocks');
 define('TBALANCE', 'balance');
 define('TCOMPANY', 'company');
+define('TTEASER', 'teaser');
 
 // Таблицы
 $IMG_MIME_TYPE = array(

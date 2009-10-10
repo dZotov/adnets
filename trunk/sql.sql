@@ -280,3 +280,20 @@ CREATE TABLE `company` (
   PRIMARY KEY  (`id`),
   KEY `adid` (`adid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя';
+
+-- 
+-- Структура таблицы `teaser`
+-- 
+
+DROP TABLE IF EXISTS `teaser`;
+CREATE TABLE `teaser` (
+  `id` int(15) NOT NULL auto_increment,
+  `adid` int(15) default '0',
+  `company_id` int(15) default '0',
+  `title` varchar(255) default NULL,
+  `desc` varchar(255) default NULL,
+  `url` varchar(255) default NULL,
+  `status` int(1) default '0',
+  `date` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Тизеры' AUTO_INCREMENT=1 ;
