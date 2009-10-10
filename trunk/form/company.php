@@ -6,8 +6,9 @@ $f->Field(FORM_TEXT, 'Название компании', 'title', array(
 );
 
 $cat = new Cat();
+$cat_list = $cat->GetList();
 $f->Field(FORM_SELECT, 'Тематика компании', 'category', array(
-		'_list' => $cat->GetList(),
+		'_list' => $cat_list,
 	)
 );
 
@@ -56,6 +57,12 @@ $f->Field(FORM_TEXT, 'Лимит бюджета кампании в день', 'day_limit', array(
 
 $f->Field(FORM_TEXT, 'Лимит бюджета кампании в целом', 'limit', array(
 	
+	)
+);
+
+$f->Field(FORM_CB_ARRAY, 'Категории', 'categories', array(
+		'_list' => $cat_list,
+		'_perrow' => 2
 	)
 );
 

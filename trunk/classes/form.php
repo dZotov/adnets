@@ -84,8 +84,17 @@
                 //~ $name=substr($name,0,strlen($name)-strlen($value1)-1);
             //~ }
 			
-			if ($type==FORM_CB_ARRAY) return implode(",", get_param_cbarray($name, get($options, '_list', array()), $default));
-            if ($type==FORM_DATE) return get_param_date($name,$default);
+			if ($type==FORM_CB_ARRAY) {
+				$value = get_param_cbarray($name, get($options, '_list', array()), $default);
+				if (is_array($value)) {
+					foreach($value as $k => $v) {
+						$value[$k] = "[{$v}]";
+					} 
+					$value = implode(",", $value);
+				}
+				return $value;
+			}
+			if ($type==FORM_DATE) return get_param_date($name,$default);
             if ($type==FORM_CHECKBOX) return get_param_checkbox($name,$default);
             if ($type==FORM_MULTIPLE) {
 				$value = get_param($name, $default);
@@ -349,6 +358,7 @@
 					}
 					
 					foreach($els as $k => $v) {
+						$v = str_replace(array("[", "]"), array("",""), $v);
 						$values[$k] = $v;
 					}
 					

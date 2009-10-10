@@ -93,6 +93,20 @@
 		</div>		
 	</div>
 	
+	<div class="padt8 anotation">
+		<div><a href="javascript: show_hide('_category_settings');">Категории</a></div>
+			
+		<div id="_category_settings" style="display: none;">
+			<table>
+				<tr>
+					<td>{$FORM.categories.title}</td> 	
+					<td>{$FORM.categories.field}</td> 	
+				</tr>
+			</table>	
+		</div>
+	</div>
+	
+	
 	<div class="padt15">
 		<a class="button" href="companies.php">Отменить</a> &nbsp;
 		<a class="button" href="javascript: Submit('company');">Сохранить</a>
