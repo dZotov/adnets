@@ -263,4 +263,7 @@ function Bookmark(title, url) {
 	}
 }
 
+function el(id) {
+	return document.getElementById(id);
+}
 

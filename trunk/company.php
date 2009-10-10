@@ -21,10 +21,12 @@ if ($f->Filled()) {
 	$f->SaveToEntity();
 	$c->Set('date', sqlDateTime());
 	$c->Set('adid', $account_id);
-	//~ $c->save();
+	$c->save();
 
-	//~ redirect("company.php?id={$c->GetId()}&save=ok");
+	redirect("company.php?id={$c->GetId()}&save=ok");
 }
+	
+$JS[] = 'company.js';	
 	
 $smarty->assign("FORM", $f->HTML);
 Display("company.tpl");
