@@ -1,27 +1,35 @@
 <style>
-	{literal}
-		div{
-			background:{$SETTINGS.field_fon}; 
-			width:{$SETTINGS.tiser_width}{$SETTINGS.tiser_width_param|default:'%'}; 
-			font-size:{$SETTINGS.block_font_size}{$SETTINGS.block_font_param};
-		}
-		a,a:visited{
-			font-size:{$SETTINGS.block_font_size}{$SETTINGS.block_font_param};
-			color:{$SETTINGS.field_norm};
-		}
-		a:hover{
-			font-size:{$SETTINGS.block_font_size_naved}{$SETTINGS.block_font_hover_param};
-			color:{$SETTINGS.field_naved};
-		}
-		img{
-			border: 1px {$SETTINGS.block_line} {$SETTINGS.field_bbrd};
-			width:{$SETTINGS.block_text_size}; height:{$SETTINGS.block_text_size};
-		}
-		tr{
-			text-align:center;
-		}
-	{/literal}
+	
+	div
+	{ldelim}
+		background:{$SETTINGS.field_fon}; 
+		width:{$SETTINGS.tiser_width}{$SETTINGS.tiser_width_param|default:'%'}; 
+		font-size:{$SETTINGS.block_font_size}{$SETTINGS.block_font_param};
+	{rdelim}
+	
+	a,a:visited
+	{ldelim}
+		font-size:{$SETTINGS.block_font_size}{$SETTINGS.block_font_param};
+		color:{$SETTINGS.field_norm};
+	{rdelim}
+	
+	a:hover
+	{ldelim}
+		font-size:{$SETTINGS.block_font_size_naved}{$SETTINGS.block_font_hover_param};
+		color:{$SETTINGS.field_naved};
+	{rdelim}
+	img
+	{ldelim}
+		border: 1px {$SETTINGS.block_line} {$SETTINGS.field_bbrd};
+		width:{$SETTINGS.block_text_size}; height:{$SETTINGS.block_text_size};
+	{rdelim}
+	
+	td{ldelim}
+		text-align:center;
+	{rdelim}
+	
 </style>
+
 <div>
 	<table>
 		<tr>
