@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Хост: localhost
--- Время создания: Окт 07 2009 г., 22:36
--- Версия сервера: 5.0.18
+-- Время создания: Окт 12 2009 г., 02:41
+-- Версия сервера: 5.0.16
 -- Версия PHP: 5.1.1
 -- 
 -- БД: `adnets`
@@ -17,7 +17,7 @@
 -- 
 
 DROP TABLE IF EXISTS `adwerts`;
-CREATE TABLE `adwerts` (
+CREATE TABLE IF NOT EXISTS `adwerts` (
   `id` int(11) NOT NULL auto_increment,
   `owner_id` int(11) default '0',
   `email` varchar(100) default NULL,
@@ -46,7 +46,7 @@ INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `
 -- 
 
 DROP TABLE IF EXISTS `balance`;
-CREATE TABLE `balance` (
+CREATE TABLE IF NOT EXISTS `balance` (
   `id` int(15) NOT NULL auto_increment,
   `adid` int(11) default '0',
   `sum` decimal(10,2) default '0.00',
@@ -68,7 +68,7 @@ CREATE TABLE `balance` (
 -- 
 
 DROP TABLE IF EXISTS `blocks`;
-CREATE TABLE `blocks` (
+CREATE TABLE IF NOT EXISTS `blocks` (
   `id` int(11) NOT NULL auto_increment,
   `pl_id` int(11) default '0',
   `ad_id` int(11) default '0',
@@ -90,7 +90,7 @@ INSERT INTO `blocks` (`id`, `pl_id`, `ad_id`, `settings`) VALUES (1, 1, 1, 'a:23
 -- 
 
 DROP TABLE IF EXISTS `category`;
-CREATE TABLE `category` (
+CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL auto_increment,
   `title` varchar(100) default NULL,
   `price` decimal(10,2) default '0.00',
@@ -133,11 +133,44 @@ INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (27, 'Эротика',
 -- --------------------------------------------------------
 
 -- 
+-- Структура таблицы `company`
+-- 
+
+DROP TABLE IF EXISTS `company`;
+CREATE TABLE IF NOT EXISTS `company` (
+  `id` int(11) NOT NULL auto_increment,
+  `adid` int(11) default '0',
+  `title` varchar(255) character set cp1251 default NULL,
+  `category` int(5) default '0',
+  `status` int(1) default '0',
+  `days` varchar(255) default NULL,
+  `hours` varchar(255) default NULL,
+  `day_limit` int(15) default '0',
+  `limit` int(15) default '0',
+  `maxrun` int(15) default '0',
+  `price` decimal(10,2) default '0.00',
+  `categories` varchar(255) default NULL,
+  `exceptions` text,
+  `no_ero` int(1) default '0',
+  `date` datetime default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `adid` (`adid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя' AUTO_INCREMENT=2 ;
+
+-- 
+-- Дамп данных таблицы `company`
+-- 
+
+INSERT INTO `company` (`id`, `adid`, `title`, `category`, `status`, `days`, `hours`, `day_limit`, `limit`, `maxrun`, `price`, `categories`, `exceptions`, `no_ero`, `date`) VALUES (1, 1, 'Компания', 27, 0, NULL, '[0]', 0, 0, 0, '0.00', '', '', NULL, '2009-10-12 01:20:23');
+
+-- --------------------------------------------------------
+
+-- 
 -- Структура таблицы `news`
 -- 
 
 DROP TABLE IF EXISTS `news`;
-CREATE TABLE `news` (
+CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) NOT NULL auto_increment,
   `title` varchar(100) default NULL,
   `preview` varchar(255) default NULL,
@@ -162,7 +195,7 @@ INSERT INTO `news` (`id`, `title`, `preview`, `full`, `type`, `status`, `date`) 
 -- 
 
 DROP TABLE IF EXISTS `payments`;
-CREATE TABLE `payments` (
+CREATE TABLE IF NOT EXISTS `payments` (
   `id` int(11) NOT NULL auto_increment,
   `adid` int(11) default '0',
   `wmr` varchar(50) default NULL,
@@ -186,7 +219,7 @@ INSERT INTO `payments` (`id`, `adid`, `wmr`, `sum`, `status`, `date`) VALUES (1,
 -- 
 
 DROP TABLE IF EXISTS `playgrounds`;
-CREATE TABLE `playgrounds` (
+CREATE TABLE IF NOT EXISTS `playgrounds` (
   `id` int(11) NOT NULL auto_increment,
   `adid` int(11) default '0',
   `title` varchar(100) NOT NULL,
@@ -212,7 +245,7 @@ INSERT INTO `playgrounds` (`id`, `adid`, `title`, `url`, `status`, `category`, `
 -- 
 
 DROP TABLE IF EXISTS `sites`;
-CREATE TABLE `sites` (
+CREATE TABLE IF NOT EXISTS `sites` (
   `id` int(11) NOT NULL auto_increment,
   `wid` int(11) default '0',
   `name` varchar(100) default NULL,
@@ -232,11 +265,40 @@ INSERT INTO `sites` (`id`, `wid`, `name`, `url`, `status`, `date`) VALUES (1, 1,
 -- --------------------------------------------------------
 
 -- 
+-- Структура таблицы `teaser`
+-- 
+
+DROP TABLE IF EXISTS `teaser`;
+CREATE TABLE IF NOT EXISTS `teaser` (
+  `id` int(15) NOT NULL auto_increment,
+  `adid` int(15) default '0',
+  `company_id` int(15) default '0',
+  `cat_id` int(11) NOT NULL,
+  `ctr` decimal(10,3) NOT NULL,
+  `ext` varchar(3) NOT NULL,
+  `title` varchar(255) default NULL,
+  `desc` varchar(255) default NULL,
+  `url` varchar(255) default NULL,
+  `status` int(1) default '0',
+  `date` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Тизеры' AUTO_INCREMENT=3 ;
+
+-- 
+-- Дамп данных таблицы `teaser`
+-- 
+
+INSERT INTO `teaser` (`id`, `adid`, `company_id`, `cat_id`, `ctr`, `ext`, `title`, `desc`, `url`, `status`, `date`) VALUES (1, 1, 1, 2, '1.000', 'gif', 'test1test1', 'test1test1 test1test1 test1test1', 'http://ya.ru', 1, '2009-10-01 02:31:51');
+INSERT INTO `teaser` (`id`, `adid`, `company_id`, `cat_id`, `ctr`, `ext`, `title`, `desc`, `url`, `status`, `date`) VALUES (2, 1, 1, 2, '2.000', 'gif', 'qwewqeqwe', 'qweqw qewqwe ', 'http://yahoo.ru', 1, '2009-10-06 02:32:33');
+
+-- --------------------------------------------------------
+
+-- 
 -- Структура таблицы `top`
 -- 
 
 DROP TABLE IF EXISTS `top`;
-CREATE TABLE `top` (
+CREATE TABLE IF NOT EXISTS `top` (
   `id` int(11) NOT NULL auto_increment,
   `ad_top_name` varchar(100) default NULL,
   `shows` int(11) default '0',
@@ -251,49 +313,3 @@ CREATE TABLE `top` (
 -- 
 
 INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `ctr`, `balance`) VALUES (1, 'Test', 123, 12312, 2, '123.00');
-
--- 
--- Структура таблицы `company`
--- 
-
--- 
--- Структура таблицы `company`
--- 
-
-DROP TABLE IF EXISTS `company`;
-CREATE TABLE `company` (
-  `id` int(11) NOT NULL auto_increment,
-  `adid` int(11) default '0',
-  `title` varchar(255) character set cp1251 default NULL,
-  `category` int(5) default '0',
-  `status` int(1) default '0',
-  `days` varchar(255) default NULL,
-  `hours` varchar(255) default NULL,
-  `day_limit` int(15) default '0',
-  `limit` int(15) default '0',
-  `maxrun` int(15) default '0',
-  `price` decimal(10,2) default '0.00',
-  `categories` varchar(255) default NULL,
-  `exceptions` text,
-  `no_ero` int(1) default '0',
-  `date` datetime default NULL,
-  PRIMARY KEY  (`id`),
-  KEY `adid` (`adid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя';
-
--- 
--- Структура таблицы `teaser`
--- 
-
-DROP TABLE IF EXISTS `teaser`;
-CREATE TABLE `teaser` (
-  `id` int(15) NOT NULL auto_increment,
-  `adid` int(15) default '0',
-  `company_id` int(15) default '0',
-  `title` varchar(255) default NULL,
-  `desc` varchar(255) default NULL,
-  `url` varchar(255) default NULL,
-  `status` int(1) default '0',
-  `date` datetime default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Тизеры' AUTO_INCREMENT=1 ;
