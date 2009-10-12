@@ -2,7 +2,7 @@
 
 <p class="anotation">
 	<img src="./images/add.gif" alt="Добавить" />
-	<a href="teaser.php" class="s11">Добавить тизер</a>
+	<a href="teaser.php?company={$COMPANY.id}" class="s11">Добавить тизер</a>
 </p>
 
 <div>

@@ -1,0 +1,26 @@
+<?
+
+$f->Field(FORM_TEXT, 'Заголовок', 'title', array(
+		'_def' => "",
+	)
+);
+
+$f->Field(FORM_TEXT, 'Описание', 'desc', array(
+		'_def' => "",
+	)
+);
+
+$f->Field(FORM_TEXT, 'URL целевой страницы', 'url', array(
+		'_def' => "",
+	)
+);
+
+$f->Field(FORM_TEXT, 'Стоимость перехода', 'price', array(
+		'_def' => $min_price,
+		'size' => '10',
+	)
+);
+
+
+
+?>

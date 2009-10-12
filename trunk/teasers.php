@@ -18,5 +18,6 @@ $cond = "adid = '{$account_id}' AND company_id = '{$id}'";
 $t = $ts->GetPagedTable($cond);
 
 $smarty->assign("TABLE", $t);
+$smarty->assign("COMPANY", $c->attr);
 Display("teasers.tpl");
 ?>
