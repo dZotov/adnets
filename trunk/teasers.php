@@ -15,7 +15,15 @@ if ($c->GetId()) {
 
 $ts = new Teaser();
 $cond = "adid = '{$account_id}' AND company_id = '{$id}'";
-$t = $ts->GetPagedTable($cond);
+$cols = array(
+	1 => 'Àäğåñ, çàãîëîâîê, òåêñò|title',
+	2 => 'Ğèñóíîê',
+	3 => 'Ñòàòóñ|status',
+	4 => 'Öåíà|price',
+	5 => 'CTR|ctr',
+	6 => 'Äàòà|date',
+);
+$t = $ts->GetSortTable($cond, $cols, get_get('sort', -1), get_get('page', 1), get_get('perpage', 20));
 
 $smarty->assign("TABLE", $t);
 $smarty->assign("COMPANY", $c->attr);

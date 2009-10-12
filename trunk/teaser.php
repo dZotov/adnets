@@ -31,19 +31,21 @@ if ($cp->GetId()) {
 
 include("./form/teaser.php");
 
-if (count($_POST) && $_FILES['uploadfile']['error'] == 0) {
+$file = get($_FILES, 'uploadfile');
+if (count($_POST)) {
 	$f->SaveToEntity();
 	
-	$file = get($_FILES, 'uploadfile');
 	$type = (int) get_post('type');
 	$type_str = get($TEASER_TYPES, $type);
 	
 	$img_format = get($IMG_MIME_TYPE, get($file, 'type'));
-	if (!$img_format) {
-		$ERRORS[] = 'Формат гафического файла не подходит!';
-	}
-	if (!$type) {
-		$ERRORS[] = 'Формат тизера не выбран!';
+	if ($file['error'] == 0) {
+		if (!$img_format) {
+			$ERRORS[] = 'Формат гафического файла не подходит!';
+		}
+		if (!$type) {
+			$ERRORS[] = 'Формат тизера не выбран!';
+		}
 	}
 	
 	if (!count($ERRORS)) {
@@ -59,7 +61,7 @@ if (count($_POST) && $_FILES['uploadfile']['error'] == 0) {
 		$path = "stat/teaser/{$type_str}/";
 		copy($file['tmp_name'], $path."{$ts->GetId()}.{$img_format}");
 		
-		redirect("teaser.php?company={$cp->GetId()}&id={$ts->GetId()}");
+		redirect("teaser.php?company={$cp->GetId()}&id={$ts->GetId()}&save=ok");
 	}	
 	
 
