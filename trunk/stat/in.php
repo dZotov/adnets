@@ -24,7 +24,9 @@ $hash=$id.rand(1,100);
 		
 		$teaser= new Teaser();
 		
-		$t =$teaser->GetManyByCond("cat_id NOT IN ({$ignore}) AND status=".STATE_ACTIVE."","ctr DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
+		$t['items']=$teaser->GetManyByCond("cat_id NOT IN ({$ignore}) AND status=".STATE_ACTIVE."","ctr DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
+		
+		$t['block_id']=$block->GetId();
 		
 		$smarty->assign("DATA",$t);
 		$smarty->assign("SETTINGS",$property);
