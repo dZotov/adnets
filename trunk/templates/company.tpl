@@ -134,7 +134,8 @@
 	
 	<div class="padt15">
 		<a class="button" href="companies.php">Отменить</a> &nbsp;
-		<a class="button" href="javascript: Submit('company');">Сохранить</a>
+		<a class="button" href="javascript: Submit('company');">Сохранить</a> &nbsp;
+		{if $smarty.get.id}<a class="button" href="teasers.php?id={$smarty.get.id}">Перейти к тизерам</a>{/if}
 	</div>
 	
 	</form>

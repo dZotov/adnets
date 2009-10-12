@@ -2,7 +2,7 @@
 
 <p class="anotation">
 	<img src="./images/add.gif" alt="Добавить" />
-	<a href="company.php" class="s11">Добавить компанию</a>
+	<a href="teaser.php" class="s11">Добавить тизер</a>
 </p>
 
 <div>
@@ -14,13 +14,7 @@
 		</tr>
 		{foreach from=$TABLE.items item=t}
 		<tr>
-			<td><a href="company.php?id={$t.id}">{$t.title}</td>
-			<td>{$t.category}</td>
-			<td>0/0/0/0/</td>
-			<td>0/<span class="red">0</span></td>
-			<td>0/<span class="red">0</span></td>
-			<td>{$t.ctr|default:0}</td>
-			<td>{$t.money|default:0.00}</td>
+			<td><a href="teaser.php?id={$t.id}">{$t.title}</td>
 			<td>{$t.date|date_format}</td>
 		</tr>
 		{/foreach}
