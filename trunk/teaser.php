@@ -54,7 +54,7 @@ if (count($_POST)) {
 		$ts->Set('date', sqlDateTime());
 		$ts->Set('type', $type);
 		$ts->Set('size', get($file, 'size'));
-		$ts->Set('format', $img_format);
+		$ts->Set('ext', $img_format);
 		$ts->Set('status', STATE_INACTIVE);
 		$ts->Save();
 			

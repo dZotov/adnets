@@ -9,7 +9,7 @@ function smarty_function_teaser($params) {
 	
 	if (get($attr, 'id')) {
 		$type = get($TEASER_TYPES, get($attr, 'type'));
-		$src = "./stat/teaser/{$type}/{$attr['id']}.{$attr['format']}";
+		$src = "./stat/teaser/{$type}/{$attr['id']}.{$attr['ext']}";
 	}
 	
 	echo $src;
