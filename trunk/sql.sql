@@ -269,20 +269,23 @@ INSERT INTO `sites` (`id`, `wid`, `name`, `url`, `status`, `date`) VALUES (1, 1,
 -- 
 
 DROP TABLE IF EXISTS `teaser`;
-CREATE TABLE IF NOT EXISTS `teaser` (
+CREATE TABLE `teaser` (
   `id` int(15) NOT NULL auto_increment,
   `adid` int(15) default '0',
   `company_id` int(15) default '0',
-  `cat_id` int(11) NOT NULL,
-  `ctr` decimal(10,3) NOT NULL,
-  `ext` varchar(3) NOT NULL,
-  `title` varchar(255) default NULL,
-  `desc` varchar(255) default NULL,
+  `title` varchar(255) character set cp1251 default NULL,
+  `desc` varchar(255) character set cp1251 default NULL,
   `url` varchar(255) default NULL,
+  `price` decimal(10,2) default '0.00',
+  `type` int(1) default '0',
+  `size` int(10) default '0',
+  `ext` varchar(4) default NULL,
   `status` int(1) default '0',
+  `ctr` decimal(10,2) default '0.00',
   `date` datetime default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Тизеры' AUTO_INCREMENT=3 ;
+  PRIMARY KEY  (`id`),
+  KEY `adid` (`adid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Тизеры';
 
 -- 
 -- Дамп данных таблицы `teaser`
