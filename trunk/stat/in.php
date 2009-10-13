@@ -3,12 +3,31 @@ include("./include/ajax_init.php");
 
 $id=(int)get_get('blockid');
 $ref=get_get('ref');
-$plid=get_get('plid');
+$plid=(int)get_get('plid');
 
 $smarty->caching = 1;
 $smarty->cache_lifetime = 3600;
 
 $hash=$id.rand(1,100);
+
+$blockstat= new Blockstat();
+
+$date=date("Y-m-d");
+$blockstat->LoadByCond("block_id='{$id}' AND date='{$date}' AND pl_id='{$plid}'");
+if($blockstat->GetId())
+{
+	$blockstat->Set('shows',$blockstat->Get('shows')+1);
+}
+else
+{
+	$blockstat->Set('ref',$ref);
+	$blockstat->Set('block_id',$id);
+	$blockstat->Set('pl_id',$plid);
+	$blockstat->Set('shows',1);
+	$blockstat->Set('date',SqlDateTime());
+}
+$blockstat->Save();
+
 
 // if (!$smarty->is_cached("in.tpl", $hash)) 
 // {
