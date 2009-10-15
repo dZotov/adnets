@@ -47,6 +47,24 @@ $blockstat->Save();
 		
 		$t['block_id']=$block->GetId();
 		
+		foreach($t['items'] as $k=>$v)
+		{
+			$tstat=new Teaserstat();
+			$tstat->LoadByCond("teaser_id='{$v['id']}' AND block_id='{$id}' AND date='{$date}' AND ad_id='{$v['adid']}'");
+			if($tstat->GetId())
+				$tstat->Set('shows',$tstat->Get('shows')+1);
+			else
+			{
+				$tstat->Set('shows',1);
+				$tstat->Set('date',$date);
+				$tstat->Set('block_id',$id);
+				$tstat->Set('teaser_id',$v['id']);
+				$tstat->Set('ad_id',$v['adid']);
+			}
+			$tstat->Save();			
+			
+		}
+		
 		$smarty->assign("DATA",$t);
 		$smarty->assign("SETTINGS",$property);
 	}
