@@ -21,6 +21,12 @@ $f->Field(FORM_TEXT, 'Стоимость перехода', 'price', array(
 	)
 );
 
-
+$cat = new Cat();
+$cat_list = $cat->GetList();
+$f->Field(FORM_SELECT, 'Категория', 'category', array(
+		'_list' => $cat_list,
+		'_def' => $cp->Get('category'),
+	)
+);
 
 ?>
