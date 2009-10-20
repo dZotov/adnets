@@ -263,7 +263,6 @@ CREATE TABLE IF NOT EXISTS `sites` (
 INSERT INTO `sites` (`id`, `wid`, `name`, `url`, `status`, `date`) VALUES (1, 1, 'google', 'google.com', 1, '2009-08-23 14:49:23');
 
 -- --------------------------------------------------------
-
 -- 
 -- Структура таблицы `teaser`
 -- 
@@ -273,6 +272,7 @@ CREATE TABLE `teaser` (
   `id` int(15) NOT NULL auto_increment,
   `adid` int(15) default '0',
   `company_id` int(15) default '0',
+  `category` int(11) default '0',
   `title` varchar(255) character set cp1251 default NULL,
   `desc` varchar(255) character set cp1251 default NULL,
   `url` varchar(255) default NULL,
@@ -285,7 +285,7 @@ CREATE TABLE `teaser` (
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `adid` (`adid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Тизеры';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Тизеры' ;
 
 -- 
 -- Дамп данных таблицы `teaser`
