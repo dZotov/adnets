@@ -1,5 +1,41 @@
 @import url(padding.css);
 
+#content2 { 
+	float: right; 
+	width: 830px; 
+	padding-top: 45px; 
+	font-size: 12px;
+}
+
+tr.table_head td {
+	border: 1px solid #cccccc;
+	padding: 8px;	
+	background-color: #f3f3f3;
+}
+
+tr.table td {
+	border: 1px solid #cccccc;	
+	padding: 8px;
+}
+
+tr.footer_table td {
+	border: 1px solid #cccccc;	
+	padding: 2px;
+	background-color: #f3f3f3;
+}
+
+table.footer_table td {
+	border: none;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+table.sort_table td {
+	border: none;
+	padding: 2px;
+	vertical-align: middle;
+}
+
 .b {
 	font-weight: bold;	
 }

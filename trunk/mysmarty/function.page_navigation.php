@@ -24,7 +24,7 @@ function smarty_function_page_navigation($params, &$smarty) {
 		$end = $start + 20;
 	}
 	
-	$html = '<table border="0"><tr>';
+	$html = '<table border="0" class="sort_table"><tr>';
 	
 	for($i = $start; $i <= $end; $i++) {
 		$opts['page'] = $i;

@@ -14,6 +14,7 @@ html{ height: 100%;}
 body { background: #fff url(../images/header_bg.jpg) repeat-x top; height: 100%; color: #666;}
 	#main { width: 980px; margin: 0 auto; position: relative; min-height: 90%;}
 	#content { float: right; width: 830px; padding-top: 45px;}
+	
 	#menu { width: 130px; padding-top: 45px; height: 100%;}
 
 h1 { position: absolute; width: 114px; height: 35px; top: 0; left: 0;}
