@@ -21,7 +21,7 @@
 			<td>0/<span class="red">0</span></td>
 			<td>{$t.ctr|default:0}</td>
 			<td>{$t.money|default:0.00}</td>
-			<td>{$t.date|date_format}</td>
+			<td>{$t.date|date}</td>
 		</tr>
 		{/foreach}
 		<tr class="footer_table"> 

@@ -1,4 +1,4 @@
-{include file="layout/header.tpl"}
+{include file="layout/header2.tpl"}
 
 <p class="anotation">
 	<form action="" name="company" method="post">
