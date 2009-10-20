@@ -16,7 +16,7 @@
 		<tr class="table">
 			<td><a href="company.php?id={$t.id}">{$t.title}</td>
 			<td>{$t.category}</td>
-			<td>0/0/0/0/</td>
+			<td> <a href="">0</a> / 0 / 0 / 0</td>
 			<td>0/<span class="red">0</span></td>
 			<td>0/<span class="red">0</span></td>
 			<td>{$t.ctr|default:0}</td>

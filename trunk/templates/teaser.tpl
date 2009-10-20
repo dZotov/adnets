@@ -1,4 +1,4 @@
-{include file="layout/header.tpl"}
+{include file="layout/header2.tpl"}
 
 <p class="anotation">	
 	<div>
@@ -12,8 +12,8 @@
 	<form name="teaser" action="" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="mode" value="upload" />
 		
-	<div>	
-		<table>
+	<div class="padt15"> 	
+		<table class="pad3">
 			<tr>
 				<td>Формат:</td>
 				<td>
@@ -36,16 +36,17 @@
 		</table>	
 	</div>
 	
+	<div class="padt15">
+		<table class="pad3">
+			{foreach from=$FORM item=f}
+			<tr>
+				<td>{$f.title}</td>
+				<td>{$f.field}</td>
+			</tr>
+			{/foreach}
+		</table>	
+	</div>
 	
-	<table>
-		{foreach from=$FORM item=f}
-		<tr>
-			<td>{$f.title}</td>
-			<td>{$f.field}</td>
-		</tr>
-		{/foreach}
-	</table>	
-		
 	<div class="padt15">
 		<a class="button" href="javascript: Submit('teaser');">Сохранить</a> &nbsp;
 		<a class="button" href="teaser.php?company={$COMPANY.id}">Добавить</a> &nbsp;
