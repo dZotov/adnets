@@ -5,6 +5,7 @@
 <title>Adnets.ru {if $PAGE_TITLE} - {$PAGE_TITLE}{/if}</title>
 <link rel="stylesheet" href="./style/colorpicker.css" type="text/css" />
 <link rel="stylesheet" href="./style/jquery.jgrowl.css" type="text/css" />
+<link rel="stylesheet" href="./style/ui.datepicker.css" type="text/css" />
 <link href="./style/screen.css" rel="stylesheet" type="text/css" />
 {foreach from=$JS item=js}
 <script src="./js/{$js}"></script>

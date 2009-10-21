@@ -16,8 +16,9 @@ $(document).ready(function(){
 		}
 	);
 
-	
+	$("#stat").tablesorter();
 });
+
 
 function del_denay_cat(account_id,site_id,cat_id)
 {
