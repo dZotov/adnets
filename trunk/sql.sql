@@ -316,3 +316,48 @@ CREATE TABLE IF NOT EXISTS `top` (
 -- 
 
 INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `ctr`, `balance`) VALUES (1, 'Test', 123, 12312, 2, '123.00');
+
+
+CREATE TABLE `stat_teaser` (
+  `id` int(11) NOT NULL auto_increment,
+  `teaser_id` int(11) NOT NULL,
+  `block_id` int(11) NOT NULL,
+  `ad_id` int(11) NOT NULL,
+  `shows` int(11) NOT NULL,
+  `clicks` int(11) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=6 ;
+
+-- 
+-- Дамп данных таблицы `stat_teaser`
+-- 
+
+INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `date`) VALUES (5, 2, 1, 1, 3, 0, '2009-10-15');
+INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `date`) VALUES (4, 1, 1, 1, 3, 1, '2009-10-15');
+INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `date`) VALUES (3, 1, 1, 1, 0, 4, '2009-10-14');
+
+
+-- 
+-- Структура таблицы `stat_blocks`
+-- 
+
+CREATE TABLE `stat_blocks` (
+  `id` int(11) NOT NULL auto_increment,
+  `block_id` int(11) NOT NULL,
+  `pl_id` int(11) NOT NULL,
+  `ref` varchar(100) collate cp1251_general_cs NOT NULL,
+  `shows` int(11) NOT NULL,
+  `clicks` int(11) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=5 ;
+
+-- 
+-- Дамп данных таблицы `stat_blocks`
+-- 
+
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (1, 1, 0, '', 6, 0, '2009-10-14');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (2, 1, 1, '', 2, 6, '2009-10-14');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (3, 0, 1, '', 1, 0, '2009-10-15');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (4, 1, 1, '', 9, 1, '2009-10-15');
