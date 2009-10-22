@@ -22,12 +22,12 @@
 </form>	
 
 <ul id="switch_type">
-	<li class="active">Общая <a href="#n">>>>></a></li>
-	<li><a href="statistic.php?act=block_stat">По блокам</a></li>
-	<li><a href="statistic.php?act=pl_stat">По площадкам</a></li>
+	<li {if !$smarty.get.act}class="active"{/if}><a href="statistic.php">Общая</a> {if !$smarty.get.act}<a href="#n">>>>></a>{/if}</li>
+	<li {if $smarty.get.act=='block_stat'}class="active"{/if}><a href="statistic.php?act=block_stat">По блокам</a> {if $smarty.get.act=='block_stat'}<a href="#n">>>>></a>{/if}</li>
+	<li {if $smarty.get.act=='pl_stat'}class="active"{/if}><a href="statistic.php?act=pl_stat">По площадкам</a> {if $smarty.get.act=='pl_stat'}<a href="#n">>>>></a>{/if}</li>
 	
 </ul>
-
+{if  !$smarty.get.act}
 <table id="stat">
 	<thead>
 		<tr>
@@ -40,41 +40,17 @@
 			<th class="money">Деньги</th>
 		</tr>
 	</thead>
-	<tr>
-		<td>12.01.09</td>
-		<td>100</td>
-		<td>300</td>
-		<td>10</td>
-		<td>10%</td>
-		<td>3.3%</td>
-		<td>100</td>
-	</tr>
-	<tr class="invert">
-		<td>13.01.09</td>
-		<td>100</td>
-		<td>300</td>
-		<td>10</td>
-		<td>10%</td>
-		<td>3.3%</td>
-		<td>100</td>
-	</tr>
-	<tr>
-		<td>13.01.09</td>
-		<td>100</td>
-		<td>300</td>
-		<td>10</td>
-		<td>10%</td>
-		<td>3.3%</td>
-		<td>100</td>
-	</tr>
-	<tr class="invert">
-		<td>13.01.09</td>
-		<td>100</td>
-		<td>300</td>
-		<td>10</td>
-		<td>10%</td>
-		<td>3.3%</td>
-		<td>100</td>
-	</tr>
-</table>
+	{foreach from=$RES item=i name=stat key=k}
+		<tr {if $k%2==0 && $k!=0}class="invert"{/if}>
+			<td>{$i.date}</td>
+			<td>{$i.block_shows}</td>
+			<td>{$i.shows}</td>
+			<td>{$i.clicks}</td>
+			<td>10%</td>
+			<td>3.3%</td>
+			<td>100</td>
+		</tr>
+	{/foreach}
+</table
+{/if}
 {include file="layout/footer.tpl"}
