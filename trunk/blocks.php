@@ -105,7 +105,7 @@ if(get_post("site_id"))
 		$block->Set('ad_id',$account_id);
 		$block->Set('settings',serialize($params));
 		$block->Save();
-		redirect('playgrounds.php');
+		redirect('blocks.php?id='.$block->GetId().'&sid='.get_post("site_id"));
 	}
 }
 
@@ -117,6 +117,7 @@ if(get_get('id'))
 		redirect('playgrounds.php');
 
 	$smarty->assign("PARAM",unserialize($block->Get('settings')));
+	$smarty->assign("PLID",$block->Get('pl_id'));
 
 }
 
