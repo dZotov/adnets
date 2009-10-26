@@ -229,6 +229,40 @@
 		<input type="submit" value="{if $smarty.get.id}Изменить{else}Добавить{/if} блок">
 	</div>
 </form>	
+<div style="float:left;">
+		<p class="anotation">Разместите этот код там, где хотите чтобы обображался ваш блок:</p>
+		<textarea>
+			<script type="text/javascript">
+				{leteral}
+					if (typeof adtens == 'undefined') {
+						var adtens = {}; var adtens_blockid = {$smarty.get.id};
+					} else {
+						adtens_blockid = 35895;
+					}
+					adtens[adtens_blockid] = {
+						'plid': 4
+					};
+					document.write('<div id="adtens_' + adtens_blockid + '"></div>');
+				{/leteral}
+			</script> 
+		</textarea>
+		
+		<p class="anotation">Разместите этот код внизу странице:</p>
+		<textarea>
+			<script type="text/javascript">
+			{literal}
+				if (typeof adtens != 'undefined' && typeof adtens_blocks_exists == 'undefined') {
+					for (var blockid in adtens) {
+						 var newScr = document.createElement('script'); newScr.type = 'text/javascript';
+						 newScr.src = 'http://stat.adnets.ru/in.php?id=' + blockid + '&plid=' + adtens[blockid].plid + '&ref=' + escape(document.referrer);
+						 var el = document.getElementById('adtens_' + blockid); if (el) { el.appendChild(newScr); }
+					}
+					var adtens_blocks_exists = true;
+				}
+			{/literal}
+			</script> 
+		</textarea>
+	</div>
 </div>
 
 {include file="layout/footer.tpl"}
