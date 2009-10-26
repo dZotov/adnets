@@ -233,17 +233,17 @@
 		<p class="anotation">Разместите этот код там, где хотите чтобы обображался ваш блок:</p>
 		<textarea>
 			<script type="text/javascript">
-				{leteral}
+				{literal}
 					if (typeof adtens == 'undefined') {
 						var adtens = {}; var adtens_blockid = {$smarty.get.id};
 					} else {
-						adtens_blockid = 35895;
+						adtens_blockid = {$smarty.get.id};
 					}
 					adtens[adtens_blockid] = {
 						'plid': 4
 					};
 					document.write('<div id="adtens_' + adtens_blockid + '"></div>');
-				{/leteral}
+				{/literal}
 			</script> 
 		</textarea>
 		
