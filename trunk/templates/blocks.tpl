@@ -257,7 +257,7 @@
 				if (typeof adtens != 'undefined' && typeof adtens_blocks_exists == 'undefined') {
 					for (var blockid in adtens) {
 						 var newScr = document.createElement('script'); newScr.type = 'text/javascript';
-						 newScr.src = 'http://localhost:88/seo/adnets/stat/in.php?id=' + blockid + '&plid=' + adtens[blockid].plid + '&ref=' + escape(document.referrer);
+						 newScr.src = 'http://localhost:88/seo/adnets/stat/in.php?blockid=' + blockid + '&plid=' + adtens[blockid].plid + '&ref=' + escape(document.referrer);
 						 var el = document.getElementById('adtens_' + blockid); if (el) { el.appendChild(newScr); }
 					}
 					var adtens_blocks_exists = true;
@@ -265,6 +265,8 @@
 			{/literal}
 			</script> 
 		</textarea>
-		<p> <a href="#" onclick="javascript:show_block_result()">Посмотреть блок</a></p>
+		<p> <a href="javascript:show_hide('show_block');">Посмотреть блок</a></p>
 	</div>
+<div style="clear:both;padding-top:20px;"></div>
+
 {include file="layout/footer.tpl"}

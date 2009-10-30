@@ -40,10 +40,9 @@ $blockstat->Save();
 	{
 		$property=unserialize($block->Get('settings'));
 		$ignore=$pl->Get('exclude');
-		
 		$teaser= new Teaser();
 		
-		$t['items']=$teaser->GetManyByCond("cat_id NOT IN ({$ignore}) AND status=".STATE_ACTIVE."","ctr DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
+		$t['items']=$teaser->GetManyByCond("category NOT IN ({$ignore}) AND status=".STATE_ACTIVE."","ctr DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
 		
 		$t['block_id']=$block->GetId();
 		
@@ -70,7 +69,8 @@ $blockstat->Save();
 	}
 
 // }
-
-
-Display("in.tpl",$hash);
+$x=$smarty->fetch("in.tpl");
+$x= str_replace(array("\r","\n","\t","\r\n"),"",$x);
+echo "document.write('{$x}')";
+//Display("in.tpl",$hash);
 ?>

@@ -54,21 +54,16 @@ function show_abs()
 	$("#show_abs").show();
 }
 
-function close_block()
-{
-
-	$("#show_block_result_id").hide();
-	$("#show_abs").hide();
-	
-}
-
 function show_block_result()
 {
 	show_abs();
+	var tiser=$("#block_show_script").attr("value");
 	$("#show_block_result_id").empty();
 	$("#show_block_result_id").show();
-	$("#show_block_result_id").append("<a href='#' onclick='javascript: close_block();'>[Закрыть] <br /><br /></a>"+$("#block_show_script").attr("value")+$("#block_footer_script").attr("value"));
-	
+	$("#show_block_result_id").append("<a href='#' onclick='javascript: close_block();'>[Закрыть] <br /><br /></a>");
+	$("#show_block_result_id").append(tiser);
+	//$("#block_footer_script").attr("value")
+	alert(tiser);
 	
 }
 

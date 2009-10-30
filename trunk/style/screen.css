@@ -209,4 +209,10 @@ table#tickets_table { width: 70%; margin: 0;}
 		height: 55px;
 		overflow: hidden;
 	}
-	
+	#show_block{
+		text-align:center;
+		width:800px; 
+		height:500px;
+		display:none;
+		padding:10px 10px 10px 10px;
+	}
