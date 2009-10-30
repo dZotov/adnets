@@ -1,14 +1,6 @@
 {include file="layout/header.tpl"}
 <link type="text/css" href="./style/base/ui.all.css" rel="stylesheet" />
-
-{literal}
-	<script>
-	$(function() {
-		$("#from_date").datepicker();
-		$("#to_date").datepicker();
-	});
-	</script>
-{/literal}		
+	
 <ul id="types_of_statistic">
 	<li><a href="statistic.php?act=block_stat" class="inactive">Блоки</a></li>
 	<li><a href="statistic.php?act=ref_stat">Рефералы</a></li>
@@ -41,7 +33,7 @@
 		</tr>
 	</thead>
 	{foreach from=$RES item=i name=stat key=k}
-		<tr {if $k%2==0 && $k!=0}class="invert"{/if}>
+		<tr {if $k%2==0}class="invert"{/if}>
 			<td>{$i.date}</td>
 			<td>{$i.block_shows}</td>
 			<td>{$i.shows}</td>

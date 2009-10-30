@@ -71,7 +71,6 @@ $JS[] = 'jquery.form.js';
 $JS[] = 'jquery.ui.all.js';
 $JS[] = 'jquery.jgrowl.js';
 $JS[] = 'colorpicker.js';
-$JS[] = 'tablesorter.js';
 $JS[] = 'ui.core.js';
 $JS[] = 'ui.datepicker.js';
 $JS[] = 'scripts.js';
