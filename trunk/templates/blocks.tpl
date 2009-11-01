@@ -242,7 +242,8 @@
 					{rdelim}
 					
 					adtens[adtens_blockid] = {ldelim}
-						'plid': {$PLID}
+						'plid': {$PLID},
+						'ad_id': {$ACCOUNT_ID}
 					{rdelim};
 					
 					document.write('<div id="adtens_' + adtens_blockid + '"></div>');
@@ -257,7 +258,7 @@
 				if (typeof adtens != 'undefined' && typeof adtens_blocks_exists == 'undefined') {
 					for (var blockid in adtens) {
 						 var newScr = document.createElement('script'); newScr.type = 'text/javascript';
-						 newScr.src = 'http://localhost:88/seo/adnets/stat/in.php?blockid=' + blockid + '&plid=' + adtens[blockid].plid + '&ref=' + escape(document.referrer);
+						 newScr.src = 'http://localhost:88/seo/adnets/stat/in.php?blockid=' + blockid + '&plid=' + adtens[blockid].plid +'&ad_id='+ adtens[blockid].ad_id+ '&ref=' + escape(document.referrer);
 						 var el = document.getElementById('adtens_' + blockid); if (el) { el.appendChild(newScr); }
 					}
 					var adtens_blocks_exists = true;
