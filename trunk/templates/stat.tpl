@@ -9,7 +9,7 @@
 <form id="choose_period">
 	<label for="from_date">c </label><input type="text" name="from_date" id="from_date" value="{$PRE_DATE}" />
 	<label for="to_date">до </label><input type="text" name="to_date" id="to_date" value="{$DATE_NOW}" />
-	
+	<input type="hidden" name="act" value="{$smarty.get.act}">
 	<input type="submit" value="Применить" />
 </form>	
 
@@ -20,29 +20,51 @@
 	
 </ul>
 {if  !$smarty.get.act}
-<table id="stat">
-	<thead>
-		<tr>
-			<th class="date"><a href="#n">Дата</a></th>
-			<th class="views_blocks">Показов блоков</th>
-			<th class="views_ads">Показов объявлений</th>
-			<th class="clicks">Клики</th>
-			<th class="ctr_blocks">CTR блока</th>
-			<th class="ctr_ads">CTR объявления</th>
-			<th class="money">Деньги</th>
-		</tr>
-	</thead>
-	{foreach from=$RES item=i name=stat key=k}
-		<tr {if $k%2==0}class="invert"{/if}>
-			<td>{$i.date}</td>
-			<td>{$i.block_shows}</td>
-			<td>{$i.shows}</td>
-			<td>{$i.clicks}</td>
-			<td>{ctr params=$i block=1}</td>
-			<td>{ctr params=$i}</td>
-			<td>{$i.amdst|default:"0"}</td>
-		</tr>
-	{/foreach}
-</table
+	<table id="stat">
+		<thead>
+			<tr>
+				<th class="date"><a href="#n">Дата</a></th>
+				<th class="views_blocks">Показов блоков</th>
+				<th class="views_ads">Показов объявлений</th>
+				<th class="clicks">Клики</th>
+				<th class="ctr_blocks">CTR блока</th>
+				<th class="ctr_ads">CTR объявления</th>
+				<th class="money">Деньги</th>
+			</tr>
+		</thead>
+		{foreach from=$RES item=i name=stat key=k}
+			<tr {if $k%2==0}class="invert"{/if}>
+				<td>{$i.date}</td>
+				<td>{$i.block_shows}</td>
+				<td>{$i.shows}</td>
+				<td>{$i.clicks}</td>
+				<td>{ctr params=$i block=1}</td>
+				<td>{ctr params=$i}</td>
+				<td>{$i.amdst|default:"0"}</td>
+			</tr>
+		{/foreach}
+	</table>
+{elseif $smarty.get.act=='block_stat'}
+	<table id="stat">
+		<thead>
+			<tr>
+				<th class="date"><a href="#n">Дата</a></th>
+				<th class="views_blocks">Имя блока</th>
+				<th class="views_ads">Показов</th>
+				<th class="clicks">Клики</th>
+				<th class="ctr_blocks">CTR блока</th>
+			</tr>
+		</thead>
+		{foreach from=$RES item=i name=stat key=k}
+			<tr {if $k%2==0}class="invert"{/if}>
+				<td>{$i.date}</td>
+				<td>{$i.block_title}</td>
+				<td>{$i.shows}</td>
+				<td>{$i.clicks}</td>
+				<td>{ctr params=$i}</td>
+			</tr>
+		{/foreach}
+	</table>
+	
 {/if}
 {include file="layout/footer.tpl"}
