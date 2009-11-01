@@ -2,18 +2,18 @@
 -- version 2.6.4-pl4
 -- http://www.phpmyadmin.net
 -- 
--- Хост: localhost
--- Время создания: Окт 30 2009 г., 16:04
--- Версия сервера: 5.0.16
--- Версия PHP: 5.1.1
+-- Host: localhost
+-- Generation Time: Nov 02, 2009 at 01:50 AM
+-- Server version: 5.0.16
+-- PHP Version: 5.1.1
 -- 
--- БД: `adnets`
+-- Database: `adnets`
 -- 
 
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `adwerts`
+-- Table structure for table `adwerts`
 -- 
 
 DROP TABLE IF EXISTS `adwerts`;
@@ -33,7 +33,7 @@ CREATE TABLE `adwerts` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 -- 
--- Дамп данных таблицы `adwerts`
+-- Dumping data for table `adwerts`
 -- 
 
 INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `wmr`, `regdate`, `balance`, `intop`) VALUES (1, 0, '2freak@inbox.ru', '123456', '202cb962ac59075b964b07152d234b70', 1, 'R1234567890', '2009-08-23 14:34:49', '0.00', '');
@@ -42,7 +42,7 @@ INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `balance`
+-- Table structure for table `balance`
 -- 
 
 DROP TABLE IF EXISTS `balance`;
@@ -57,14 +57,14 @@ CREATE TABLE `balance` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
--- Дамп данных таблицы `balance`
+-- Dumping data for table `balance`
 -- 
 
 
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `blocks`
+-- Table structure for table `blocks`
 -- 
 
 DROP TABLE IF EXISTS `blocks`;
@@ -79,7 +79,7 @@ CREATE TABLE `blocks` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
--- Дамп данных таблицы `blocks`
+-- Dumping data for table `blocks`
 -- 
 
 INSERT INTO `blocks` (`id`, `pl_id`, `title`, `ad_id`, `settings`) VALUES (1, 1, 'Блок', 1, 'a:23:{s:12:"block_titile";s:4:"Блок";s:15:"hor_tiser_count";i:3;s:16:"vert_tiser_count";i:4;s:11:"tiser_width";i:100;s:17:"tiser_width_param";i:0;s:9:"field_fon";s:7:"#bd49bd";s:12:"tiser_border";s:5:"solid";s:9:"field_brd";s:7:"#388ed9";s:14:"field_colorfon";s:7:"#f0f0f0";s:12:"block_border";s:1:"0";s:10:"block_line";s:5:"solid";s:10:"field_bbrd";s:7:"#f0f0f0";s:16:"block_text_align";s:10:"under_text";s:15:"block_text_size";s:3:"100";s:15:"block_font_size";i:10;s:16:"block_font_param";s:2:"px";s:10:"field_norm";s:7:"#f0f0f0";s:21:"block_font_size_naved";i:10;s:22:"block_font_hover_param";s:2:"px";s:11:"field_naved";s:7:"#f0f0f0";s:15:"block_font_desc";i:10;s:27:"block_font_hover_param_deck";s:2:"px";s:10:"field_decr";s:7:"#000000";}');
@@ -87,7 +87,7 @@ INSERT INTO `blocks` (`id`, `pl_id`, `title`, `ad_id`, `settings`) VALUES (1, 1,
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `category`
+-- Table structure for table `category`
 -- 
 
 DROP TABLE IF EXISTS `category`;
@@ -100,7 +100,7 @@ CREATE TABLE `category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 -- 
--- Дамп данных таблицы `category`
+-- Dumping data for table `category`
 -- 
 
 INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (1, 'Авто/мото', '0.26', 1);
@@ -134,7 +134,7 @@ INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (27, 'Эротика',
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `company`
+-- Table structure for table `company`
 -- 
 
 DROP TABLE IF EXISTS `company`;
@@ -159,7 +159,7 @@ CREATE TABLE `company` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя' AUTO_INCREMENT=2 ;
 
 -- 
--- Дамп данных таблицы `company`
+-- Dumping data for table `company`
 -- 
 
 INSERT INTO `company` (`id`, `adid`, `title`, `category`, `status`, `days`, `hours`, `day_limit`, `limit`, `maxrun`, `price`, `categories`, `exceptions`, `no_ero`, `date`) VALUES (1, 1, 'Компания', 27, 0, NULL, '[0]', 0, 0, 0, '0.00', '', '', NULL, '2009-10-12 01:20:23');
@@ -167,7 +167,7 @@ INSERT INTO `company` (`id`, `adid`, `title`, `category`, `status`, `days`, `hou
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `news`
+-- Table structure for table `news`
 -- 
 
 DROP TABLE IF EXISTS `news`;
@@ -184,7 +184,7 @@ CREATE TABLE `news` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
--- Дамп данных таблицы `news`
+-- Dumping data for table `news`
 -- 
 
 INSERT INTO `news` (`id`, `title`, `preview`, `full`, `type`, `status`, `date`) VALUES (1, 'тест', 'тест тест тест тест ', 'тест тест тест тест тест тест тест тест ', 1, 1, '2009-08-24 01:58:33');
@@ -192,7 +192,7 @@ INSERT INTO `news` (`id`, `title`, `preview`, `full`, `type`, `status`, `date`) 
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `payments`
+-- Table structure for table `payments`
 -- 
 
 DROP TABLE IF EXISTS `payments`;
@@ -208,7 +208,7 @@ CREATE TABLE `payments` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
--- Дамп данных таблицы `payments`
+-- Dumping data for table `payments`
 -- 
 
 INSERT INTO `payments` (`id`, `adid`, `wmr`, `sum`, `status`, `date`) VALUES (1, 1, 'R123456789', '100.00', 1, '2009-09-13 15:38:14');
@@ -216,7 +216,7 @@ INSERT INTO `payments` (`id`, `adid`, `wmr`, `sum`, `status`, `date`) VALUES (1,
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `playgrounds`
+-- Table structure for table `playgrounds`
 -- 
 
 DROP TABLE IF EXISTS `playgrounds`;
@@ -234,7 +234,7 @@ CREATE TABLE `playgrounds` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
--- Дамп данных таблицы `playgrounds`
+-- Dumping data for table `playgrounds`
 -- 
 
 INSERT INTO `playgrounds` (`id`, `adid`, `title`, `url`, `status`, `category`, `exclude`, `date`) VALUES (1, 1, 'google.com', 'google.com', 1, 1, '1,10', '2009-09-13 14:21:52');
@@ -242,7 +242,7 @@ INSERT INTO `playgrounds` (`id`, `adid`, `title`, `url`, `status`, `category`, `
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `sites`
+-- Table structure for table `sites`
 -- 
 
 DROP TABLE IF EXISTS `sites`;
@@ -258,7 +258,7 @@ CREATE TABLE `sites` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
--- Дамп данных таблицы `sites`
+-- Dumping data for table `sites`
 -- 
 
 INSERT INTO `sites` (`id`, `wid`, `name`, `url`, `status`, `date`) VALUES (1, 1, 'google', 'google.com', 1, '2009-08-23 14:49:23');
@@ -266,7 +266,7 @@ INSERT INTO `sites` (`id`, `wid`, `name`, `url`, `status`, `date`) VALUES (1, 1,
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `stat_blocks`
+-- Table structure for table `stat_blocks`
 -- 
 
 DROP TABLE IF EXISTS `stat_blocks`;
@@ -282,7 +282,7 @@ CREATE TABLE `stat_blocks` (
 ) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=9 ;
 
 -- 
--- Дамп данных таблицы `stat_blocks`
+-- Dumping data for table `stat_blocks`
 -- 
 
 INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (1, 1, 0, '', 6, 0, '2009-10-14');
@@ -292,12 +292,12 @@ INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, 
 INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (5, 0, 1, 'http://localhost:88/seo/adnets/playgrounds.php', 1, 0, '2009-10-27');
 INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (6, 0, 1, 'http://localhost:88/seo/adnets/playgrounds.php', 8, 0, '2009-10-30');
 INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (7, 0, 0, '', 1, 0, '2009-10-30');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (8, 1, 1, '', 69, 0, '2009-10-30');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (8, 1, 1, '', 76, 0, '2009-10-30');
 
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `stat_teaser`
+-- Table structure for table `stat_teaser`
 -- 
 
 DROP TABLE IF EXISTS `stat_teaser`;
@@ -308,23 +308,25 @@ CREATE TABLE `stat_teaser` (
   `ad_id` int(11) NOT NULL,
   `shows` int(11) NOT NULL,
   `clicks` int(11) NOT NULL,
+  `amsrc` decimal(10,2) default NULL,
+  `amdst` decimal(10,2) default NULL,
   `date` date NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=7 ;
 
 -- 
--- Дамп данных таблицы `stat_teaser`
+-- Dumping data for table `stat_teaser`
 -- 
 
-INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `date`) VALUES (5, 2, 1, 1, 3, 0, '2009-10-15');
-INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `date`) VALUES (4, 1, 1, 1, 3, 1, '2009-10-15');
-INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `date`) VALUES (3, 1, 1, 1, 0, 4, '2009-10-14');
-INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `date`) VALUES (6, 1, 1, 1, 69, 0, '2009-10-30');
+INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES (5, 2, 1, 1, 3, 0, NULL, NULL, '2009-10-15');
+INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES (4, 1, 1, 1, 3, 1, NULL, NULL, '2009-10-15');
+INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES (3, 1, 1, 1, 0, 4, NULL, NULL, '2009-10-14');
+INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES (6, 1, 1, 1, 76, 0, NULL, NULL, '2009-10-30');
 
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `teaser`
+-- Table structure for table `teaser`
 -- 
 
 DROP TABLE IF EXISTS `teaser`;
@@ -348,7 +350,7 @@ CREATE TABLE `teaser` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Тизеры' AUTO_INCREMENT=2 ;
 
 -- 
--- Дамп данных таблицы `teaser`
+-- Dumping data for table `teaser`
 -- 
 
 INSERT INTO `teaser` (`id`, `adid`, `company_id`, `category`, `title`, `desc`, `url`, `price`, `type`, `size`, `ext`, `status`, `ctr`, `date`) VALUES (1, 1, 1, 3, 'test test test', 'testtesttesttesttesttesttesttest', 'http://ya.ru', '0.00', 0, 0, 'gif', 1, '0.00', '2009-10-30 15:01:57');
@@ -356,7 +358,7 @@ INSERT INTO `teaser` (`id`, `adid`, `company_id`, `category`, `title`, `desc`, `
 -- --------------------------------------------------------
 
 -- 
--- Структура таблицы `top`
+-- Table structure for table `top`
 -- 
 
 DROP TABLE IF EXISTS `top`;
@@ -371,7 +373,7 @@ CREATE TABLE `top` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- 
--- Дамп данных таблицы `top`
+-- Dumping data for table `top`
 -- 
 
 INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `ctr`, `balance`) VALUES (1, 'Test', 123, 12312, 2, '123.00');

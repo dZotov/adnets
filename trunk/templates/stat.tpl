@@ -38,9 +38,9 @@
 			<td>{$i.block_shows}</td>
 			<td>{$i.shows}</td>
 			<td>{$i.clicks}</td>
-			<td>10%</td>
-			<td>3.3%</td>
-			<td>100</td>
+			<td>{ctr params=$i blocks=1}</td>
+			<td>{ctr params=$i}</td>
+			<td>{$i.amdst}</td>
 		</tr>
 	{/foreach}
 </table
