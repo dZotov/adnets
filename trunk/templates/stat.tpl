@@ -38,9 +38,9 @@
 			<td>{$i.block_shows}</td>
 			<td>{$i.shows}</td>
 			<td>{$i.clicks}</td>
-			<td>{ctr params=$i blocks=1}</td>
+			<td>{ctr params=$i block=1}</td>
 			<td>{ctr params=$i}</td>
-			<td>{$i.amdst}</td>
+			<td>{$i.amdst|default:"0"}</td>
 		</tr>
 	{/foreach}
 </table
