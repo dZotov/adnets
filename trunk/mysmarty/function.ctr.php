@@ -7,14 +7,14 @@ function smarty_function_ctr($params) {
 	if($block)
 	{
 		if($attr["block_clicks"])
-			return round($attr['block_shows']/$attr["block_clicks"],2);
+			return round(($attr["block_clicks"]/$attr['block_shows'])*100,2);
 		else
 			return 0;
 	}
 	else
 	{
 		if($attr['clicks'])
-			return round($attr['shows']/$attr['clicks'],2);
+			return round(($attr['clicks']/$attr['shows'])*100,2);
 		else
 			return 0;
 	}
