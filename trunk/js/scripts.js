@@ -132,6 +132,7 @@ function add_playdround()
 				if(data=='ok')
 				{
 					show_error('Информация изменена!');
+					redirect('playgrounds.php');
 				}
 				else
 				{
