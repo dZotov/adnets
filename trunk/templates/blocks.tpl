@@ -81,7 +81,7 @@
 				</td>
 			</tr>
 		</table>
-		<label for="title">Название блока</label>
+		
 		<table>
 			<tr>
 				<td>
@@ -258,7 +258,7 @@
 				if (typeof adtens != 'undefined' && typeof adtens_blocks_exists == 'undefined') {
 					for (var blockid in adtens) {
 						 var newScr = document.createElement('script'); newScr.type = 'text/javascript';
-						 newScr.src = 'http://localhost:88/seo/adnets/stat/in.php?blockid=' + blockid + '&plid=' + adtens[blockid].plid +'&ad_id='+ adtens[blockid].ad_id+ '&ref=' + escape(document.referrer);
+						 newScr.src = 'http://stat.adnets.ru/in.php?blockid=' + blockid + '&plid=' + adtens[blockid].plid +'&ad_id='+ adtens[blockid].ad_id+ '&ref=' + escape(document.referrer);
 						 var el = document.getElementById('adtens_' + blockid); if (el) { el.appendChild(newScr); }
 					}
 					var adtens_blocks_exists = true;

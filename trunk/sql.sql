@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Nov 02, 2009 at 01:50 AM
+-- Generation Time: Nov 04, 2009 at 10:23 PM
 -- Server version: 5.0.16
 -- PHP Version: 5.1.1
 -- 
@@ -274,6 +274,7 @@ CREATE TABLE `stat_blocks` (
   `id` int(11) NOT NULL auto_increment,
   `block_id` int(11) NOT NULL,
   `pl_id` int(11) NOT NULL,
+  `ad_id` int(11) default NULL,
   `ref` varchar(100) collate cp1251_general_cs NOT NULL,
   `shows` int(11) NOT NULL,
   `clicks` int(11) NOT NULL,
@@ -285,14 +286,14 @@ CREATE TABLE `stat_blocks` (
 -- Dumping data for table `stat_blocks`
 -- 
 
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (1, 1, 0, '', 6, 0, '2009-10-14');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (2, 1, 1, '', 2, 6, '2009-10-14');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (3, 0, 1, '', 1, 0, '2009-10-15');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (4, 1, 1, '', 9, 1, '2009-10-15');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (5, 0, 1, 'http://localhost:88/seo/adnets/playgrounds.php', 1, 0, '2009-10-27');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (6, 0, 1, 'http://localhost:88/seo/adnets/playgrounds.php', 8, 0, '2009-10-30');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (7, 0, 0, '', 1, 0, '2009-10-30');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ref`, `shows`, `clicks`, `date`) VALUES (8, 1, 1, '', 76, 0, '2009-10-30');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (1, 1, 0, NULL, '', 6, 0, '2009-10-14');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (2, 1, 1, NULL, '', 2, 6, '2009-10-14');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (3, 0, 1, NULL, '', 1, 0, '2009-10-15');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (4, 1, 1, 1, '', 9, 1, '2009-10-15');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (5, 0, 1, NULL, 'http://localhost:88/seo/adnets/playgrounds.php', 1, 0, '2009-10-27');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (6, 0, 1, NULL, 'http://localhost:88/seo/adnets/playgrounds.php', 8, 0, '2009-10-30');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (7, 0, 0, NULL, '', 1, 0, '2009-10-30');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (8, 1, 1, NULL, '', 76, 0, '2009-10-30');
 
 -- --------------------------------------------------------
 
