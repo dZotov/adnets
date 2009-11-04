@@ -1,6 +1,8 @@
 <?
 include("./include/init.php");
 
+if (IsAdv()) redirect("advprofile.php");
+
 if(get_post("update"))
 {
 	$ad= new Adwerts($account_id);

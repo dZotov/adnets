@@ -106,6 +106,7 @@ $MENU_ADV = array(
 	array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php'),
 	array('name' => 'company', 'title' => 'Компании', 'url' => 'companies.php'),
 	array('name' => 'stat', 'title' => 'Статистика', 'url' => 'advstat.php'),
+	array('name' => 'profile', 'title' => 'Профиль', 'url' => 'advprofile.php'),
 	array('name' => 'balance', 'title' => 'Баланс', 'url' => 'balance.php'),
 	array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
 );

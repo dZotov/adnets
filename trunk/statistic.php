@@ -1,5 +1,8 @@
 <?
 include("./include/init.php");
+
+if (IsAdv()) redirect("advstat.php");
+
 $date_start=date("Y-m-d",( strtotime(date("d.m.Y"))-(3600*48)));
 $date_end=date("Y-m-d");
 
@@ -63,6 +66,6 @@ $smarty->assign("PRE_DATE",$date_start);
 $smarty->assign("DATE_NOW",$date_end);
 $smarty->assign("RES",$t);
 
-$PAGE_TITLE = "Статистика";
+$PAGE_TITLE = $HEAD_TITLE = "Статистика";
 Display("stat.tpl");
 ?>
