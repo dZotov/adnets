@@ -246,7 +246,7 @@
 						'ad_id': {$ACCOUNT_ID}
 					{rdelim};
 					
-					document.write('<div id="adtens_' + adtens_blockid + '"></div>');
+					document.write('<div id="adtens_' + adtens_blockid + '">Загрузка...</div>');
 				
 			</script> 
 		</textarea>

@@ -21,11 +21,11 @@ td{ldelim}
 	{rdelim}
 </style>
 <div>
-	<table>
+	<table align="center">
 		<tr>
 		{foreach from=$DATA.items item=i name=data}
 			<td{if $SETTINGS.block_border} style="border:{$SETTINGS.block_border}{$SETTINGS.block_line}{$SETTINGS.field_bbrd}"{/if}>
-				<a href="{link attr=$i block=$DATA.block_id}" target="_blank"><img src="http://localhost:88/seo/adnets/stat/teaser/{$SETTINGS.block_text_size}x{$SETTINGS.block_text_size}/{$i.id}.{$i.ext}" alt="{$i.title}"/></a>
+				<a href="{link attr=$i block=$DATA.block_id}" target="_blank"><img src="http://stat.adnets.ru/teaser/{$SETTINGS.block_text_size}x{$SETTINGS.block_text_size}/{$i.id}.{$i.ext}" alt="{$i.title}" width="{$SETTINGS.block_text_size}px" height="{$SETTINGS.block_text_size}px"/></a>
 				{if $SETTINGS.block_text_align=="under_text"} 
 					<br />
 					<a href="{link attr=$i block=$DATA.block_id}" target="_blank">{$i.desc}</a>

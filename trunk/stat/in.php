@@ -45,6 +45,7 @@ $blockstat->Save();
 		
 		$t['items']=$teaser->GetManyByCond("category NOT IN ({$ignore}) AND status=".STATE_ACTIVE."","ctr DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
 		
+			
 		$t['block_id']=$block->GetId();
 		
 		foreach($t['items'] as $k=>$v)
