@@ -1,6 +1,13 @@
 {include file="layout/header.tpl"}
 <link type="text/css" href="./style/base/ui.all.css" rel="stylesheet" />
-	
+{literal}
+	<script>
+	$(function() {
+		$("#from_date").datepicker({dateFormat: 'yy-mm-dd'});
+		$("#to_date").datepicker({dateFormat: 'yy-mm-dd'});
+	});
+	</script>
+{/literal}	
 <ul id="types_of_statistic">
 	<li><a href="statistic.php?act=block_stat" class="inactive">Блоки</a></li>
 	<li><a href="statistic.php?act=ref_stat">Рефералы</a></li>
