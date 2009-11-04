@@ -42,9 +42,9 @@
 		{foreach from=$RES.items item=i name=stat key=k}
 			<tr {if $k%2==0}class="invert"{/if}>
 				<td>{$i.date}</td>
-				<td>{$i.block_shows}</td>
-				<td>{$i.shows}</td>
-				<td>{$i.clicks}</td>
+				<td>{$i.block_shows|default:"0"}</td>
+				<td>{$i.shows|default:"0"}</td>
+				<td>{$i.clicks|default:"0"}</td>
 				<td>{ctr params=$i block=1}</td>
 				<td>{ctr params=$i}</td>
 				<td>{$i.amdst|default:"0"}</td>
