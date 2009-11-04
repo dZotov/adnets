@@ -103,6 +103,9 @@ function add_playdround()
 	);
 	
 	var id=$("#pl_id").attr('value');
+	
+	if(!id)
+		id='undefined';
 	var adid=$("#adid").attr('value');
 	if(!title)
 		error +="Нет названия площадки<br />";
