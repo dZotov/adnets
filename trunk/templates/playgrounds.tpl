@@ -29,7 +29,7 @@
 					<a href="javascript: show_hide('blocks_{$i.id}')">Блоки</a> ({$i.num_blocks})
 					<div class="pl_show" id="blocks_{$i.id}">
 						{foreach from=$i.blocks item=b}
-							Блок: {$b.settings.block_text_size}x{$b.settings.block_text_size} Тизеры: {$b.settings.hor_tiser_count}x{$b.settings.vert_tiser_count} <a href="blocks.php?id={$b.id}&sid={$i.id}">редактировать</a>
+							{$b.settings.block_titile}: {$b.settings.block_text_size}x{$b.settings.block_text_size} Тизеры: {$b.settings.hor_tiser_count}x{$b.settings.vert_tiser_count} <a href="blocks.php?id={$b.id}&sid={$i.id}">редактировать</a>
 							<br /><br />
 						{/foreach}
 						

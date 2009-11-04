@@ -14,16 +14,6 @@
 		
 	<div class="padt15"> 	
 		<table class="pad3">
-			{*
-			<tr>
-				<td>Формат:</td>
-				<td>
-					<select name="type">
-					{html_options options=$TEASER_TYPES selected=$TEASER.type}
-					</select>
-				</td>
-			</tr>
-			*}
 			<tr>
 				<td>Файл:</td>
 				<td>

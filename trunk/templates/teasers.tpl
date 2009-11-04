@@ -20,7 +20,7 @@
 				{$t.url} <br />
 			</td>
 			<td>
-				<div><a href="teaser.php?company={$t.company_id}&id={$t.id}"><img src="{teaser attr=$t}" alt="" /></a></div>
+				<div><a href="teaser.php?company={$t.company_id}&id={$t.id}"><img src="{teaser attr=$t}" alt=""  width="100px" height="100px" /></a></div>
 			</td>
 			<td>{$t.status|human:STATUS_LIST}</td>
 			<td>{$t.price}</td>

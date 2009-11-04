@@ -13,7 +13,7 @@ $hash=$id.rand(1,100);
 $blockstat= new Blockstat();
 
 $date=date("Y-m-d");
-$blockstat->LoadByCond("block_id='{$id}' AND date='{$date}' AND pl_id='{$plid}' ad_id='{$ad_id}'");
+$blockstat->LoadByCond("block_id='{$id}' AND date='{$date}' AND pl_id='{$plid}' AND ad_id='{$ad_id}'");
 if($blockstat->GetId())
 {
 	$blockstat->Set('shows',$blockstat->Get('shows')+1);
