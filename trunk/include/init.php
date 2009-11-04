@@ -115,6 +115,13 @@ if ($account_id) {
 	if (IsAdv()) {
 		$MENU = $MENU_ADV;
 	}
+
+	$c = new Cat();
+	$cats = $c->GetManyByCond("1");
+	$CATEGORY_LIST = array();
+	foreach($cats as $v) {
+		$CATEGORY_LIST[$v['id']] = $v['title'];
+	}
 }
 
 foreach ($MENU as $k => $v) {
@@ -124,5 +131,7 @@ foreach ($MENU as $k => $v) {
 	}
 }
 $smarty->assign('MENU', $MENU);
+
+
 
 ?>

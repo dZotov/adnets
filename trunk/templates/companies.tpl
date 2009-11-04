@@ -15,13 +15,18 @@
 		{foreach from=$TABLE.items item=t}
 		<tr class="table">
 			<td><a href="company.php?id={$t.id}">{$t.title}</td>
-			<td>{$t.category}</td>
-			<td> <a href="">0</a> / 0 / 0 / 0</td>
-			<td>0/<span class="red">0</span></td>
-			<td>0/<span class="red">0</span></td>
-			<td>{$t.ctr|default:0}</td>
-			<td>{$t.money|default:0.00}</td>
-			<td>{$t.date|date}</td>
+			<td>{$t.category|human:"CATEGORY_LIST"}</td>
+			<td class="ac"> 
+				<a href="teasers.php?id={$t.id}&status=1">0</a> /
+				<a href="teasers.php?id={$t.id}&status=2">0</a> /
+				<a href="teasers.php?id={$t.id}&status=3">0</a> /
+				<a href="teasers.php?id={$t.id}&status=4">0</a>
+			</td>
+			<td class="ac">0 / <span class="red">0</span></td>
+			<td class="ac">0 / <span class="red">0</span></td>
+			<td class="ac">{$t.ctr|default:0}</td>
+			<td class="ac">{$t.money|default:0.00}</td>
+			<td class="ac">{$t.date|date}</td>
 		</tr>
 		{/foreach}
 		<tr class="footer_table"> 
