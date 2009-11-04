@@ -11,18 +11,35 @@ if(get_get("from_date") && get_get("to_date"))
 }
 if(!get_get("act"))
 {
-	$teaser = new Teaserstat();
-	$t=$teaser->GetManyByCond("ad_id='{$account_id}' AND (`date` BETWEEN '{$date_start}' AND '{$date_end}')","date DESC");
-	foreach($t as $k=>$v)
+	
+	$max = datediff('d', $date_start, $date_end);
+	for($i = 0; $i <= $max; $i++) 
 	{
+		$date = NewDate($date_start, "+$i DAY");
+		$key = explode(" ", $date);	
+		$key = $key[0];
+		$t['items'][$key]['date'] = $date;
+		
+		$teaser = new Teaserstat();
+				
+		$t['items'][$key]['shows']=$teaser->SelectSum("shows","ad_id='{$account_id}' AND `date`='{$key}'");
+		$t['items'][$key]['clicks']=$teaser->SelectSum("clicks","ad_id='{$account_id}' AND `date`='{$key}'");
+		$t['items'][$key]['amdst']=$teaser->SelectSum("amdst","ad_id='{$account_id}' AND `date`='{$key}'");
+		
 		$blockstat= new Blockstat();
-		$blockstat->LoadbyCond("block_id='{$v['block_id']}' AND date='{$v['date']}'");
-		if($blockstat->GetId())
-		{
-			$t[$k]['block_shows']=$blockstat->Get('shows');
-			$t[$k]['block_clicks']=$blockstat->Get('clicks');
-		}
+			
+		$t['items'][$key]['block_shows']=$blockstat->SelectSum("shows","ad_id='{$account_id}' AND `date`='{$key}'");
+		$t['items'][$key]['block_clicks']=$blockstat->SelectSum("clicks","ad_id='{$account_id}' AND `date`='{$key}'");
 	}
+	// Total
+	foreach($t['items'] as $k => $v) {
+		@$t['total']['shows'] +=  $v['shows'];
+		@$t['total']['clicks'] +=  $v['clicks'];
+		@$t['total']['block_shows'] +=  $v['block_shows'];
+		@$t['total']['block_clicks'] +=  $v['block_clicks'];
+		@$t['total']['amdst'] +=  $v['amdst'];
+	}
+	
 }
 if(get_get("act")=="block_stat")
 {

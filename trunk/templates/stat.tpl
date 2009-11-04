@@ -32,7 +32,7 @@
 				<th class="money">Δενόγθ</th>
 			</tr>
 		</thead>
-		{foreach from=$RES item=i name=stat key=k}
+		{foreach from=$RES.items item=i name=stat key=k}
 			<tr {if $k%2==0}class="invert"{/if}>
 				<td>{$i.date}</td>
 				<td>{$i.block_shows}</td>

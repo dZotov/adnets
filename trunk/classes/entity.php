@@ -280,6 +280,9 @@ class Entity
 
 	function SelectSum($field, $cond, $order = NULL) {
 		$q = "SELECT SUM(".$field.") FROM `{$this->table}` WHERE {$this->jcond} ($cond)";
+		
+		
+		
 		if($order) 
 			$q.=" ORDER BY $order";
 
@@ -429,7 +432,8 @@ class Entity
 			$sep = ",";
 		}
 		$this->UpdateByCond("id IN ({$ids})", "status = '".STATE_BUFFER."', buffer = NOW()");
-	}	
+	}
+	
 	
 	function IsMy() {
 		global $account_id;
