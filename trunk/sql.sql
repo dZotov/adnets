@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Nov 04, 2009 at 10:23 PM
+-- Generation Time: Nov 06, 2009 at 02:30 AM
 -- Server version: 5.0.16
 -- PHP Version: 5.1.1
 -- 
@@ -242,6 +242,26 @@ INSERT INTO `playgrounds` (`id`, `adid`, `title`, `url`, `status`, `category`, `
 -- --------------------------------------------------------
 
 -- 
+-- Table structure for table `refstat`
+-- 
+
+DROP TABLE IF EXISTS `refstat`;
+CREATE TABLE `refstat` (
+  `id` int(11) NOT NULL auto_increment,
+  `ad_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `refstat`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
 -- Table structure for table `sites`
 -- 
 
@@ -355,6 +375,31 @@ CREATE TABLE `teaser` (
 -- 
 
 INSERT INTO `teaser` (`id`, `adid`, `company_id`, `category`, `title`, `desc`, `url`, `price`, `type`, `size`, `ext`, `status`, `ctr`, `date`) VALUES (1, 1, 1, 3, 'test test test', 'testtesttesttesttesttesttesttest', 'http://ya.ru', '0.00', 0, 0, 'gif', 1, '0.00', '2009-10-30 15:01:57');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tmp_stat`
+-- 
+
+DROP TABLE IF EXISTS `tmp_stat`;
+CREATE TABLE `tmp_stat` (
+  `id` int(11) NOT NULL auto_increment,
+  `ip` varchar(100) collate cp1251_general_cs NOT NULL,
+  `teaser_id` int(11) NOT NULL,
+  `id_id` int(11) NOT NULL,
+  `uniq` int(11) NOT NULL,
+  `raw` int(11) NOT NULL,
+  `referer` varchar(100) collate cp1251_general_cs NOT NULL,
+  `clicks` time NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `tmp_stat`
+-- 
+
 
 -- --------------------------------------------------------
 
