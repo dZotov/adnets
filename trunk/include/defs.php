@@ -12,6 +12,7 @@ define('TCOMPANY', 'company');
 define('TTEASER', 'teaser');
 define('TBLOCKSTAT', 'stat_blocks');
 define('TTEASERSTAT', 'stat_teaser');
+define('TREFSTAT', 'refstat');
 
 
 // Таблицы
