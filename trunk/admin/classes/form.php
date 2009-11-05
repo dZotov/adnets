@@ -7,12 +7,14 @@
 	define("FORM_RADIO",			06); 
 	define("FORM_FILE",		    	10);		
 	define("FORM_MEMO",			11);		
+	define("FORM_MEMO_COUNTER",	12);		
 	define("FORM_PHONE",			30);
 	define("FORM_DATE",		    31);	
 	define("FORM_CB_ARRAY",		32); 
 	define("FORM_RAD_ARRAY",	33); 
 	define("FORM_COUNTRY",		34); 
 	define("FORM_MULTIPLE",		34); 
+	
 	
     $GLOBALS['FORM_NONVALIDABLES'] = array(
 		FORM_RADIO,
@@ -24,8 +26,9 @@
 		FORM_FILE,
 	);
     
-	class Form {
-
+	define("AUTO", 0); 
+	
+	class Form {		
 		public $HTML = array();
 
 		public $message = array();
@@ -81,9 +84,32 @@
                 //~ $name=substr($name,0,strlen($name)-strlen($value1)-1);
             //~ }
 			
-			if ($type==FORM_CB_ARRAY) return implode(",", get_param_cbarray($name, get($options, '_list', array()), $default));
-            if ($type==FORM_DATE) return get_param_date($name,$default);
-            if ($type==FORM_CHECKBOX) return get_param_checkbox($name,$default);
+			if ($type==FORM_CB_ARRAY) {
+				$value = get_param_cbarray($name, get($options, '_list', array()), $default);
+				if (is_array($value)) {
+					foreach($value as $k => $v) {
+						$value[$k] = "[{$v}]";
+					} 
+					$value = implode(",", $value);
+				}
+				return $value;
+			}
+			if ($type==FORM_DATE) return get_param_date($name,$default);
+            if ($type==FORM_CHECKBOX) {
+				$value = get_param_checkbox($name,$default);
+            	if ($value == 'on') $value = 1;
+				return $value;
+			}
+			if ($type==FORM_MULTIPLE) {
+				$value = get_param($name, $default);
+				if (is_array($value)) {
+					foreach($value as $k => $v) {
+						$value[$k] = "[{$v}]";
+					} 
+					$value = implode(",", $value);
+				}
+				return $value;
+			}
             return get_param($name,$default);
         }
 
@@ -91,16 +117,20 @@
             $s = $this->GetDefaultValue($name,$type,$options);
 			$e = $s;
             if ($type == FORM_CHECKBOX) {
-                $e = ($s) ? 1 : 0;
+                $e == ($s) ? 1 : 0;
             }
-            if (($name!='') && (!in_array($type,$GLOBALS['FORM_NONSAVEABLES']))) {
-                if(!get($options,'_nosave')) {
-					$this->valuesforentity[$name] = $e;
-					if($asdefault) 
-						$this->valuesfortemplate[$name]=$e;
+            if ($type == FORM_MULTIPLE) {
+                $name == str_replace("[]", "", $name);
+            }
+            if (($name != '') && (!in_array($type, $GLOBALS['FORM_NONSAVEABLES']))) {
+                if (!get($options,'_nosave')) {
+					$s = $this->valuesforentity[$name] = $e;
+					if ($asdefault) 
+						$this->valuesfortemplate[$name] = $e;
 				}
             }
-            return $s;
+			
+	        return $s;
         }
        
 		public function Select($name = NULL, $value = NULL, $options = array()) {
@@ -110,7 +140,7 @@
 			
 			if (isset($options['onblur']) && !isset($options['onchange'])) $options['onchange'] = $options['onblur'];
 			
-			$res="<select ".attribs2string($options)." id=\"__dropdown_".$name."\">";
+			$res="<select ".attribs2string($options)." id=\"_form_".$name."\">";
 
 			if (!isset($options['_list']))
 				throw new exception("Не определён ключ _list для поля $name");
@@ -148,10 +178,18 @@
 					$options['multiple'] = 'multiple';
 					
 					if (!isset($options['size'])) {
-						$options['size'] = '5';
+						$options['size'] = 5;
 					}
-					
-					$control_html = $this->Select($name, $value, $options);
+					$value = explode(",", $value);
+					foreach($value as $k => $v) {
+						$value[$k] = str_replace(array("[", "]"), array("",""), $v);
+					}
+					$control_html = '<select name="'.$name.'[]" '.attribs2string($options).' id="_form_'.$name.'" multiple>';
+					foreach($options['_list'] as $k => $v) {
+						$c = (in_array($k, $value)) ? " selected = \"selected\"" : "";
+						$control_html .= "<option value=\"$k\"$c> $v &nbsp;</option>";
+					}
+					$control_html .= '</select>';
 					break;
 				
 				case FORM_TEXT:
@@ -180,7 +218,7 @@
 					break;
                     
 				case FORM_SELECT:
-					$control_html = '<table cellpadding="0"><tr>';
+					$control_html = '<table><tr>';
 					
 					$disabled = get($options,'disabled');
 					if($disabled)
@@ -206,13 +244,13 @@
 						unset($options['checked']);
 						
 					$control_html = $this->Input('checkbox',$name,NULL,$options);
-					$control_html = '<table><tr>';
-					$control_html .= '<td>'.$this->Input('checkbox',$name,NULL,$options).'</td>';
+					//~ $control_html = '<table><tr>';
+					//~ $control_html .= '<td>'.$this->Input('checkbox',$name,NULL,$options).'</td>';
 						
-					if(isset($options['_postlabels'])) {
-						$control_html .= '<td>'.$options['_postlabels'].'</td>';
-					}
-					$control_html .= '</tr></table>';
+					//~ if(isset($options['_postlabels'])) {
+						//~ $control_html .= '<td>'.$options['_postlabels'].'</td>';
+					//~ }
+					//~ $control_html .= '</tr></table>';
 					break;
 
 				case FORM_RADIO:
@@ -248,8 +286,28 @@
 					} else {
 						$control_html .= '<table border="0" align="left" class="vat"><tr><td><textarea class="'.$class.'"'.attribs2string($options).'>'.htmlQuote($value).'</textarea></td></tr></table>';
 					}					
-
 					break;
+				
+				case FORM_MEMO_COUNTER:
+					$options['name']=$name;	
+                    $maxchar=get($options,'_maxchar',1000);
+					$control_html = "<table border=0>";
+					
+					$control_html .= "<tr><td><textarea onkeyup=\"javascript: charcount('$name', $maxchar)\" id=\"_form_$name\" onchange=\"javascript: charcount('$name',$maxchar)\" class=\"form\" ".attribs2string($options).">".htmlQuote($value)."</textarea></td></tr>";
+					$control_html .= "<table width=\"100%\" class=\"pad0\" cellpadding=0><tr><td><a href=\"javascript: javascript: clearmemo('{$name}')\">Clear</a></td><td><table align=\"right\" cellpadding=0 cellspacing=0 class=\"pad0\"><tr><td><input size=\"2\" id=\"{$name}__charcounter\" disabled=\"disabled\" value=\"".strlen($value)."\" /></td><td><span class=\"s11\"> of $maxchar</span></td></tr></table>";
+					$control_html .= "</td></tr></table>";
+					break;
+				
+				//~ case FORM_MEMO_COUNTER :
+					//~ $options['name'] = $name;
+					//~ $class = get($options, 'class', 'form');
+                    //~ $control_html = '';
+					
+					//~ $control_html .= '<table border="0" align="left" class="vat"><tr><td><textarea class="'.$class.'"'.attribs2string($options).' id="_memo_'.$name.'">'.htmlQuote($value).'</textarea></td></tr>';
+					//~ $control_html .= '<tr><td><input type="text" size="2" id="_memo_counter_'.$name.'" value="'.strlen($value).'"></td></tr>';
+					//~ $control_html .= "</table>";
+
+					//~ break;
 
 				case FORM_DATE :
 					$valarr=explode('-',$value);
@@ -273,8 +331,8 @@
 					if($pre_label)
 						$control_html .= '<td>'.$pre_label.'</td>';
 					
-					if (get($GLOBALS, 'LANGUAGE', 'ru') && strtolower(get($GLOBALS, 'LANGUAGE', 'ru')) == 'ru') {
-						$control_html .= "</td><td> ".$this->Select("{$name}_0", $d, $opts_d)
+					if ($GLOBALS['LANGUAGE'] && strtolower($GLOBALS['LANGUAGE']) == 'ru') {
+						$control_html .= "</td><td class=\"padl5\"> ".$this->Select("{$name}_0", $d, $opts_d)
 							.'<td class="padl3">'.$this->Select("{$name}_1", $m, $opts_m)
 							."</td><td class=\"padl3\"> ".$this->Select("{$name}_2", $y, $opts_y).'</td>';
 					} else {
@@ -304,6 +362,7 @@
 					}
 					
 					foreach($els as $k => $v) {
+						$v = str_replace(array("[", "]"), array("",""), $v);
 						$values[$k] = $v;
 					}
 					
@@ -356,7 +415,7 @@
 						
 					   	$control_html .= '';
 						$control_html .= '<td>'.$this->Input('radio',$name, $k, $radio_options).'</td>';
-						$control_html .= '<td class="padl3">'.$v."</td>";
+						$control_html .= '<td class="padr5">'.$v."</td>";
 						$i++;
 					}
 					
@@ -414,10 +473,12 @@
         }
 
 		public function SetsError(&$title, $options = array()) {
+			global $ERRROS;
 			$this->fails++;
 			$this->wrong++;
-			//~ $title = '<span class="reenter">'.$title.'</span>';
+			$field = '<span class="reenter">'.$title.'</span>';
 			$this->error = true;
+			$GLOBALS['ERRORS'][] = "Incorrect filled the {$field} field";
 		}
 
 		function Field($type, $title0, $name, $options=array(), $pattern=NULL) {
@@ -438,9 +499,8 @@
 
            if ($value == AUTO)
 				$value = $this->DefaultValue($name, $type, $options, $asdefault);
-
-			//~ print_r($_POST);
-
+			
+		
 			$title = $title0;
 			if (count($_POST) && !in_array($type, $GLOBALS['FORM_NONVALIDABLES'])) {
 				if (!is_null($value)) {
@@ -484,7 +544,7 @@
 				
 			$help = get($options, 'help');
 			if ($help) {
-				$help = '<div class="padb5" style="display: none;" id="_help_'.$name.'"><div class="pad3 s11 help_block">'.$help.'</div></div>';
+				$help = '<div class="padt5" style="display: none;" id="_help_'.$name.'"><div class="pad5 help_block">'.$help.'</div></div>';
 				$title .= ' (<a href="javascript: show_hide(\'_help_'.$name.'\')">?</a>)';
 			}
 			
@@ -496,6 +556,7 @@
 				'name'  => $name,
 				'error'  => $error,
 				'help' => $help,
+				'options' => $options,
 			);
 			
 		} 
@@ -553,10 +614,11 @@
 		
         function SaveToEntity() {
             foreach($this->valuesforentity as $key=>$value) {
-                $this->tgtentity->Set($key, $value);
+                $this->tgtentity->Set($key,$value);
             }
         }
 		
+        
 		function Persist() {
 			foreach ($_POST as $key=>$val)
 				$_SESSION["posted_".$this->name."_$key"]=$val;
@@ -575,6 +637,6 @@
 			$this->thissection = '';
 			return $r;
 		}
-		
+
 	}
 ?>

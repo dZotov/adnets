@@ -52,6 +52,7 @@ define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST'].$SCRIPTPATH);
 $smarty->assign('SITE_URL', SITE_URL);
 
 $ERRORS = array();
+$JS = array();
 $PAGE_TITLE = '';
 $HEAD_ICON = '';
 $HEAD_TITLE = '';
@@ -61,6 +62,12 @@ $smarty->assign_by_ref('DB_QUERY', $DB_QUERY);
 $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('HEAD_ICON', $HEAD_ICON);
 $smarty->assign_by_ref('HEAD_TITLE', $HEAD_TITLE);
+
+$JS[] = 'jquery.js';
+$JS[] = 'jquery.form.js';
+$JS[] = 'scripts.js';
+$JS[] = 'tiny_mce/tiny_mce.js';
+
 
 $MENU_WEB = array();
 $MENU_SELLER = array();

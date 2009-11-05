@@ -10,10 +10,7 @@
 	<meta name="Keywords" content="" />
 	<link rel="stylesheet" type="text/css" href="./style/style.css" />
 	<link rel="stylesheet" type="text/css" href="./style/{$LANGUAGE|lower}.css" />
-	<script src="./js/jquery.js"></script>
-	<script src="./js/jquery.form.js"></script>
-	<script src="./js/scripts.js"></script>
-	<script src="./js/tiny_mce/tiny_mce.js"></script>
+	{foreach from=$JS item=js}<script src="./js/{$js}"></script>{/foreach}
 	{literal}
 		<script>
 			tiny_init();
