@@ -12,6 +12,7 @@ define('TCOMPANY', 'company');
 define('TTEASER', 'teaser');
 define('TBLOCKSTAT', 'stat_blocks');
 define('TTEASERSTAT', 'stat_teaser');
+define('TTMPSTAT', 'tmp_stat');
 
 // Таблицы
 $IMG_MIME_TYPE = array(

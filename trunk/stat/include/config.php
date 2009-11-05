@@ -14,4 +14,9 @@ define('SHOW_PHP_ERRORS', 1);
 define('ADMIN_LOGIN', 'admin');
 define('ADMIN_PASSWORD', '123');
 
+
+$HASH="asdasdsajDWIWDASCdmlaw290482ur3rKLKFN@#)U$!@)$";
+
+$DEF_URL="http://google.com";
+
 ?>

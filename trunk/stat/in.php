@@ -5,11 +5,13 @@ $id=(int)get_get('blockid');
 $ref=get_get('ref');
 $plid=(int)get_get('plid');
 $ad_id=(int)get_get('ad_id');
-$smarty->caching = 1;
+
+
+/* $smarty->caching = 1;
 $smarty->cache_lifetime = 3600;
 
 $hash=$id.rand(1,100);
-
+ */
 $blockstat= new Blockstat();
 
 $date=date("Y-m-d");
