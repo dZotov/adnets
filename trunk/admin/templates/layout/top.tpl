@@ -14,7 +14,7 @@
 			</tr>
 		</table>
 	<div>
-	<div style="display:none;" class="padt10" id="w_menu">
+	<div {if $MENU_TYPE != 'webmaster'}style="display:none;"{/if} class="padt10" id="w_menu">
 		<table class="pad3">
 			<tr>
 				{foreach from=$MENU item=m key=k}
@@ -23,7 +23,7 @@
 			</tr>
 		</table>
 	</div>
-	<div style="display:none;" id="r_menu" class="padt10">
+	<div {if $MENU_TYPE != 'adverts'}style="display:none;"{/if} id="r_menu" class="padt10">
 		<table class="pad3">
 			<tr>
 				{foreach from=$MENU_SELLER item=m key=k}

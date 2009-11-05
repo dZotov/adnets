@@ -56,12 +56,14 @@ $JS = array();
 $PAGE_TITLE = '';
 $HEAD_ICON = '';
 $HEAD_TITLE = '';
+$MENU_TYPE = '';
 $smarty->assign_by_ref('ERRORS', $ERRORS);
 $smarty->assign_by_ref('PAGE_TITLE', $PAGE_TITLE);
 $smarty->assign_by_ref('DB_QUERY', $DB_QUERY);
 $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('HEAD_ICON', $HEAD_ICON);
 $smarty->assign_by_ref('HEAD_TITLE', $HEAD_TITLE);
+$smarty->assign_by_ref('MENU_TYPE', $MENU_TYPE);
 
 $JS[] = 'jquery.js';
 $JS[] = 'jquery.form.js';
@@ -85,13 +87,18 @@ $MENU_SELLER[] = array('name' => 'rnews', 'title' => 'Новости', 'url' => 'rnews.
 $MENU_SELLER[] = array('name' => 'rtiz', 'title' => 'Тизеры', 'url' => 'rtisers.php');
 
 
-foreach ($MENU as $k => $v)
-	if ($v['url'] && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false)
+foreach ($MENU as $k => $v) {
+	if ($v['url'] && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false) {
 		$smarty->assign('MENU_SD', $v['name']);
-foreach ($MENU_SELLER as $k => $v)
-	if ($v['url'] && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false)
+		$MENU_TYPE = 'webmaster';
+	}
+}	
+foreach ($MENU_SELLER as $k => $v) {
+	if ($v['url'] && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false) {
 		$smarty->assign('MENU_SD', $v['name']);
-				
+		$MENU_TYPE = 'adverts';
+	}			
+}	
 		
 $SCRIPT_NAME=script_name();		
 $smarty->assign('SCRIPT_NAME', $SCRIPT_NAME);

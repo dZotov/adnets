@@ -27,7 +27,8 @@ if ($f->Filled()) {
 }
 	
 $JS[] = 'company.js';	
-	
+
+
 $smarty->assign("FORM", $f->HTML);
 Display("company.tpl");
 ?>
