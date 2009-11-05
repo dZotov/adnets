@@ -221,3 +221,20 @@ table.sort_table td {
 	border: 0;
 }
 
+tr.footer_table td {
+	border: 1px solid #cccccc;	
+	padding: 2px;
+	background-color: #f3f3f3;
+}
+
+table.footer_table td {
+	border: none;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+table.sort_table td {
+	border: none;
+	padding: 2px;
+	vertical-align: middle;
+}

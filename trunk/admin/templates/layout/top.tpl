@@ -15,7 +15,7 @@
 		</table>
 	<div>
 	<div style="display:none;" class="padt10" id="w_menu">
-		<table>
+		<table class="pad3">
 			<tr>
 				{foreach from=$MENU item=m key=k}
 					<td>[<a href="{$m.url}" id="menu_{$k}" {if $MENU_SD == $m.name}class="b"{/if} >{$m.title}</a> ]</td>
@@ -24,7 +24,7 @@
 		</table>
 	</div>
 	<div style="display:none;" id="r_menu" class="padt10">
-		<table>
+		<table class="pad3">
 			<tr>
 				{foreach from=$MENU_SELLER item=m key=k}
 					<td>[<a href="{$m.url}" id="rmenu_{$k}" {if $MENU_SD == $m.name}class="b"{/if} >{$m.title}</a> ]</td>

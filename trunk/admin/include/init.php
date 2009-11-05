@@ -1,6 +1,5 @@
 <?
 session_start();
-
 Header("Content-type: text/html; charset=cp1251");
 
 $root_dir=str_replace("\\", "/", __FILE__);
@@ -35,10 +34,6 @@ $DB_QUERY =  0;
 require_once ROOT_PATH.'include/defs.php';
 require_once ROOT_PATH.'include/db.php';
 
-// Ajax lib
-//require_once("./include/sajax.php");
-// $sajax_request_type = "POST";
-
 ini_set('display_errors', SHOW_PHP_ERRORS);
 error_reporting(E_ALL);
 
@@ -48,8 +43,7 @@ $smarty->template_dir = ROOT_PATH."templates/";
 $smarty->compile_dir = ROOT_PATH."templates_c/";
 $smarty->plugins_dir = array('mysmarty', 'plugins');
 
-if (!isset($AUTH))
-	$AUTH = 'free';
+if (!isset($AUTH)) $AUTH = 'free';
 auth($AUTH);
 
 $SCRIPTNAME = substr(strrchr($_SERVER['SCRIPT_NAME'], '/'), 1);
@@ -71,18 +65,17 @@ $smarty->assign_by_ref('HEAD_TITLE', $HEAD_TITLE);
 $MENU_WEB = array();
 $MENU_SELLER = array();
 
-	$MENU[] = array('name' => 'adw', 'title' => 'Партнеры', 'url' => 'adwerts.php');
-	$MENU[] = array('name' => 'sites', 'title' => 'Сайты', 'url' => 'sites.php');
-	$MENU[] = array('name' => 'stat', 'title' => 'Статистика', 'url' => 'stat.php');
-	$MENU[] = array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php');
-	$MENU[] = array('name' => 'tiz', 'title' => 'Тизеры', 'url' => 'tisers.php');
-	$MENU[] = array('name' => 'pay', 'title' => 'Выплаты', 'url' => 'pay.php');
-	
-	
-	$MENU_SELLER[] = array('name' => 'rstat', 'title' => 'Статистика', 'url' => 'rstat.php');
-	$MENU_SELLER[] = array('name' => 'rnews', 'title' => 'Новости', 'url' => 'rnews.php');
-	$MENU_SELLER[] = array('name' => 'rtiz', 'title' => 'Тизеры', 'url' => 'rtisers.php');
-	
+$MENU[] = array('name' => 'adw', 'title' => 'Партнеры', 'url' => 'adwerts.php');
+$MENU[] = array('name' => 'sites', 'title' => 'Сайты', 'url' => 'sites.php');
+$MENU[] = array('name' => 'stat', 'title' => 'Статистика', 'url' => 'stat.php');
+$MENU[] = array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php');
+$MENU[] = array('name' => 'tiz', 'title' => 'Тизеры', 'url' => 'tisers.php');
+$MENU[] = array('name' => 'pay', 'title' => 'Выплаты', 'url' => 'pay.php');
+		
+$MENU_SELLER[] = array('name' => 'companies', 'title' => 'Компании', 'url' => 'rcompanies.php');
+$MENU_SELLER[] = array('name' => 'rstat', 'title' => 'Статистика', 'url' => 'rstat.php');
+$MENU_SELLER[] = array('name' => 'rnews', 'title' => 'Новости', 'url' => 'rnews.php');
+$MENU_SELLER[] = array('name' => 'rtiz', 'title' => 'Тизеры', 'url' => 'rtisers.php');
 
 
 foreach ($MENU as $k => $v)
@@ -100,5 +93,12 @@ $smarty->assign('MENU_SELLER', $MENU_SELLER);
 
 $smarty->assign('YEAR', date("Y"));
 $smarty->assign('SERVER_TIME', sqlDateTime());
+
+$c = new Cat();
+$cats = $c->GetManyByCond("1");
+$CATEGORY_LIST = array();
+foreach($cats as $v) {
+	$CATEGORY_LIST[$v['id']] = $v['title'];
+}
 
 ?>

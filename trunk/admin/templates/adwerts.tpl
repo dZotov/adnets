@@ -32,8 +32,8 @@
 	</table>
 </div>
 <div class="ac">
-		{include file="./layout/pagenav.tpl"}
-	</div>
+	{include file="./layout/pagenav.tpl"}
+</div>
 
 {include file="layout/bottom.tpl"}
 {include file="layout/footer.tpl"}
