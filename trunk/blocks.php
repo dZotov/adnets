@@ -118,7 +118,7 @@ if(get_get('id'))
 
 	$smarty->assign("PARAM",unserialize($block->Get('settings')));
 	$smarty->assign("PLID",$block->Get('pl_id'));
-
+	
 }
 
 $smarty->assign("TISER_COUNT",$tiser_count);

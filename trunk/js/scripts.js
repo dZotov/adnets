@@ -47,11 +47,20 @@ function colorselector(id ,defcolor)
 	});
 }
 
-function show_abs()
+function close_abs()
+{
+	$("#show_abs").hide();
+	$("#show_block").empty();
+	$("#show_block").hide();
+}
+
+function show_abs(block,pl)
 {
 	$("#show_abs").css("height",window.innerHeight+"px");
 	$("#show_abs").css("width","100%");
 	$("#show_abs").show();
+	$("#show_block").show();
+	$("#show_block").append('<br /><a href="javascript:close_abs();" style="padding:0 0 0 10px">[Закрыть]</a><br /><br /><br /><iframe src="show_block.php?block='+block+'&plid='+pl+'" height="400px" width="700px" />');
 }
 
 function show_block_result()

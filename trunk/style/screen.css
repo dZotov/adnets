@@ -190,6 +190,17 @@ table#tickets_table { width: 70%; margin: 0;}
 		top:0px;
 		
 	}
+	#show_block{
+		position:absolute;
+		top:17%;
+		left:22%;
+		background:#FFFFFF;
+		width:700px;
+		height:450px;
+		display:none;
+		border:2px solid #2374c6;
+		
+	}
 	#show_block_result_id{
 		background:#fff;
 		position:absolute;
@@ -209,10 +220,4 @@ table#tickets_table { width: 70%; margin: 0;}
 		height: 55px;
 		overflow: hidden;
 	}
-	#show_block{
-		text-align:center;
-		width:800px; 
-		height:500px;
-		display:none;
-		padding:10px 10px 10px 10px;
-	}
+	

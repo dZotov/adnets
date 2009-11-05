@@ -62,5 +62,6 @@
 	<div id="show_error"></div>
 	<div id="show_abs"></div>
 	<div id="show_block_result_id"></div>
+	<div id="show_block"></div>
 </body>
 </html>
