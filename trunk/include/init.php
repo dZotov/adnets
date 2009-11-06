@@ -74,6 +74,7 @@ $JS[] = 'colorpicker.js';
 $JS[] = 'ui.core.js';
 $JS[] = 'ui.datepicker.js';
 $JS[] = 'scripts.js';
+
 $ERRORS = array();
 $PAGE_TITLE = 'ADNets.ru - сервис тизерной рекламы';
 $HEAD_TITLE = "";
