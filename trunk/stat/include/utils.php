@@ -544,4 +544,15 @@ function IsAdv() {
 	return ($USER_TYPE == 2);
 }
 
+function GetRefURL($ref = NULL) {
+	$ref = explode("/", $ref);
+	$ref = get($ref, 2);
+	$ref = str_replace("www.", "", $ref);
+	if (!$ref) {
+		$ref = 'Noref';
+	}
+	return $ref;
+}
+
+
 ?>
