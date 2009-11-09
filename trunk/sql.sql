@@ -1,23 +1,26 @@
 -- phpMyAdmin SQL Dump
--- version 2.6.4-pl4
+-- version 2.11.0
 -- http://www.phpmyadmin.net
--- 
--- Host: localhost
--- Generation Time: Nov 06, 2009 at 02:30 AM
--- Server version: 5.0.16
--- PHP Version: 5.1.1
--- 
--- Database: `adnets`
--- 
+--
+-- Хост: localhost
+-- Время создания: Ноя 10 2009 г., 00:52
+-- Версия сервера: 5.0.77
+-- Версия PHP: 5.1.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- База данных: `adnets`
+--
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `adwerts`
--- 
+--
+-- Структура таблицы `adwerts`
+--
 
 DROP TABLE IF EXISTS `adwerts`;
-CREATE TABLE `adwerts` (
+CREATE TABLE IF NOT EXISTS `adwerts` (
   `id` int(11) NOT NULL auto_increment,
   `owner_id` int(11) default '0',
   `email` varchar(100) default NULL,
@@ -30,23 +33,25 @@ CREATE TABLE `adwerts` (
   `intop` varchar(100) default NULL,
   PRIMARY KEY  (`id`),
   KEY `owner_id` (`owner_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
--- 
--- Dumping data for table `adwerts`
--- 
+--
+-- Дамп данных таблицы `adwerts`
+--
 
-INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `wmr`, `regdate`, `balance`, `intop`) VALUES (1, 0, '2freak@inbox.ru', '123456', '202cb962ac59075b964b07152d234b70', 1, 'R1234567890', '2009-08-23 14:34:49', '0.00', '');
-INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `wmr`, `regdate`, `balance`, `intop`) VALUES (6, 1, 'for.Zotov@inbox.ru', '', '202cb962ac59075b964b07152d234b70', 1, 'R123', '2009-09-14 22:49:31', '0.00', '');
+INSERT INTO `adwerts` (`id`, `owner_id`, `email`, `icq`, `password`, `status`, `wmr`, `regdate`, `balance`, `intop`) VALUES
+(1, 0, '2freak@inbox.ru', '123456', '202cb962ac59075b964b07152d234b70', 1, 'R1234567890', '2009-08-23 14:34:49', 0.00, ''),
+(6, 1, 'for.Zotov@inbox.ru', '', '202cb962ac59075b964b07152d234b70', 1, 'R123', '2009-09-14 22:49:31', 0.00, ''),
+(7, 0, 'offseo@gmail.com', NULL, 'b8706e4abee2e21bcb3e85c30af0f45c', 1, 'R306690989026', '2009-11-04 22:53:10', 0.00, NULL);
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `balance`
--- 
+--
+-- Структура таблицы `balance`
+--
 
 DROP TABLE IF EXISTS `balance`;
-CREATE TABLE `balance` (
+CREATE TABLE IF NOT EXISTS `balance` (
   `id` int(15) NOT NULL auto_increment,
   `adid` int(11) default '0',
   `sum` decimal(10,2) default '0.00',
@@ -56,19 +61,19 @@ CREATE TABLE `balance` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- 
--- Dumping data for table `balance`
--- 
+--
+-- Дамп данных таблицы `balance`
+--
 
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `blocks`
--- 
+--
+-- Структура таблицы `blocks`
+--
 
 DROP TABLE IF EXISTS `blocks`;
-CREATE TABLE `blocks` (
+CREATE TABLE IF NOT EXISTS `blocks` (
   `id` int(11) NOT NULL auto_increment,
   `pl_id` int(11) default '0',
   `title` varchar(100) NOT NULL,
@@ -76,69 +81,72 @@ CREATE TABLE `blocks` (
   `settings` text,
   PRIMARY KEY  (`id`),
   KEY `pl_id` (`pl_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
--- 
--- Dumping data for table `blocks`
--- 
+--
+-- Дамп данных таблицы `blocks`
+--
 
-INSERT INTO `blocks` (`id`, `pl_id`, `title`, `ad_id`, `settings`) VALUES (1, 1, 'Блок', 1, 'a:23:{s:12:"block_titile";s:4:"Блок";s:15:"hor_tiser_count";i:3;s:16:"vert_tiser_count";i:4;s:11:"tiser_width";i:100;s:17:"tiser_width_param";i:0;s:9:"field_fon";s:7:"#bd49bd";s:12:"tiser_border";s:5:"solid";s:9:"field_brd";s:7:"#388ed9";s:14:"field_colorfon";s:7:"#f0f0f0";s:12:"block_border";s:1:"0";s:10:"block_line";s:5:"solid";s:10:"field_bbrd";s:7:"#f0f0f0";s:16:"block_text_align";s:10:"under_text";s:15:"block_text_size";s:3:"100";s:15:"block_font_size";i:10;s:16:"block_font_param";s:2:"px";s:10:"field_norm";s:7:"#f0f0f0";s:21:"block_font_size_naved";i:10;s:22:"block_font_hover_param";s:2:"px";s:11:"field_naved";s:7:"#f0f0f0";s:15:"block_font_desc";i:10;s:27:"block_font_hover_param_deck";s:2:"px";s:10:"field_decr";s:7:"#000000";}');
+INSERT INTO `blocks` (`id`, `pl_id`, `title`, `ad_id`, `settings`) VALUES
+(1, 1, 'Блок', 1, 'a:23:{s:12:"block_titile";s:5:"Блок1";s:15:"hor_tiser_count";i:6;s:16:"vert_tiser_count";i:2;s:11:"tiser_width";i:100;s:17:"tiser_width_param";i:0;s:9:"field_fon";s:7:"#dbecf5";s:12:"tiser_border";s:5:"solid";s:9:"field_brd";s:7:"#ffffff";s:14:"field_colorfon";s:7:"#dbecf5";s:12:"block_border";s:1:"1";s:10:"block_line";s:5:"solid";s:10:"field_bbrd";s:7:"#ffffff";s:16:"block_text_align";s:10:"under_text";s:15:"block_text_size";s:3:"120";s:15:"block_font_size";i:12;s:16:"block_font_param";s:2:"px";s:10:"field_norm";s:7:"#063c51";s:21:"block_font_size_naved";i:12;s:22:"block_font_hover_param";s:2:"px";s:11:"field_naved";s:7:"#ffffff";s:15:"block_font_desc";i:12;s:27:"block_font_hover_param_deck";s:2:"px";s:10:"field_decr";s:7:"#063c51";}'),
+(2, 2, '', 7, 'a:23:{s:12:"block_titile";s:6:"Блок 1";s:15:"hor_tiser_count";i:1;s:16:"vert_tiser_count";i:6;s:11:"tiser_width";i:100;s:17:"tiser_width_param";i:0;s:9:"field_fon";s:7:"#f0f0f0";s:12:"tiser_border";s:5:"solid";s:9:"field_brd";s:7:"#f0f0f0";s:14:"field_colorfon";s:7:"#f0f0f0";s:12:"block_border";s:1:"0";s:10:"block_line";s:5:"solid";s:10:"field_bbrd";s:7:"#f0f0f0";s:16:"block_text_align";s:10:"under_text";s:15:"block_text_size";s:3:"120";s:15:"block_font_size";i:10;s:16:"block_font_param";s:2:"px";s:10:"field_norm";s:7:"#f0f0f0";s:21:"block_font_size_naved";i:10;s:22:"block_font_hover_param";s:2:"px";s:11:"field_naved";s:7:"#f0f0f0";s:15:"block_font_desc";i:10;s:27:"block_font_hover_param_deck";s:2:"px";s:10:"field_decr";s:7:"#000000";}');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `category`
--- 
+--
+-- Структура таблицы `category`
+--
 
 DROP TABLE IF EXISTS `category`;
-CREATE TABLE `category` (
+CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL auto_increment,
   `title` varchar(100) default NULL,
   `price` decimal(10,2) default '0.00',
   `status` int(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
--- 
--- Dumping data for table `category`
--- 
+--
+-- Дамп данных таблицы `category`
+--
 
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (1, 'Авто/мото', '0.26', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (2, 'Афиша', '2.10', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (3, 'Бизнес, финансы', '2.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (4, 'Гороскопы, эзотерика', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (5, 'Дети', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (6, 'Дом, хобби', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (7, 'Здоровье, фитнес', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (8, 'Знакомства без эро-фото', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (9, 'Знаменитости', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (10, 'Карьера, трудоустройство', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (11, 'Кино и ТВ', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (12, 'Красота, косметика, уход за собой', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (13, 'Кулинария, рецепты', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (14, 'Мода, одежда, шоппинг', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (15, 'Недвижимость', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (16, 'Новости', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (17, 'Новости (без эро)', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (18, 'Общество', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (19, 'Отношения', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (20, 'Подарки', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (21, 'Программы', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (22, 'Секс, cтатьи', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (23, 'Секс-знакомства', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (24, 'Спорт', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (25, 'Товары', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (26, 'Туризм', '0.00', 1);
-INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES (27, 'Эротика', '0.00', 1);
+INSERT INTO `category` (`id`, `title`, `price`, `status`) VALUES
+(1, 'Авто/мото', 0.26, 1),
+(2, 'Афиша', 2.10, 1),
+(3, 'Бизнес, финансы', 2.00, 1),
+(4, 'Гороскопы, эзотерика', 0.00, 1),
+(5, 'Дети', 0.00, 1),
+(6, 'Дом, хобби', 0.00, 1),
+(7, 'Здоровье, фитнес', 0.00, 1),
+(8, 'Знакомства без эро-фото', 0.00, 1),
+(9, 'Знаменитости', 0.00, 1),
+(10, 'Карьера, трудоустройство', 0.00, 1),
+(11, 'Кино и ТВ', 0.00, 1),
+(12, 'Красота, косметика, уход за собой', 0.00, 1),
+(13, 'Кулинария, рецепты', 0.00, 1),
+(14, 'Мода, одежда, шоппинг', 0.00, 1),
+(15, 'Недвижимость', 0.00, 1),
+(16, 'Новости', 0.00, 1),
+(17, 'Новости (без эро)', 0.00, 1),
+(18, 'Общество', 0.00, 1),
+(19, 'Отношения', 0.00, 1),
+(20, 'Подарки', 0.00, 1),
+(21, 'Программы', 0.00, 1),
+(22, 'Секс, cтатьи', 0.00, 1),
+(23, 'Секс-знакомства', 0.00, 1),
+(24, 'Спорт', 0.00, 1),
+(25, 'Товары', 0.00, 1),
+(26, 'Туризм', 0.00, 1),
+(27, 'Эротика', 0.00, 1);
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `company`
--- 
+--
+-- Структура таблицы `company`
+--
 
 DROP TABLE IF EXISTS `company`;
-CREATE TABLE `company` (
+CREATE TABLE IF NOT EXISTS `company` (
   `id` int(11) NOT NULL auto_increment,
   `adid` int(11) default '0',
   `title` varchar(255) character set cp1251 default NULL,
@@ -156,22 +164,25 @@ CREATE TABLE `company` (
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `adid` (`adid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='Компании рекламодателя' AUTO_INCREMENT=4 ;
 
--- 
--- Dumping data for table `company`
--- 
+--
+-- Дамп данных таблицы `company`
+--
 
-INSERT INTO `company` (`id`, `adid`, `title`, `category`, `status`, `days`, `hours`, `day_limit`, `limit`, `maxrun`, `price`, `categories`, `exceptions`, `no_ero`, `date`) VALUES (1, 1, 'Компания', 27, 0, NULL, '[0]', 0, 0, 0, '0.00', '', '', NULL, '2009-10-12 01:20:23');
+INSERT INTO `company` (`id`, `adid`, `title`, `category`, `status`, `days`, `hours`, `day_limit`, `limit`, `maxrun`, `price`, `categories`, `exceptions`, `no_ero`, `date`) VALUES
+(1, 1, 'Компания', 27, 0, NULL, '[0]', 0, 0, 0, 0.00, '', '', NULL, '2009-10-12 01:20:23'),
+(2, 1, 'Первая', 27, 0, '[1],[2],[3],[4],[5],[6],[7]', '[0],[1],[2],[3],[4],[5],[6],[7],[8],[9],[19],[20],[21],[22],[23]', 100, 300, 100, 0.30, '[22],[23],[27]', '', NULL, '2009-11-04 22:30:44'),
+(3, 7, 'Date1', 23, 0, NULL, '[0]', 0, 0, 0, 0.00, '', '', NULL, '2009-11-04 23:20:36');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `news`
--- 
+--
+-- Структура таблицы `news`
+--
 
 DROP TABLE IF EXISTS `news`;
-CREATE TABLE `news` (
+CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) NOT NULL auto_increment,
   `title` varchar(100) default NULL,
   `preview` varchar(255) default NULL,
@@ -181,22 +192,23 @@ CREATE TABLE `news` (
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `status` (`status`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
--- 
--- Dumping data for table `news`
--- 
+--
+-- Дамп данных таблицы `news`
+--
 
-INSERT INTO `news` (`id`, `title`, `preview`, `full`, `type`, `status`, `date`) VALUES (1, 'тест', 'тест тест тест тест ', 'тест тест тест тест тест тест тест тест ', 1, 1, '2009-08-24 01:58:33');
+INSERT INTO `news` (`id`, `title`, `preview`, `full`, `type`, `status`, `date`) VALUES
+(1, 'тест', 'тест тест тест тест ', 'тест тест тест тест тест тест тест тест ', 1, 1, '2009-08-24 01:58:33');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `payments`
--- 
+--
+-- Структура таблицы `payments`
+--
 
 DROP TABLE IF EXISTS `payments`;
-CREATE TABLE `payments` (
+CREATE TABLE IF NOT EXISTS `payments` (
   `id` int(11) NOT NULL auto_increment,
   `adid` int(11) default '0',
   `wmr` varchar(50) default NULL,
@@ -205,22 +217,23 @@ CREATE TABLE `payments` (
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `adid` (`adid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
--- 
--- Dumping data for table `payments`
--- 
+--
+-- Дамп данных таблицы `payments`
+--
 
-INSERT INTO `payments` (`id`, `adid`, `wmr`, `sum`, `status`, `date`) VALUES (1, 1, 'R123456789', '100.00', 1, '2009-09-13 15:38:14');
+INSERT INTO `payments` (`id`, `adid`, `wmr`, `sum`, `status`, `date`) VALUES
+(1, 1, 'R123456789', 100.00, 1, '2009-09-13 15:38:14');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `playgrounds`
--- 
+--
+-- Структура таблицы `playgrounds`
+--
 
 DROP TABLE IF EXISTS `playgrounds`;
-CREATE TABLE `playgrounds` (
+CREATE TABLE IF NOT EXISTS `playgrounds` (
   `id` int(11) NOT NULL auto_increment,
   `adid` int(11) default '0',
   `title` varchar(100) NOT NULL,
@@ -231,22 +244,24 @@ CREATE TABLE `playgrounds` (
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `adid` (`adid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
--- 
--- Dumping data for table `playgrounds`
--- 
+--
+-- Дамп данных таблицы `playgrounds`
+--
 
-INSERT INTO `playgrounds` (`id`, `adid`, `title`, `url`, `status`, `category`, `exclude`, `date`) VALUES (1, 1, 'google.com', 'google.com', 1, 1, '1,10', '2009-09-13 14:21:52');
+INSERT INTO `playgrounds` (`id`, `adid`, `title`, `url`, `status`, `category`, `exclude`, `date`) VALUES
+(1, 1, 'teenages.org', 'teenages.org', 1, 1, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '2009-09-13 14:21:52'),
+(2, 7, 'eropornstars.info', 'eropornstars.info', -1, 27, '', NULL);
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `refstat`
--- 
+--
+-- Структура таблицы `refstat`
+--
 
 DROP TABLE IF EXISTS `refstat`;
-CREATE TABLE `refstat` (
+CREATE TABLE IF NOT EXISTS `refstat` (
   `id` int(11) NOT NULL auto_increment,
   `ad_id` int(11) NOT NULL,
   `amount` decimal(10,2) NOT NULL,
@@ -254,19 +269,19 @@ CREATE TABLE `refstat` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=1 ;
 
--- 
--- Dumping data for table `refstat`
--- 
+--
+-- Дамп данных таблицы `refstat`
+--
 
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `sites`
--- 
+--
+-- Структура таблицы `sites`
+--
 
 DROP TABLE IF EXISTS `sites`;
-CREATE TABLE `sites` (
+CREATE TABLE IF NOT EXISTS `sites` (
   `id` int(11) NOT NULL auto_increment,
   `wid` int(11) default '0',
   `name` varchar(100) default NULL,
@@ -275,22 +290,23 @@ CREATE TABLE `sites` (
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `wid` (`wid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
--- 
--- Dumping data for table `sites`
--- 
+--
+-- Дамп данных таблицы `sites`
+--
 
-INSERT INTO `sites` (`id`, `wid`, `name`, `url`, `status`, `date`) VALUES (1, 1, 'google', 'google.com', 1, '2009-08-23 14:49:23');
+INSERT INTO `sites` (`id`, `wid`, `name`, `url`, `status`, `date`) VALUES
+(1, 1, 'google', 'google.com', 1, '2009-08-23 14:49:23');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `stat_blocks`
--- 
+--
+-- Структура таблицы `stat_blocks`
+--
 
 DROP TABLE IF EXISTS `stat_blocks`;
-CREATE TABLE `stat_blocks` (
+CREATE TABLE IF NOT EXISTS `stat_blocks` (
   `id` int(11) NOT NULL auto_increment,
   `block_id` int(11) NOT NULL,
   `pl_id` int(11) NOT NULL,
@@ -300,29 +316,36 @@ CREATE TABLE `stat_blocks` (
   `clicks` int(11) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=15 ;
 
--- 
--- Dumping data for table `stat_blocks`
--- 
+--
+-- Дамп данных таблицы `stat_blocks`
+--
 
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (1, 1, 0, NULL, '', 6, 0, '2009-10-14');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (2, 1, 1, NULL, '', 2, 6, '2009-10-14');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (3, 0, 1, NULL, '', 1, 0, '2009-10-15');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (4, 1, 1, 1, '', 9, 1, '2009-10-15');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (5, 0, 1, NULL, 'http://localhost:88/seo/adnets/playgrounds.php', 1, 0, '2009-10-27');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (6, 0, 1, NULL, 'http://localhost:88/seo/adnets/playgrounds.php', 8, 0, '2009-10-30');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (7, 0, 0, NULL, '', 1, 0, '2009-10-30');
-INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES (8, 1, 1, NULL, '', 76, 0, '2009-10-30');
+INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `clicks`, `date`) VALUES
+(1, 1, 0, NULL, '', 6, 0, '2009-10-14'),
+(2, 1, 1, NULL, '', 2, 6, '2009-10-14'),
+(3, 0, 1, NULL, '', 1, 0, '2009-10-15'),
+(4, 1, 1, 1, '', 9, 1, '2009-10-15'),
+(5, 0, 1, NULL, 'http://localhost:88/seo/adnets/playgrounds.php', 1, 0, '2009-10-27'),
+(6, 0, 1, NULL, 'http://localhost:88/seo/adnets/playgrounds.php', 8, 0, '2009-10-30'),
+(7, 0, 0, NULL, '', 1, 0, '2009-10-30'),
+(8, 1, 1, NULL, '', 76, 0, '2009-10-30'),
+(9, 1, 1, 1, '', 56, 1, '2009-11-04'),
+(10, 1, 1, 1, '', 1766, 21, '2009-11-05'),
+(11, 0, 0, 0, '', 3, 0, '2009-11-05'),
+(12, 1, 1, 1, 'http://adnets.ru/playgrounds.php', 37, 0, '2009-11-06'),
+(13, 1, 1, 1, 'http://localhost:88/seo/adnets/blocks.php?id=1&sid=1', 2, 0, '2009-11-09'),
+(14, 1, 1, 1, 'http://adnets.ru/blocks.php?id=1&sid=1', 1, 0, '2009-11-10');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `stat_teaser`
--- 
+--
+-- Структура таблицы `stat_teaser`
+--
 
 DROP TABLE IF EXISTS `stat_teaser`;
-CREATE TABLE `stat_teaser` (
+CREATE TABLE IF NOT EXISTS `stat_teaser` (
   `id` int(11) NOT NULL auto_increment,
   `teaser_id` int(11) NOT NULL,
   `block_id` int(11) NOT NULL,
@@ -333,25 +356,83 @@ CREATE TABLE `stat_teaser` (
   `amdst` decimal(10,2) default NULL,
   `date` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=64 ;
 
--- 
--- Dumping data for table `stat_teaser`
--- 
+--
+-- Дамп данных таблицы `stat_teaser`
+--
 
-INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES (5, 2, 1, 1, 3, 0, NULL, NULL, '2009-10-15');
-INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES (4, 1, 1, 1, 3, 1, NULL, NULL, '2009-10-15');
-INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES (3, 1, 1, 1, 0, 4, NULL, NULL, '2009-10-14');
-INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES (6, 1, 1, 1, 76, 0, NULL, NULL, '2009-10-30');
+INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `clicks`, `amsrc`, `amdst`, `date`) VALUES
+(5, 2, 1, 1, 3, 0, NULL, NULL, '2009-10-15'),
+(4, 1, 1, 1, 3, 1, NULL, NULL, '2009-10-15'),
+(3, 1, 1, 1, 0, 4, NULL, NULL, '2009-10-14'),
+(6, 1, 1, 1, 76, 0, NULL, NULL, '2009-10-30'),
+(7, 2, 1, 1, 49, 0, NULL, NULL, '2009-11-04'),
+(8, 3, 1, 1, 49, 0, NULL, NULL, '2009-11-04'),
+(9, 4, 1, 1, 49, 0, NULL, NULL, '2009-11-04'),
+(10, 5, 1, 1, 49, 0, NULL, NULL, '2009-11-04'),
+(11, 6, 1, 1, 49, 0, NULL, NULL, '2009-11-04'),
+(12, 7, 1, 1, 49, 1, 0.36, 0.10, '2009-11-04'),
+(13, 8, 1, 1, 49, 0, NULL, NULL, '2009-11-04'),
+(14, 9, 1, 7, 33, 0, NULL, NULL, '2009-11-04'),
+(15, 10, 1, 7, 34, 0, NULL, NULL, '2009-11-04'),
+(16, 2, 1, 1, 1766, 1, 0.36, 0.10, '2009-11-05'),
+(17, 3, 1, 1, 1766, 3, 1.08, 0.30, '2009-11-05'),
+(18, 4, 1, 1, 1766, 1, 0.36, 0.10, '2009-11-05'),
+(19, 5, 1, 1, 1766, 1, 0.36, 0.10, '2009-11-05'),
+(20, 6, 1, 1, 1766, 2, 0.72, 0.20, '2009-11-05'),
+(21, 7, 1, 1, 1766, 5, 1.80, 0.50, '2009-11-05'),
+(22, 8, 1, 1, 1766, 1, 0.36, 0.10, '2009-11-05'),
+(23, 17, 1, 1, 1480, 3, 1.08, 0.30, '2009-11-05'),
+(24, 16, 1, 1, 1480, 1, 0.36, 0.10, '2009-11-05'),
+(25, 15, 1, 1, 1480, 1, 0.36, 0.10, '2009-11-05'),
+(26, 18, 1, 1, 1480, 2, 0.72, 0.20, '2009-11-05'),
+(27, 19, 1, 1, 47, 0, NULL, NULL, '2009-11-05'),
+(28, 2, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(29, 18, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(30, 17, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(31, 16, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(32, 15, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(33, 8, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(34, 7, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(35, 6, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(36, 5, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(37, 4, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(38, 3, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(39, 19, 1, 1, 37, 0, NULL, NULL, '2009-11-06'),
+(40, 2, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(41, 18, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(42, 17, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(43, 16, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(44, 15, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(45, 8, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(46, 7, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(47, 6, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(48, 5, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(49, 4, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(50, 3, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(51, 19, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
+(52, 2, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(53, 18, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(54, 17, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(55, 16, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(56, 15, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(57, 8, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(58, 7, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(59, 6, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(60, 5, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(61, 4, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(62, 3, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
+(63, 19, 1, 1, 1, 0, NULL, NULL, '2009-11-10');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `teaser`
--- 
+--
+-- Структура таблицы `teaser`
+--
 
 DROP TABLE IF EXISTS `teaser`;
-CREATE TABLE `teaser` (
+CREATE TABLE IF NOT EXISTS `teaser` (
   `id` int(15) NOT NULL auto_increment,
   `adid` int(15) default '0',
   `company_id` int(15) default '0',
@@ -368,22 +449,41 @@ CREATE TABLE `teaser` (
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `adid` (`adid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Тизеры' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='Тизеры' AUTO_INCREMENT=20 ;
 
--- 
--- Dumping data for table `teaser`
--- 
+--
+-- Дамп данных таблицы `teaser`
+--
 
-INSERT INTO `teaser` (`id`, `adid`, `company_id`, `category`, `title`, `desc`, `url`, `price`, `type`, `size`, `ext`, `status`, `ctr`, `date`) VALUES (1, 1, 1, 3, 'test test test', 'testtesttesttesttesttesttesttest', 'http://ya.ru', '0.00', 0, 0, 'gif', 1, '0.00', '2009-10-30 15:01:57');
+INSERT INTO `teaser` (`id`, `adid`, `company_id`, `category`, `title`, `desc`, `url`, `price`, `type`, `size`, `ext`, `status`, `ctr`, `date`) VALUES
+(1, 1, 1, 3, 'test test test', 'testtesttesttesttesttesttesttest', 'http://ya.ru', 0.00, 0, 0, 'gif', 1, 0.00, '2009-10-30 15:01:57'),
+(2, 1, 2, 23, 'Однотрахники в твоем городе', 'Однотрахники в твоем городе', 'http://tds.xfreepics.ru/go.php?sid=6', 0.30, NULL, 23553, 'gif', 1, 0.00, '2009-11-04 22:44:49'),
+(3, 1, 2, 23, 'Хотим познакомиться для траха', 'Хотим познакомиться для траха', 'http://tds.xfreepics.ru/go.php?sid=6', 0.30, NULL, 13509, 'gif', 1, 0.00, '2009-11-04 22:47:05'),
+(4, 1, 2, 23, 'Я уже теку! Позвони мне', 'Я уже теку! Позвони мне', 'http://tds.xfreepics.ru/go.php?sid=6', 0.30, NULL, 3035, 'jpg', 1, 0.00, '2009-11-04 22:46:46'),
+(5, 1, 2, 23, 'Хочешь меня? Просто позвони', 'Хочешь меня? Просто позвони', 'http://tds.xfreepics.ru/go.php?sid=6', 0.30, NULL, 18505, 'gif', 1, 0.00, '2009-11-04 22:48:56'),
+(6, 1, 2, 25, 'Удовлетвори сразу трех', 'Удовлетвори сразу трех', 'http://www.ukrtabletki.com/index.php?wm_id=414&sub_id=1&site_id=1152&promo_id=1', 0.10, NULL, 9566, 'gif', 1, 0.00, '2009-11-04 22:50:55'),
+(7, 1, 2, 27, 'Отдери по жесткому', 'Отдери по жесткому', 'http://tds.xfreepics.ru/go.php?sid=1', 0.10, NULL, 73648, 'gif', 1, 0.00, '2009-11-04 22:53:47'),
+(8, 1, 2, 27, 'Рвут попку', 'Рвут попку', 'http://tds.xfreepics.ru/go.php?sid=1', 0.10, NULL, 238789, 'gif', 1, 0.00, '2009-11-04 22:55:04'),
+(9, 7, 3, 23, 'Хочу cекса без заморочек!', 'Хочу cекса без заморочек!', 'http://sexkrug.com', 1.00, NULL, 13509, 'gif', -1, 0.00, '2009-11-04 23:51:09'),
+(10, 7, 3, 27, 'Онлайн на сайте секс-знакомств.', 'Онлайн на сайте секс-знакомств.', 'http://sexkrug.com', 1.00, NULL, 19460, 'gif', -1, 0.00, '2009-11-04 23:51:27'),
+(11, 7, 3, 27, 'Познакомлюсь для секса!', 'Познакомлюсь для секса!', 'http://sexkrug.com', 1.00, NULL, 5133, 'gif', -1, 0.00, '2009-11-04 23:51:20'),
+(12, 7, 3, 27, 'Одноночники.РУ - Ищешь с кем потрахаться? Тут 300000 девченок для траха!', 'Одноночники.РУ - Ищешь с кем потрахаться? Тут 300000 девченок для траха!', 'http://sexkrug.com', 1.00, NULL, 3035, 'gif', -1, 0.00, '2009-11-04 23:52:06'),
+(13, 7, 3, 27, 'Алина. 18 лет. Жду парней для перепиха. Люблю секс в душе. Пишите мне!', 'Алина. 18 лет. Жду парней для перепиха. Люблю секс в душе. Пишите мне!', 'http://sexkrug.com', 1.00, NULL, 16316, 'gif', -1, 0.00, '2009-11-04 23:52:30'),
+(14, 7, 3, 27, 'Xочется реального СЕКСА? Тебе СЮДА! Новый сайт СЕКС-ЗНАКОМСТВ!', 'Xочется реального СЕКСА? Тебе СЮДА! Новый сайт СЕКС-ЗНАКОМСТВ!', 'http://sexkrug.com', 1.00, NULL, 19192, 'gif', -1, 0.00, '2009-11-04 23:52:54'),
+(15, 1, 2, 27, 'Жестко отсадомировали', 'Жестко отсадомировали', '	http://tds.xfreepics.ru/go.php?sid=1', 0.10, NULL, 280904, 'gif', 1, 0.00, '2009-11-05 01:37:46'),
+(16, 1, 2, 27, 'Звездный трах', 'Звездный трах', 'http://russianxxxtv.com/?wid=311&subid=311', 0.10, NULL, 57444, 'gif', 1, 0.00, '2009-11-05 01:46:12'),
+(17, 1, 2, 27, 'Выебем школьниц', 'Выебем школьниц', 'http://tds.xfreepics.ru/go.php?sid=1', 0.10, NULL, 93653, 'gif', 1, 0.00, '2009-11-05 01:48:16'),
+(18, 1, 2, 23, 'Альбина,19 лет. Трехнемся сегодня?', 'Альбина,19 лет. Трехнемся сегодня?', 'http://tds.xfreepics.ru/go.php?sid=6', 0.30, NULL, 18505, 'gif', 1, 0.00, '2009-11-05 01:49:42'),
+(19, 1, 2, 23, 'Хочу просто трахаться!', 'Хочу просто трахаться!', '', 0.30, NULL, 19192, 'gif', 1, 0.00, '2009-11-05 12:50:42');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `tmp_stat`
--- 
+--
+-- Структура таблицы `tmp_stat`
+--
 
 DROP TABLE IF EXISTS `tmp_stat`;
-CREATE TABLE `tmp_stat` (
+CREATE TABLE IF NOT EXISTS `tmp_stat` (
   `id` int(11) NOT NULL auto_increment,
   `ip` varchar(100) collate cp1251_general_cs NOT NULL,
   `teaser_id` int(11) NOT NULL,
@@ -396,19 +496,19 @@ CREATE TABLE `tmp_stat` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=1 ;
 
--- 
--- Dumping data for table `tmp_stat`
--- 
+--
+-- Дамп данных таблицы `tmp_stat`
+--
 
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `top`
--- 
+--
+-- Структура таблицы `top`
+--
 
 DROP TABLE IF EXISTS `top`;
-CREATE TABLE `top` (
+CREATE TABLE IF NOT EXISTS `top` (
   `id` int(11) NOT NULL auto_increment,
   `ad_top_name` varchar(100) default NULL,
   `shows` int(11) default '0',
@@ -416,10 +516,11 @@ CREATE TABLE `top` (
   `ctr` int(11) default '0',
   `balance` decimal(10,2) default '0.00',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
--- 
--- Dumping data for table `top`
--- 
+--
+-- Дамп данных таблицы `top`
+--
 
-INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `ctr`, `balance`) VALUES (1, 'Test', 123, 12312, 2, '123.00');
+INSERT INTO `top` (`id`, `ad_top_name`, `shows`, `clicks`, `ctr`, `balance`) VALUES
+(1, 'Test', 123, 12312, 2, 123.00);
