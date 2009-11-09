@@ -28,9 +28,9 @@ td{ldelim}
 				<a href="{link attr=$i block=$DATA.block_id}" target="_blank"><img src="http://stat.adnets.ru/teaser/{$SETTINGS.block_text_size}x{$SETTINGS.block_text_size}/{$i.id}.{$i.ext}" alt="{$i.title}" width="{$SETTINGS.block_text_size}px" height="{$SETTINGS.block_text_size}px"/></a>
 				{if $SETTINGS.block_text_align=="under_text"} 
 					<br />
-					<a href="{link attr=$i block=$DATA.block_id}" target="_blank">{$i.desc}</a>
+					<a href="{link attr=$i block=$DATA.block_id ref=$REF}" target="_blank">{$i.desc}</a>
 				{else}
-					<span><a href="{link attr=$i block=$DATA.block_id}" target="_blank">{$i.desc}</a></span>
+					<span><a href="{link attr=$i block=$DATA.block_id ref=$REF}" target="_blank">{$i.desc}</a></span>
 				{/if}
 			</td>
 			{if $smarty.foreach.data.iteration %$SETTINGS.hor_tiser_count==0}</tr><tr>{/if}

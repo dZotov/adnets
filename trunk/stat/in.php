@@ -69,6 +69,7 @@ $blockstat->Save();
 		}
 		
 		$smarty->assign("DATA",$t);
+		$smarty->assign("REF",$ref);
 		$smarty->assign("SETTINGS",$property);
 	}
 

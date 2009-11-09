@@ -1,5 +1,5 @@
 <?
-//teaserid:blockid:url:adwert:companyid
+//teaserid:blockid:url:adwert:companyid:ref
 
 include("./include/ajax_init.php");
 
@@ -12,7 +12,7 @@ $_COOKIE['check'] = md5($array[0].$array[1].$array[2].$array[3].$HASH);
 if (get($_COOKIE, 'check')) {
 
 	$ip=get($_SERVER, 'REMOTE_ADDR');
-	$referer = GetRefURL($referer_full);
+	$referer = GetRefURL($array[5]);
 	
 	$traf = new TmpStat();
 	$cond = "ip = '{$ip}' AND `teaser_id` = '{$array[0]}' AND `ad_id` = '{$array[3]}' AND date = '{$date}'";
