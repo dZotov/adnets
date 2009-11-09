@@ -2,43 +2,43 @@
 	<head>
 	</head>
 	<body>
+		dasdasdaaasdsa	
+		<script type="text/javascript">
+			if (typeof adtens == 'undefined') {
+				var adtens ={} ; var adtens_blockid = 3;
+				} else {
+					adtens_blockid = 3;
+				}
+				
+				adtens[adtens_blockid] = {
+					'plid': 3,
+					'ad_id': 1
+				};
+				
+				document.write('<div id="adtens_' + adtens_blockid + '"></div>');
 			
-			<script type="text/javascript">
-	
-	if (typeof adtens == 'undefined') {
-		var adtens ={} ; var adtens_blockid = 1;
-		} else {
-			adtens_blockid = 1;
-		}
-		
-		adtens[adtens_blockid] = {
-			'plid': 1,
-			'ad_id': 1
-		};
-		
-		document.write('<div id="adtens_' + adtens_blockid + '">Загрузка...</div>');
-	
-</script> 
+			</script> 
 <br />
 <br />
 <br />
 <br />
-<br />
+<br />sdasdasdasdas
 <br />
 <br />
 <br />
 <script type="text/javascript">
-	
-	if (typeof adtens != 'undefined' && typeof adtens_blocks_exists == 'undefined') {
-		for (var blockid in adtens) {
-			 var newScr = document.createElement('script'); newScr.type = 'text/javascript';
-			 newScr.src = 'http://stat.adnets.ru/in.php?blockid=' + blockid + '&plid=' + adtens[blockid].plid +'&ad_id='+ adtens[blockid].ad_id+ '&ref=' + escape(document.referrer);
-			 var el = document.getElementById('adtens_' + adtens_blockid); if (el) { el.appendChild(newScr); }
-		}
-		var adtens_blocks_exists = true;
-	}
-	
-</script>
+			
+				if (typeof adtens != 'undefined' && typeof adtens_blocks_exists == 'undefined') {
+					for (var blockid in adtens) {
+						 var newScr = document.createElement('script'); newScr.type = 'text/javascript';
+						 newScr.src = 'http://stat.adnets.ru/in.php?blockid=' + blockid + '&plid=' + adtens[blockid].plid +'&ad_id='+ adtens[blockid].ad_id+ '&ref=' + escape(document.referrer);
+						 var el = document.getElementById('adtens_' + blockid); if (el) {el.appendChild(newScr); }
+					}
+					var adtens_blocks_exists = true;
+									
+				}
+			
+			</script> 
 		
 	</body>
 </html>

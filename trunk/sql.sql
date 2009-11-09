@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 10 2009 г., 00:52
+-- Время создания: Ноя 10 2009 г., 01:32
 -- Версия сервера: 5.0.77
 -- Версия PHP: 5.1.6
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `blocks` (
   `settings` text,
   PRIMARY KEY  (`id`),
   KEY `pl_id` (`pl_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `blocks`
@@ -89,7 +89,8 @@ CREATE TABLE IF NOT EXISTS `blocks` (
 
 INSERT INTO `blocks` (`id`, `pl_id`, `title`, `ad_id`, `settings`) VALUES
 (1, 1, 'Блок', 1, 'a:23:{s:12:"block_titile";s:5:"Блок1";s:15:"hor_tiser_count";i:6;s:16:"vert_tiser_count";i:2;s:11:"tiser_width";i:100;s:17:"tiser_width_param";i:0;s:9:"field_fon";s:7:"#dbecf5";s:12:"tiser_border";s:5:"solid";s:9:"field_brd";s:7:"#ffffff";s:14:"field_colorfon";s:7:"#dbecf5";s:12:"block_border";s:1:"1";s:10:"block_line";s:5:"solid";s:10:"field_bbrd";s:7:"#ffffff";s:16:"block_text_align";s:10:"under_text";s:15:"block_text_size";s:3:"120";s:15:"block_font_size";i:12;s:16:"block_font_param";s:2:"px";s:10:"field_norm";s:7:"#063c51";s:21:"block_font_size_naved";i:12;s:22:"block_font_hover_param";s:2:"px";s:11:"field_naved";s:7:"#ffffff";s:15:"block_font_desc";i:12;s:27:"block_font_hover_param_deck";s:2:"px";s:10:"field_decr";s:7:"#063c51";}'),
-(2, 2, '', 7, 'a:23:{s:12:"block_titile";s:6:"Блок 1";s:15:"hor_tiser_count";i:1;s:16:"vert_tiser_count";i:6;s:11:"tiser_width";i:100;s:17:"tiser_width_param";i:0;s:9:"field_fon";s:7:"#f0f0f0";s:12:"tiser_border";s:5:"solid";s:9:"field_brd";s:7:"#f0f0f0";s:14:"field_colorfon";s:7:"#f0f0f0";s:12:"block_border";s:1:"0";s:10:"block_line";s:5:"solid";s:10:"field_bbrd";s:7:"#f0f0f0";s:16:"block_text_align";s:10:"under_text";s:15:"block_text_size";s:3:"120";s:15:"block_font_size";i:10;s:16:"block_font_param";s:2:"px";s:10:"field_norm";s:7:"#f0f0f0";s:21:"block_font_size_naved";i:10;s:22:"block_font_hover_param";s:2:"px";s:11:"field_naved";s:7:"#f0f0f0";s:15:"block_font_desc";i:10;s:27:"block_font_hover_param_deck";s:2:"px";s:10:"field_decr";s:7:"#000000";}');
+(2, 2, '', 7, 'a:23:{s:12:"block_titile";s:6:"Блок 1";s:15:"hor_tiser_count";i:1;s:16:"vert_tiser_count";i:6;s:11:"tiser_width";i:100;s:17:"tiser_width_param";i:0;s:9:"field_fon";s:7:"#f0f0f0";s:12:"tiser_border";s:5:"solid";s:9:"field_brd";s:7:"#f0f0f0";s:14:"field_colorfon";s:7:"#f0f0f0";s:12:"block_border";s:1:"0";s:10:"block_line";s:5:"solid";s:10:"field_bbrd";s:7:"#f0f0f0";s:16:"block_text_align";s:10:"under_text";s:15:"block_text_size";s:3:"120";s:15:"block_font_size";i:10;s:16:"block_font_param";s:2:"px";s:10:"field_norm";s:7:"#f0f0f0";s:21:"block_font_size_naved";i:10;s:22:"block_font_hover_param";s:2:"px";s:11:"field_naved";s:7:"#f0f0f0";s:15:"block_font_desc";i:10;s:27:"block_font_hover_param_deck";s:2:"px";s:10:"field_decr";s:7:"#000000";}'),
+(3, 3, '', 1, 'a:23:{s:12:"block_titile";s:3:"Ero";s:15:"hor_tiser_count";i:6;s:16:"vert_tiser_count";i:1;s:11:"tiser_width";i:100;s:17:"tiser_width_param";i:0;s:9:"field_fon";s:7:"#9a0477";s:12:"tiser_border";s:5:"solid";s:9:"field_brd";s:7:"#9a0477";s:14:"field_colorfon";s:7:"#9a0478";s:12:"block_border";s:1:"1";s:10:"block_line";s:6:"dashed";s:10:"field_bbrd";s:7:"#fff9b3";s:16:"block_text_align";s:10:"under_text";s:15:"block_text_size";s:3:"120";s:15:"block_font_size";i:10;s:16:"block_font_param";s:2:"px";s:10:"field_norm";s:7:"#fff9b3";s:21:"block_font_size_naved";i:10;s:22:"block_font_hover_param";s:2:"px";s:11:"field_naved";s:7:"#ec5613";s:15:"block_font_desc";i:10;s:27:"block_font_hover_param_deck";s:2:"px";s:10:"field_decr";s:7:"#fff9b3";}');
 
 -- --------------------------------------------------------
 
@@ -244,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `playgrounds` (
   `date` datetime default NULL,
   PRIMARY KEY  (`id`),
   KEY `adid` (`adid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `playgrounds`
@@ -252,7 +253,8 @@ CREATE TABLE IF NOT EXISTS `playgrounds` (
 
 INSERT INTO `playgrounds` (`id`, `adid`, `title`, `url`, `status`, `category`, `exclude`, `date`) VALUES
 (1, 1, 'teenages.org', 'teenages.org', 1, 1, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '2009-09-13 14:21:52'),
-(2, 7, 'eropornstars.info', 'eropornstars.info', -1, 27, '', NULL);
+(2, 7, 'eropornstars.info', 'eropornstars.info', -1, 27, '', NULL),
+(3, 1, 'erocuteteens.com', 'erocuteteens.com', 1, 27, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', NULL);
 
 -- --------------------------------------------------------
 
@@ -316,7 +318,7 @@ CREATE TABLE IF NOT EXISTS `stat_blocks` (
   `clicks` int(11) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=15 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=16 ;
 
 --
 -- Дамп данных таблицы `stat_blocks`
@@ -336,7 +338,8 @@ INSERT INTO `stat_blocks` (`id`, `block_id`, `pl_id`, `ad_id`, `ref`, `shows`, `
 (11, 0, 0, 0, '', 3, 0, '2009-11-05'),
 (12, 1, 1, 1, 'http://adnets.ru/playgrounds.php', 37, 0, '2009-11-06'),
 (13, 1, 1, 1, 'http://localhost:88/seo/adnets/blocks.php?id=1&sid=1', 2, 0, '2009-11-09'),
-(14, 1, 1, 1, 'http://adnets.ru/blocks.php?id=1&sid=1', 1, 0, '2009-11-10');
+(14, 1, 1, 1, 'http://adnets.ru/blocks.php?id=1&sid=1', 3, 0, '2009-11-10'),
+(15, 3, 3, 1, 'http://adnets.ru/blocks.php?id=3&sid=3', 18, 0, '2009-11-10');
 
 -- --------------------------------------------------------
 
@@ -356,7 +359,7 @@ CREATE TABLE IF NOT EXISTS `stat_teaser` (
   `amdst` decimal(10,2) default NULL,
   `date` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=64 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 COLLATE=cp1251_general_cs AUTO_INCREMENT=70 ;
 
 --
 -- Дамп данных таблицы `stat_teaser`
@@ -412,18 +415,24 @@ INSERT INTO `stat_teaser` (`id`, `teaser_id`, `block_id`, `ad_id`, `shows`, `cli
 (49, 4, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
 (50, 3, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
 (51, 19, 1, 1, 2, 0, NULL, NULL, '2009-11-09'),
-(52, 2, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(53, 18, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(54, 17, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(55, 16, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(56, 15, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(57, 8, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(58, 7, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(59, 6, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(60, 5, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(61, 4, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(62, 3, 1, 1, 1, 0, NULL, NULL, '2009-11-10'),
-(63, 19, 1, 1, 1, 0, NULL, NULL, '2009-11-10');
+(52, 2, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(53, 18, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(54, 17, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(55, 16, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(56, 15, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(57, 8, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(58, 7, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(59, 6, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(60, 5, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(61, 4, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(62, 3, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(63, 19, 1, 1, 3, 0, NULL, NULL, '2009-11-10'),
+(64, 2, 3, 1, 18, 0, NULL, NULL, '2009-11-10'),
+(65, 18, 3, 1, 17, 0, NULL, NULL, '2009-11-10'),
+(66, 17, 3, 1, 17, 0, NULL, NULL, '2009-11-10'),
+(67, 16, 3, 1, 17, 0, NULL, NULL, '2009-11-10'),
+(68, 15, 3, 1, 17, 0, NULL, NULL, '2009-11-10'),
+(69, 8, 3, 1, 17, 0, NULL, NULL, '2009-11-10');
 
 -- --------------------------------------------------------
 
@@ -487,7 +496,7 @@ CREATE TABLE IF NOT EXISTS `tmp_stat` (
   `id` int(11) NOT NULL auto_increment,
   `ip` varchar(100) collate cp1251_general_cs NOT NULL,
   `teaser_id` int(11) NOT NULL,
-  `id_id` int(11) NOT NULL,
+  `ad_id` int(11) NOT NULL,
   `uniq` int(11) NOT NULL,
   `raw` int(11) NOT NULL,
   `referer` varchar(100) collate cp1251_general_cs NOT NULL,
