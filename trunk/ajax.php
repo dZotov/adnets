@@ -37,6 +37,7 @@ if(get_post("act")=='add_pl')
 			$pl->Set('category',(int)get_post('cat'));
 			$pl->Set('exclude',get_post('ignore'));
 			$pl->Set('adid',get_post('adid'));
+			$pl->Set('date',SqlDateTime());
 			$pl->Save();
 			
 		}
@@ -52,6 +53,7 @@ if(get_post("act")=='add_pl')
 			$pl->Set('url',trim(get_post('url')));
 			$pl->Set('category',(int)get_post('cat'));
 			$pl->Set('exclude',get_post('ignore'));
+			
 			$pl->Save();
 		}
 		else
