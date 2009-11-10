@@ -235,19 +235,16 @@
 		<p class="anotation">Разместите этот код там, где хотите чтобы обображался ваш блок:</p>
 		<textarea cols="38" rows="8" id="block_show_script">
 			<script type="text/javascript">
-				if (typeof adtens == 'undefined') {ldelim}
-					var adtens ={ldelim}{rdelim} ; var adtens_blockid = {$smarty.get.id};
+				if (typeof adnets == 'undefined') {ldelim}
+					var adnets ={ldelim}{rdelim} ; var adnets_blockid = {$smarty.get.id};
 					{rdelim} else {ldelim}
-						adtens_blockid = {$smarty.get.id};
+						adnets_blockid = {$smarty.get.id};
 					{rdelim}
-					
-					adtens[adtens_blockid] = {ldelim}
+					adnets[adnets_blockid] = {ldelim}
 						'plid': {$PLID},
 						'ad_id': {$ACCOUNT_ID}
 					{rdelim};
-					
-					document.write('<div id="adtens_' + adtens_blockid + '">Загрузка...</div>');
-				
+					document.write('<div id="adnets_' + adnets_blockid + '"></div>');
 			</script> 
 		</textarea>
 		
@@ -255,11 +252,11 @@
 		<textarea cols="38" rows="8" id="block_footer_script">
 			<script type="text/javascript">
 			{literal}
-				if (typeof adtens != 'undefined' && typeof adtens_blocks_exists == 'undefined') {
-					for (var blockid in adtens) {
+				if (typeof adnets != 'undefined' && typeof adtens_blocks_exists == 'undefined') {
+					for (var blockid in adnets) {
 						 var newScr = document.createElement('script'); newScr.type = 'text/javascript';
-						 newScr.src = 'http://stat.adnets.ru/in.php?blockid=' + blockid + '&plid=' + adtens[blockid].plid +'&ad_id='+ adtens[blockid].ad_id+ '&ref=' + escape(document.referrer);
-						 var el = document.getElementById('adtens_' + adtens_blockid); if (el) { el.appendChild(newScr); }
+						 newScr.src = 'http://stat.adnets.ru/in.php?blockid=' + blockid + '&plid=' + adnets[blockid].plid +'&ad_id='+ adnets[blockid].ad_id+ '&ref=' + escape(document.referrer);
+						 var el = document.getElementById('adnets_' + adnets_blockid); if (el) { el.appendChild(newScr);}
 					}
 					var adtens_blocks_exists = true;
 				}
