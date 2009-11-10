@@ -76,6 +76,11 @@ $blockstat->Save();
 // }
 $x=$smarty->fetch("in.tpl");
 $x= str_replace(array("\r","\n","\t","\r\n"),"",$x);
-echo "document.write('{$x}')";
+echo "var block='{$x}';";
+echo "var div = document.createElement(\"div\");";
+echo "div.innerHTML = block;";
+echo "document.getElementById(\"adnets_\"+{$id}).appendChild(div);";
+echo "";
+
 //Display("in.tpl",$hash);
 ?>
