@@ -1,0 +1,20 @@
+<?
+
+function smarty_function_teaser($params) {
+	global $TEASER_TYPES;
+	
+	$attr = get($params, 'attr');
+	
+	$src = "../images/nophoto.jpg";
+	
+	if (get($attr, 'id')) {
+		$type = get($TEASER_TYPES, get($attr, 'type'));
+		$src = "../stat/teaser/100x100/{$attr['id']}.{$attr['ext']}";
+	}
+	
+	echo $src;
+	
+	//~ return $src;
+}
+
+?>

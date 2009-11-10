@@ -1,5 +1,5 @@
 <?
-//$AUTH = 'member';
+$AUTH = 'member';
 include('./include/init.php');
 
 

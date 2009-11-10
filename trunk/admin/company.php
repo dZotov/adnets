@@ -28,7 +28,7 @@ if ($f->Filled()) {
 	
 $JS[] = 'company.js';	
 
-
+$MENU_TYPE = 'adverts';
 $smarty->assign("FORM", $f->HTML);
 Display("company.tpl");
 ?>
