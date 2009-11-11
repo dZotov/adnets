@@ -225,6 +225,12 @@
 					</div>
 				</td>
 			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="checkbox" name="only_my_pl" id="only_my_pl" {if $PARAM.show_mine}checked{/if}> &nbsp;&nbsp;<span>Показывать только свои площадки</span>
+				</td>
+				
+			</tr>
 		</table>
 		<input type="submit" value="{if $smarty.get.id}Изменить{else}Добавить{/if} блок">
 	</div>

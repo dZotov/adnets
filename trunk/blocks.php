@@ -97,7 +97,11 @@ if(get_post("site_id"))
 		$params['field_decr']=get_post('field_decr');
 	else
 		$ERRORS[]="”кажите цвет границы";
-		
+	
+	if(get_post('only_my_pl'))
+		$params['show_mine']=1;
+	else
+		$params['show_mine']=0;
 	if(!count($ERRORS))
 	{
 		$block = new Blocks(get_post('block_id'));

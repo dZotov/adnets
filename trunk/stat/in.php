@@ -45,7 +45,12 @@ $blockstat->Save();
 		$ignore=$pl->Get('exclude');
 		$teaser= new Teaser();
 		
-		$t['items']=$teaser->GetManyByCond("category NOT IN ({$ignore}) AND status=".STATE_ACTIVE."","ctr DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
+		$cond="category NOT IN ({$ignore}) AND status=".STATE_ACTIVE."";
+		
+		if($property['show_mine'])
+			$cond .=" AND adid='{$ad_id}'";
+		
+		$t['items']=$teaser->GetManyByCond($cond,"ctr DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
 		
 			
 		$t['block_id']=$block->GetId();
