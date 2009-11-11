@@ -15,7 +15,7 @@ if (get($_COOKIE, 'check')) {
 	$referer = GetRefURL($array[5]);
 	
 	$traf = new TmpStat();
-	$cond = "ip = '{$ip}' AND `teaser_id` = '{$array[0]}' AND `ad_id` = '{$array[3]}' AND date = '{$date}'";
+	$cond = "ip = '{$ip}' AND teaser_id='{$array[0]}' AND date='{$date}'";
 	
 	$count = $traf->ExistsByCond($cond);		
 	if (!$count) {
@@ -66,7 +66,7 @@ if (get($_COOKIE, 'check')) {
 			$tstat->Set('amsrc',$tstat->Get('amsrc'));
 		}
 		$tstat->Save();
-		
+		$traf = new TmpStat();
 		$traf->LoadByCond($cond);
 		$traf->Set("ip",$ip);
 		$traf->Set("uniq",$uniq);
