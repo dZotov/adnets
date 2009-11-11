@@ -45,20 +45,18 @@ $blockstat->Save();
 		$ignore=$pl->Get('exclude');
 		$teaser= new Teaser();
 		
-		$cond="category NOT IN ({$ignore}) AND status=".STATE_ACTIVE.""; //exists (SELECT id FROM ".TCOMPANY." WHERE) AND
+		$cond="category NOT IN ({$ignore}) AND status=".STATE_ACTIVE."";
 		
 		if($property['show_mine'])
 			$cond .=" AND adid='{$ad_id}'";
 		
-		$t['items']=$teaser->GetManyByCond($cond,"id DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
+		$t['items']=$teaser->GetManyByCond($cond,"ctr DESC,id DESC",1,$property['hor_tiser_count']*$property['vert_tiser_count']);
 		
 			
 		$t['block_id']=$block->GetId();
 		
 		foreach($t['items'] as $k=>$v)
 		{
-			$teaser_ids[]=$v['id']
-			
 			$tstat=new Teaserstat();
 			$tstat->LoadByCond("teaser_id='{$v['id']}' AND block_id='{$id}' AND date='{$date}' AND ad_id='{$v['adid']}'");
 			if($tstat->GetId())

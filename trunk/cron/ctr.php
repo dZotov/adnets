@@ -1,4 +1,5 @@
 <?
+set_time_limit(0);
 include('init.php');
 
 $teasers=new Teaser();
@@ -9,14 +10,17 @@ $date=date("Y-m-d");
 
 foreach($t as $k=>$v)
 {
-	$stat=new TeasetStat();
+	$stat=new Teaserstat();
 	$shows=$stat->SelectSum("shows","teaser_id='{$v['id']}' AND date='{$date}'");
 	$clicks=$stat->SelectSum("clicks","teaser_id='{$v['id']}' AND date='{$date}'");
-	$ctr=round(($clicks/$shows)*100,2);
-	
-	$teaser= new Teaser($v['id']);
-	$teaser->Set('ctr',$ctr);
-	$teaser->Save();
+	if($shows)
+	{
+		$ctr=round(($clicks/$shows)*100,2);
+		
+		$teaser= new Teaser($v['id']);
+		$teaser->Set('ctr',$ctr);
+		$teaser->Save();
+	}
 	
 }
 
