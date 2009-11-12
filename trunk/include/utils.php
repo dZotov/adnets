@@ -407,96 +407,12 @@ function redirect_301($url) {
 	redirect($url);
 }
 
-function Card_cod($naminal) {
-	$n=$naminal;
-	$pin_rand0 = rand(0,9);
-	$pin_rand1 = rand(0,9);
-	$pin_rand2 = rand(0,9);
-	$pin_rand3 = rand(0,9);
-	$pin_rand4 = rand(0,9);
-	$pin_rand5 = rand(0,9);
-	$pin_rand6 = rand(0,9);
-	$pin_rand7 = rand(0,9);
-	$pin_rand8 = rand(0,9);
-	$pin_rand9 = rand(0,9);
-	$pin_rand9 = rand(0,9);
-	$pin_rand10 = rand(0,9);
-	//-----------------------------------------------	
-	if($pin_rand0==0)
-		$pin_rand0=1;
-	$pin=$pin_rand0.$pin_rand1.$pin_rand2.$pin_rand3.$pin_rand4.$pin_rand5.$pin_rand6.$pin_rand7.$pin_rand8.$pin_rand9.$pin_rand10;
-	//echo $pin."<br>";
-	//-----------------------------------------------
-	$card_rand0 = rand(0,9);
-	$card_rand1 = rand(0,9);
-	$card_rand2 = rand(0,9);
-	$card_rand3 = rand(0,9);
-	$card_rand4 = rand(0,9);
-	$card_rand5 = rand(0,9);
-	$card_rand6 = rand(0,9);
-	//------------------------------------------------------
-	if($card_rand0==0)
-		$card_rand0=1;
-	$card=$card_rand0.$card_rand1.$card_rand2.$card_rand3.$card_rand4.$card_rand5.$card_rand6;
-	
-	$c =new Cards();
-	if($c->ExistsByCond("card='".$card."' AND pin='".$pin."'"))
-		Card_cod($n);	
-		
-	
-	return $card."|".$pin;	
-}
-
 function dateformat($string, $format = "%e %b  %Y", $default_date = NULL) {
 	require_once ROOT_PATH.'./include/smarty/Smarty.class.php';
 	$smarty = new Smarty();
 	require_once $smarty->_get_plugin_filepath('modifier','date_format');
 	
 	return smarty_modifier_date_format($string,  "%d.%m.%Y");
-}
-
-function NewTransaction($opt = array()) {
-	$acc = new Account(get($opt, 'account_id'));
-	if ($acc->Get('wmid')) {
-		$notes = get($opt, 'notes');
-		$t = new Transaction();
-		$t->Set("type", $opt['type']);
-		$t->Set("cost", $opt['credits']);
-		$partner_cost = $opt['credits'] * 0.20; 
-		if ($acc->IsModel()) {
-			$partner_cost = $opt['credits'] * 0.05; 
-		}
-		$t->Set("partner_cost", $partner_cost);
-		$t->Set("wmid", $acc->Get('wmid'));
-		$t->Set("tr_id", $opt['transaction_id']);
-		$t->Set("date", sqlDateTime());
-		$t->Set("notes", "{$notes}");
-		$t->Save();
-	} elseif ($acc->Get('pid')) {
-		$opt['sid'] = 3;
-		$opt['sum'] = $opt['credits'] * 0.25;
-		$q = '?';
-		if (get($opt, 'notes')) {
-			$opt['notes'] = urlencode($opt['notes']);
-		}
-		foreach($opt as $k => $v) {
-			$q .= "{$k}={$v}&";
-		}
-		$f = fopen("http://therussiankings.com/transaction/{$q}", "r");
-		//~ $result = fread($f, 255);
-		//~ echo $result;
-	}
-	
-	
-}
-
-function black_ip() {
-	$ip = new IP();
-	
-	if($ip->ExistsByCond("ip = '".$_SERVER['REMOTE_ADDR']."'")) {
-		redirect("http://ebnvideo.com");
-	}
-	return true;
 }
 
  // функция превода текста с кириллицы в траскрипт
