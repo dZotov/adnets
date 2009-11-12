@@ -78,7 +78,6 @@ $MENU[] = array('name' => 'adw', 'title' => 'Партнеры', 'url' => 'adwerts.php');
 $MENU[] = array('name' => 'sites', 'title' => 'Сайты', 'url' => 'sites.php');
 $MENU[] = array('name' => 'stat', 'title' => 'Статистика', 'url' => 'stat.php');
 $MENU[] = array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php');
-$MENU[] = array('name' => 'tiz', 'title' => 'Тизеры', 'url' => 'tisers.php');
 $MENU[] = array('name' => 'pay', 'title' => 'Выплаты', 'url' => 'pay.php');
 		
 $MENU_SELLER[] = array('name' => 'companies', 'title' => 'Компании', 'url' => 'rcompanies.php');
