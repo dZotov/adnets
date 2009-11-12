@@ -82,7 +82,7 @@ $MENU[] = array('name' => 'pay', 'title' => 'Выплаты', 'url' => 'pay.php');
 		
 $MENU_SELLER[] = array('name' => 'companies', 'title' => 'Компании', 'url' => 'rcompanies.php');
 $MENU_SELLER[] = array('name' => 'rstat', 'title' => 'Статистика', 'url' => 'rstat.php');
-$MENU_SELLER[] = array('name' => 'rnews', 'title' => 'Новости', 'url' => 'rnews.php');
+$MENU_SELLER[] = array('name' => 'rnews', 'title' => 'Новости', 'url' => 'news.php');
 $MENU_SELLER[] = array('name' => 'teasers', 'title' => 'Тизеры', 'url' => 'teasers.php');
 
 
