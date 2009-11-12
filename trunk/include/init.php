@@ -101,7 +101,7 @@ $MENU_WEB = array(
 	array('name' => 'payments', 'title' => 'Выплаты', 'url' => 'payments.php'),
 	array('name' => 'profile', 'title' => 'Профиль', 'url' => 'profile.php'),
 	array('name' => 'top', 'title' => 'Топ', 'url' => 'top.php'),
-	array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
+	//array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
 );
 $MENU_ADV = array(
 	array('name' => 'news', 'title' => 'Новости', 'url' => 'news.php'),
@@ -109,7 +109,7 @@ $MENU_ADV = array(
 	array('name' => 'stat', 'title' => 'Статистика', 'url' => 'advstat.php'),
 	array('name' => 'profile', 'title' => 'Профиль', 'url' => 'advprofile.php'),
 	array('name' => 'balance', 'title' => 'Баланс', 'url' => 'balance.php'),
-	array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
+	//array('name' => 'ticket', 'title' => 'Тикеты', 'url' => 'tickets.php'),
 );
 $MENU = $MENU_GUEST;
 if ($account_id) {

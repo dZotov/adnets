@@ -40,7 +40,7 @@
 			</tr>
 		</thead>
 		{foreach from=$RES.items item=i name=stat key=k}
-			<tr {if $k%2==0}class="invert"{/if}>
+			<tr {if $smarty.foreach.stat.iteration%2==0}class="invert"{/if}>
 				<td>{$i.date}</td>
 				<td>{$i.block_shows|default:"0"}</td>
 				<td>{$i.shows|default:"0"}</td>
