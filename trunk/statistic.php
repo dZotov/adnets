@@ -5,7 +5,8 @@ if (IsAdv()) redirect("advstat.php");
 
 $date_start=date("Y-m-d",( strtotime(date("d.m.Y"))-(3600*48)));
 $date_end=date("Y-m-d");
-
+$t=array();
+$t['items']=array();
 
 if(get_get("from_date") && get_get("to_date"))
 {
