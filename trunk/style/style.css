@@ -18,6 +18,8 @@ tr.table td {
 	padding: 8px;
 }
 
+tr.table:hover { background: #efe;}
+
 tr.footer_table td {
 	border: 1px solid #cccccc;	
 	padding: 2px;

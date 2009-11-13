@@ -1,19 +1,24 @@
-{include file="layout/header.tpl"}
-<p class="add_site"><a class="button" href="edit_playground.php">Добавить сайт</a></p>
+{include file="layout/header2.tpl"}
 
+<p class="anotation">
+	<img src="./images/add.gif" alt="Добавить" />
+	<a href="edit_playground.php" class="s11">Добавить сайт</a>
+</p>
+
+<div class="padt15">
 {if !$DATA}
 <p class="anotation">У вас не пока нет ни одного сайта, но вы можете <a href="edit_playground.php">добавить сайт</a> прямо сейчас.</p>
 {else}
 <table>
-	<tr>
-		<th class="name">Названиe</th>
-		<th class="status">Статус</th>
-		<th class="category">Категория</th>
-		<th class="blocks">Блоки</th>
-		<th class="blocks">Фильтры</th>
+	<tr class="table_head">
+		<td>Названиe</td>
+		<td>Статус</td>
+		<td>Категория</td>
+		<td>Блоки</td>
+		<td>Фильтры</td>
 	</tr>
 	{foreach from=$DATA item=i key=k name=data}
-		<tr {if $smarty.foreach.data.iteration %2==0}class="invert"{/if}>
+		<tr  class="table">
 			<td>
 				<h4>{$i.title}</h4>
 				<p class="url"><a href="http://{$i.url}" target="_blank">{$i.url}</a> [<a href="edit_playground.php?id={$i.id}">ред.</a>]</p>
@@ -51,4 +56,7 @@
 	{/foreach}
 </table>
 {/if}
+
+</div>
+
 {include file="layout/footer.tpl"}
