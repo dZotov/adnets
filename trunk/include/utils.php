@@ -460,4 +460,23 @@ function IsAdv() {
 	return ($USER_TYPE == 2);
 }
 
+function DateByWeek($week) {
+	$d_cond = ("SELECT NOW() - INTERVAL 49-".$week." WEEK");
+	$last_date = one_result($d_cond);
+	
+	if ($week === 0) {
+		$week_start_date = date('Y-m-d ', strtotime("2008-12-29"));
+		$week_end_date =  date('Y-m-d ', strtotime($week_start_date."+6 DAY"));
+	} else {
+		$week--;
+		$week_start_date = date('Y-m-d ', strtotime("2009-01-05 +$week WEEK"));
+		$week_end_date = date('Y-m-d ', strtotime($week_start_date."+6 DAY"));
+	} 
+	
+	$result['date_begin'] = $week_start_date;
+	$result['date_end'] = $week_end_date;
+	return $result;
+}
+
+
 ?>
