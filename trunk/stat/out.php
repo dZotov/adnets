@@ -15,13 +15,13 @@ if (get($_COOKIE, 'check')) {
 	$referer = GetRefURL($array[5]);
 	
 	$traf = new TmpStat();
-	$cond = "ip = '{$ip}' AND teaser_id='{$array[0]}' AND date='{$date}'";
+	$cond = "ip = '{$ip}' AND date='{$date}'";
 	
 	$count = $traf->ExistsByCond($cond);		
 	if (!$count) {
 		$uniq = 1;
 	}
-	if ($count < 5) 
+	if ($count < 2) 
 	{
 	
 		$blockstat = new Blockstat();
@@ -31,19 +31,21 @@ if (get($_COOKIE, 'check')) {
 			$blockstat->Set('clicks',$blockstat->Get('clicks')+1);
 			$blockstat->Save();
 		}
-
+		
 		$company = new Company($array[4]);
 		if($company->GetId())
 		{
 			$price=$company->Get("price");
 			$amdst=$price*0.80;//площадкам
 			$amsrc=$price+($price*0.20);//рекламсам
+			$refstat=$amdst*0.05;
 		}
 		else
 		{
 			$price=0;
 			$amdst=0.1;
 			$amsrc=0.3+(0.3*0.2);
+			$refstat=0;
 		}
 
 
@@ -65,6 +67,32 @@ if (get($_COOKIE, 'check')) {
 			$tstat->Set('amdst',$tstat->Get('amdst'));
 			$tstat->Set('amsrc',$tstat->Get('amsrc'));
 		}
+		
+		$ad= new Adwerts();
+		
+		$ad->Load($array[3]);
+		if($ad->GetId())
+		{
+			if($ad->Get('ref_id')!=0)
+			{
+				$ref= new Refstat();
+				if($ref->LoadByCond("adid='{$ad->Get('ref_id')}' AND date='{$date}'"))
+				{
+					$ref->Set("amount",$ref->Get('amount')+$refstat);
+					$ref->Save();
+				}
+				else
+				{
+					$ref->Set("adid",$ad->Get('ref_id'));
+					$ref->Set("date",$date);
+					$ref->Set("amount",$refstat);
+					$ref->Save();
+				}
+			}
+		}
+		
+				
+		
 		$tstat->Save();
 		$traf = new TmpStat();
 		$traf->LoadByCond($cond);
@@ -74,6 +102,7 @@ if (get($_COOKIE, 'check')) {
 		$traf->Set("ad_id",$array[3]);
 		$traf->Set("referer",$referer);
 		$traf->Set("teaser_id",$array[0]);
+		$traf->Set("date",$date);
 		$traf->Save();
 		
 		redirect($array[2]);
