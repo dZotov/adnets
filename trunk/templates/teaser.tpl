@@ -36,14 +36,14 @@
 				<td>{$f.field}</td>
 			</tr>
 			{/foreach}
+			<tr>
+				<td></td>
+				<td><input type="button" value=" Сохранить " onclick="javascript: Submit('teaser');" /></td>
+			</tr>
 		</table>	
 	</div>
 	
-	<div class="padt15">
-		<a class="button" href="javascript: Submit('teaser');">Сохранить</a> &nbsp;
-		<a class="button" href="teaser.php?company={$COMPANY.id}">Добавить</a> &nbsp;
-		<a class="button" href="teasers.php?id={$COMPANY.id}">К списку</a>
-	</div>
+	
 	
 	</form>
 </p>

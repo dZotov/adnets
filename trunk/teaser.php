@@ -24,7 +24,7 @@ $f = new Form('teaser', $ts);
 
 $min_price = 0;
 if ($cp->GetId()) {
-	$PAGE_TITLE = $HEAD_TITLE = $cp->GetTitle();
+	$PAGE_TITLE = $HEAD_TITLE = "Компания: ".$cp->GetTitle();
 	$cat = new Cat($cp->Get('category'));
 	$min_price = $cat->Get('price');
 }
@@ -48,8 +48,10 @@ if (count($_POST)) {
 		$ts->Set('company_id', $cp->GetId());
 		$ts->Set('date', sqlDateTime());
 		$ts->Set('type', $type);
-		$ts->Set('size', get($file, 'size'));
-		$ts->Set('ext', $img_format);
+		if ($file['error'] == 0) { 
+			$ts->Set('size', get($file, 'size'));
+			$ts->Set('ext', $img_format);
+		}
 		$ts->Set('status', STATE_INACTIVE);
 		$ts->Save();
 			

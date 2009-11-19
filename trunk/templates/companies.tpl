@@ -14,7 +14,19 @@
 		</tr>
 		{foreach from=$TABLE.items item=t}
 		<tr class="table">
-			<td><a href="company.php?id={$t.id}">{$t.title}</td>
+			<td>
+				<a href="company.php?id={$t.id}">{$t.title}</a>
+				<div class="padt3">
+					<table class="sort_table">
+						<tr>
+							<td><a href="teaser.php?company={$t.id}" title="Добавить тизер"><img src="./images/add2.gif" /></a></td>
+							<td><a href="teaser.php?company={$t.id}" title="Добавить тизер"><img src="./images/play.gif" /></a></td>
+							<td><a href="teaser.php?company={$t.id}" title="Добавить тизер"><img src="./images/play.gif" /></a></td>
+							<td><a href="teaser.php?company={$t.id}" title="Добавить тизер"><img src="./images/play.gif" /></a></td>
+						</tr>
+					</table>	
+				</div>
+			</td>
 			<td>{$t.category|human:"CATEGORY_LIST"}</td>
 			<td class="ac"> 
 				<a href="teasers.php?id={$t.id}&status=1">0</a> /
