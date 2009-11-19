@@ -52,16 +52,35 @@ if(get_get("act")=="block_stat")
 	
 	foreach($t as $k=>$v)
 	{
+		$blockstat= new Blockstat();
 		$b= new Blocks($v['block_id']);
 		$t[$k]['block_title']=$b->Get("title");
 	}
 }
 if(get_get("act")=="pl_stat")
 {
-	$blockstat= new Blockstat();
-	$t=$blockstat->GetManyByCond("ad_id='{$account_id}' AND (`date` BETWEEN '{$date_start}' AND '{$date_end}')");
+	$pl = new Playgrounds();
+	$t = $pl->GetManyByCond("adid='{$account_id}' AND status='".STATE_ACTIVE."'");
+	foreach ($t as $k=>$v)
+	{
+		$teaser = new Teaserstat();
+		$t[$k]['amount']=$teaser->SelectSum("amdst","(ad_id='{$account_id}' AND `date` BETWEEN '{$date_start}' AND '{$date_end}') AND EXISTS (SELECT ".TBLOCKSTAT.".id FROM `".TBLOCKSTAT."` WHERE ".TBLOCKSTAT.".id=block_id AND ".TBLOCKSTAT.".pl_id='{$v['id']}')");
+	}
 }
-
+if(get_get("act")=="ref_stat")
+{
+	$ref= new RefStat();
+	$max = datediff('d', $date_start, $date_end);
+	for($i = 0; $i <= $max; $i++) 
+	{
+		$date = NewDate($date_start, "+$i DAY");
+		$key = explode(" ", $date);	
+		$key = $key[0];
+		$t['items'][$key]['date'] = $date;
+		$t['items'][$key]['imount']= $ref->SelectSum('amount',"adid='{$account_id}' AND `date`='{$key}'");
+	}
+	
+}
 
 $smarty->assign("PRE_DATE",$date_start);
 $smarty->assign("DATE_NOW",$date_end);
