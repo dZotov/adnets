@@ -105,6 +105,7 @@ if(get_post("site_id"))
 	if(!count($ERRORS))
 	{
 		$block = new Blocks(get_post('block_id'));
+		$block->Set('title',$params['block_titile']);
 		$block->Set('pl_id',get_post('site_id'));
 		$block->Set('ad_id',$account_id);
 		$block->Set('settings',serialize($params));
