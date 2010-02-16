@@ -6,14 +6,9 @@ $ref=get_get('ref');
 $plid=(int)get_get('plid');
 $ad_id=(int)get_get('ad_id');
 
+$hash="{$id}|{$plid}|{$ad_id}";
 
-/* $smarty->caching = 1;
-$smarty->cache_lifetime = 3600;
-
-$hash=$id.rand(1,100);
- */
 $blockstat= new Blockstat();
-
 $date=date("Y-m-d");
 $blockstat->LoadByCond("block_id='{$id}' AND date='{$date}' AND pl_id='{$plid}' AND ad_id='{$ad_id}'");
 if($blockstat->GetId())
@@ -37,7 +32,6 @@ $blockstat->Save();
 	// $smarty->clear_cache("in.tpl", $hash);
 	
 	$block = new Blocks ($id);
-	
 	$pl = new Playgrounds($plid);
 	if($block->GetId() && $pl->GetId())
 	{
@@ -81,11 +75,12 @@ $blockstat->Save();
 // }
 $x=$smarty->fetch("in.tpl");
 $x= str_replace(array("\r","\n","\t","\r\n"),"",$x);
-echo "var block='{$x}';";
-echo "var div = document.createElement(\"div\");";
-echo "div.innerHTML = block;";
-echo "document.getElementById(\"adnets_\"+{$id}).appendChild(div);";
-echo "";
+
+$block="var block='{$x}';";
+$block .="var div = document.createElement(\"div\");";
+$block .="div.innerHTML = block;";
+$block .="document.getElementById(\"adnets_\"+{$id}).appendChild(div);";
+$block .="";
 
 //Display("in.tpl",$hash);
 ?>

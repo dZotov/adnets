@@ -79,7 +79,6 @@ function show_block_result()
 function show_error(message)
 {
 	$.jGrowl(message, { 
-		theme: 'smoke',
 		sticky: false,
 		speed: 2000,
 		speed: 'slow',
@@ -252,7 +251,7 @@ function redirect(url) {
 }
 
 function if_confirm(url) {
-	if(confirm(text_are_you_sure))
+	if(confirm('Вы уверены?'))
 		redirect(url);
 }
 

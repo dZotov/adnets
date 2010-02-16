@@ -1,8 +1,8 @@
 <?
 
 define('DB_HOST','localhost');
-define('DB_LOGIN','root');
-define('DB_PASS','');
+define('DB_LOGIN','adnets');
+define('DB_PASS', 'enteradnets');
 define('DB_DEVICE','adnets');
 
 define('DEBUG', 1);

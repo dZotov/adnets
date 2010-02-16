@@ -1,6 +1,14 @@
 {include file="layout/header.tpl"}
 
 <p class="anotation">Ваш баланс на текущий момент - <strong>{$ACCOUNT.balance} руб.</strong></p>
+<p class="anotation">
+	Не производить выплаты: <input type="checkbox" {if $ACCOUNT.hold}checked{/if}> 
+	{if $ACCOUNT.hold}
+		<a href="javascript:if_confirm('payments.php?act=payment_on')">Включить выплаты</a>
+	{else}
+		<a href="javascript:if_confirm('payments.php?act=payment_off')">Отключить выплаты</a>
+	{/if}
+</p>
 
 {if !$DATA}
 <p class="anotation"><strong>Выплаты не проводились</strong></p>	

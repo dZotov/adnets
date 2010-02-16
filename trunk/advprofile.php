@@ -3,16 +3,20 @@ include("./include/init.php");
 
 if (!IsAdv()) redirect("profile.php");
 
-$f = new Form();
-
-if ($f->Filled()) {
-	$f->SaveToEntity();
-
-	
+if(get_post("update"))
+{
+	$ad= new Adwerts($account_id);
+	if($ad->GetId())
+	{
+		if(get_post("icq"))
+			$ad->Set('icq',get_post("icq"));
+		if(get_post("login_in_top"))
+			$ad->Set('intop',get_post("login_in_top"));
+		$ad->Save();
+	}
+	redirect("profile.php");
 }
 
 $PAGE_TITLE = $HEAD_TITLE = "Профиль";
-
-$smarty->assign('FORM', $f->HTML);
 Display("advprofile.tpl");
 ?>
