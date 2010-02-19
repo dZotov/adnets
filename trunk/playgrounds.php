@@ -30,8 +30,6 @@ if(get_get('act')=='del_cat' && get_get('sid') && get_get('cat'))
 	redirect("playgrounds.php");
 }
 
-
-
 foreach($p as $k=>$v)
 {
 	$cat= new Cat($v['category']);
@@ -40,12 +38,12 @@ foreach($p as $k=>$v)
 	$b=$bl->GetManyByCond("pl_id='{$v['id']}'");
 	$p[$k]['num_blocks']=sizeof($b);
 	
-	$exclude_cat=explode(",",$v['exclude']);
+	$exclude_cat = explode(",", $v['exclude']);
 	$p[$k]['num_exclude']=sizeof($exclude_cat);
 	$cat= new Cat();
 	
 	if ($v['exclude']) {
-		$cat_exclude_arr=$cat->GetManyByCond("id IN({$v['exclude']})");
+		$cat_exclude_arr=$cat->GetManyByCond("id IN(".str_replace(array('[', ']'), '', $v['exclude']).")");
 		$p[$k]['cat_exclude']=$cat_exclude_arr;
 	}
 	
