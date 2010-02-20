@@ -8,26 +8,25 @@
 					<li {if $MENU_SD==$m.name}class="active"{/if}><a href="{$m.url}">{$m.title}</a></li>
 					{/foreach}
 				</ul>
-				{if $ACCOUNT}<p class="exit"><a class="button" href="logout.php">Выйти</a></p>{/if}
+				{if $ACCOUNT}<p class="exit"><a class="button" href="/logout.php">Выйти</a></p>{/if}
 			</div>
 			<div class="border_b"></div>			
 		</div>
 		
 		<div id="sub_menu">
 			{if $ACCOUNT}
-			<p class="balanc"><b><span>{$ACCOUNT.balance}</span>руб.</b> на балансе</p>
+			<p class="balanc">Баланс: {$ACCOUNT.balance} руб.</p>
 			<ul>
-				<li><a href="about.php">Справка</a></li>
-				<li><a href="contact.php">Контакты</a></li>
-				<li><a href="faq.php">FAQ</a></li>
+				<li><a href="/about.php">Справка</a></li>
+				<li><a href="/contact.php">Контакты</a></li>
+				<li><a href="/faq.php">FAQ</a></li>
 			</ul>
 			{if $smarty.cookies.user_type==2}
-			<p class="user_type"><a href="?user_type=1">Веб-мастер</a> Рекламодатель:</p>
+			<p class="user_type"><a href="?user_type=1">Веб-мастер</a> | Рекламодатель</p>
 			{else}
-			<p class="user_type">Веб-мастер: <a href="?user_type=2">Рекламодатель</a></p>
+			<p class="user_type">Веб-мастер | <a href="?user_type=2">Рекламодатель</a></p>
 			{/if}
-			<p class="email"><a href="profile.php">профиль {$ACCOUNT.email}</a></p>
-			<p class="exit"><a class="button" href="logout.php">Выйти</a></p>
+			<p class="email"><a href="/profile.php">Профиль</a> | <a href="/logout.php">Выйти</a></p>
 			{else}
 			{*
 				<p class="registration"><a class="button" href="registration.php">Регистрация</a></p>
