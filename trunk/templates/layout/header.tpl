@@ -14,7 +14,7 @@
 <body>
 	<div id="main">
 		<div id="header">
-			<h1><a href="index.php"><img src="./images/logo.jpg" /></a></h1>
+			<h1 style="margin-top:5px;"><a href="index.php"><img src="./images/logo.jpg" /></a></h1>
 		</div>
 		<div id="content">
 			<div class="padb15">
