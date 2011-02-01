@@ -1,84 +1,75 @@
-<?
+<?php
 
-$f->Field(FORM_TEXT, 'Íàçâàíèå êîìïàíèè', 'title', array(
-		'_def' => 'Êîìïàíèÿ',
-	)
+$f->Field(FORM_TEXT, 'ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸', 'title', array(
+    '_def' => 'ÐšÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ñ',
+        )
 );
 
 $cat = new Cat();
 $cat_list = $cat->GetList();
-$f->Field(FORM_SELECT, 'Òåìàòèêà êîìïàíèè', 'category', array(
-		'_list' => $cat_list,
-	)
+$f->Field(FORM_SELECT, 'Ð¢ÐµÐ¼Ð°Ñ‚Ð¸ÐºÐ° ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸', 'category', array(
+    '_list' => $cat_list,
+        )
 );
 
 $DAYS_LIST = array(
-	1 => 'Ïí.',
-	2 => 'Âò.',
-	3 => 'Ñð.',
-	4 => '×ò.',
-	5 => 'Ïò.',
-	6 => 'Ñá.',
-	7 => 'Âñ.',
+    1 => 'ÐŸÐ½.',
+    2 => 'Ð’Ñ‚.',
+    3 => 'Ð¡Ñ€.',
+    4 => 'Ð§Ñ‚.',
+    5 => 'ÐŸÑ‚.',
+    6 => 'Ð¡Ð±.',
+    7 => 'Ð’Ñ.',
 );
-$f->Field(FORM_MULTIPLE, 'Äíè', 'days', array(
-		'_list' => $DAYS_LIST,
-		'size' => 7,
-		'style' => 'width: 80px;',
-	)
+$f->Field(FORM_MULTIPLE, 'Ð”Ð½Ð¸', 'days', array(
+    '_list' => $DAYS_LIST,
+    'size' => 7,
+    'style' => 'width: 80px;',
+        )
 );
 
 $HOURS_LIST = array();
-for($i = 0; $i < 24; $i++) {
-	$HOURS_LIST[$i] = $i;
+for ($i = 0; $i < 24; $i++) {
+    $HOURS_LIST[$i] = $i;
 }
 
-$f->Field(FORM_MULTIPLE, '×àñû', 'hours', array(
-		'_list' => $HOURS_LIST,
-		'size' => 24,
-		'style' => 'width: 80px;',
-	)
+$f->Field(FORM_MULTIPLE, 'Ð§Ð°ÑÑ‹', 'hours', array(
+    '_list' => $HOURS_LIST,
+    'size' => 24,
+    'style' => 'width: 80px;',
+        )
 );
 
-$f->Field(FORM_TEXT, 'Ñòîèìîñòü ïåðåõîäà', 'price', array(
-		'_def' => $min_price,
-	)
+$f->Field(FORM_TEXT, 'Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´Ð°', 'price', array(
+    '_def' => $min_price,
+        )
 );
 
-$f->Field(FORM_TEXT, 'Ìàêñèìàëüíîå êîëè÷åñòâî ïåðåõîäîâ â äåíü', 'maxrun', array(
-	
-	)
+$f->Field(FORM_TEXT, 'ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´Ð¾Ð² Ð² Ð´ÐµÐ½ÑŒ', 'maxrun', array(
+        )
 );
 
-$f->Field(FORM_TEXT, 'Ëèìèò áþäæåòà êàìïàíèè â äåíü', 'day_limit', array(
-		
-	)
+$f->Field(FORM_TEXT, 'Ð›Ð¸Ð¼Ð¸Ñ‚ Ð±ÑŽÐ´Ð¶ÐµÑ‚Ð° ÐºÐ°Ð¼Ð¿Ð°Ð½Ð¸Ð¸ Ð² Ð´ÐµÐ½ÑŒ', 'day_limit', array(
+        )
 );
 
-$f->Field(FORM_TEXT, 'Ëèìèò áþäæåòà êàìïàíèè â öåëîì', 'limit', array(
-	
-	)
+$f->Field(FORM_TEXT, 'Ð›Ð¸Ð¼Ð¸Ñ‚ Ð±ÑŽÐ´Ð¶ÐµÑ‚Ð° ÐºÐ°Ð¼Ð¿Ð°Ð½Ð¸Ð¸ Ð² Ñ†ÐµÐ»Ð¾Ð¼', 'limit', array(
+        )
 );
 
-$f->Field(FORM_CB_ARRAY, 'Êàòåãîðèè', 'categories', array(
-		'_list' => $cat_list,
-		'_perrow' => 2
-	)
+$f->Field(FORM_CB_ARRAY, 'ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸', 'categories', array(
+    '_list' => $cat_list,
+    '_perrow' => 2
+        )
 );
 
-$f->Field(FORM_MEMO, 'Èñêëþ÷åíèÿ', 'exceptions', array(
-		'rows' => 4,
-		'cols' => 50,
-	)
+$f->Field(FORM_MEMO, 'Ð˜ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ', 'exceptions', array(
+    'rows' => 4,
+    'cols' => 50,
+        )
 );
 
-$f->Field(FORM_CHECKBOX, "íå ïîêàçûâàòü íà ïëîùàäêàõ ýðîòè÷åñêîãî ñîäåðæàíèÿ", 'no_ero', array(
-	
-	)
+$f->Field(FORM_CHECKBOX, "Ð½Ðµ Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ Ð½Ð° Ð¿Ð»Ð¾Ñ‰Ð°Ð´ÐºÐ°Ñ… ÑÑ€Ð¾Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ð½Ð¸Ñ", 'no_ero', array(
+        )
 );
-
-
-
-
-
 ?>

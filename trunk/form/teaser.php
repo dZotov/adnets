@@ -1,32 +1,31 @@
-<?
+<?php
 
-$f->Field(FORM_TEXT, 'Çàãîëîâîê', 'title', array(
-		'_def' => "",
-	)
+$f->Field(FORM_TEXT, 'Ð—Ð°Ð³Ð¾Ð»Ð¾Ð²Ð¾Ðº', 'title', array(
+    '_def' => "",
+        )
 );
 
-$f->Field(FORM_TEXT, 'Îïèñàíèå', 'desc', array(
-		'_def' => "",
-	)
+$f->Field(FORM_TEXT, 'ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ', 'desc', array(
+    '_def' => "",
+        )
 );
 
-$f->Field(FORM_TEXT, 'URL öåëåâîé ñòðàíèöû', 'url', array(
-		'_def' => "",
-	)
+$f->Field(FORM_TEXT, 'URL Ñ†ÐµÐ»ÐµÐ²Ð¾Ð¹ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñ‹', 'url', array(
+    '_def' => "",
+        )
 );
 
-$f->Field(FORM_TEXT, 'Ñòîèìîñòü ïåðåõîäà', 'price', array(
-		'_def' => $min_price,
-		'size' => '10',
-	)
+$f->Field(FORM_TEXT, 'Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´Ð°', 'price', array(
+    '_def' => $min_price,
+    'size' => '10',
+        )
 );
 
 $cat = new Cat();
 $cat_list = $cat->GetList();
-$f->Field(FORM_SELECT, 'Êàòåãîðèÿ', 'category', array(
-		'_list' => $cat_list,
-		'_def' => $cp->Get('category'),
-	)
+$f->Field(FORM_SELECT, 'ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ', 'category', array(
+    '_list' => $cat_list,
+    '_def' => $cp->Get('category'),
+        )
 );
-
 ?>

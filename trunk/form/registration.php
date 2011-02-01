@@ -1,43 +1,42 @@
-<?
+<?php
 
 $f->Field(FORM_TEXT, 'Email', 'email', array(
-		'_mandatory' => true,
-		'_pattern' => '/^[A-Za-z0-9\._-]+@[A-Za-z0-9\._-]+\.[A-Za-z]{2,4}$/',
-		'maxlength'=>15,
-		'_msg' => 'Çàïîëíèòå ïîëå êîððåêòíî',
-		'id' => 'email',
-		'size' => 35,
-	)
+    '_mandatory' => true,
+    '_pattern' => '/^[A-Za-z0-9\._-]+@[A-Za-z0-9\._-]+\.[A-Za-z]{2,4}$/',
+    'maxlength' => 15,
+    '_msg' => 'Ð—Ð°Ð¿Ð¾Ð»Ð½Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾',
+    'id' => 'email',
+    'size' => 35,
+        )
 );
-$f->Field(FORM_PASSWORD, 'Ïàðîëü', 'password', array(
-		'_mandatory' => true,
-		'_pattern' => '/^[A-Za-z0-9]{3,30}$/',
-		'_msg' => 'Ââåäèòå ïàðîëü',
-		'size' => 35,
-		'_nosave'=> true,
-		'id' => 'password',
-		'maxlength'=>15,
-	)
+$f->Field(FORM_PASSWORD, 'ÐŸÐ°Ñ€Ð¾Ð»ÑŒ', 'password', array(
+    '_mandatory' => true,
+    '_pattern' => '/^[A-Za-z0-9]{3,30}$/',
+    '_msg' => 'Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ',
+    'size' => 35,
+    '_nosave' => true,
+    'id' => 'password',
+    'maxlength' => 15,
+        )
 );
-$f->Field(FORM_PASSWORD, 'Ïîäòâåðäèòå ïàðîëü', 'password_conf', array(
-		'_mandatory' => true,
-		'_pattern' => '/^[A-Za-z0-9]{3,30}$/',
-		'_msg' => 'Ââåäèòå ïàðîëü',
-		'size' => 35,
-		'_nosave'=> true,
-		'id' => 'password_conf',
-		'maxlength'=>15,
-	)
+$f->Field(FORM_PASSWORD, 'ÐŸÐ¾Ð´Ñ‚Ð²ÐµÑ€Ð´Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ', 'password_conf', array(
+    '_mandatory' => true,
+    '_pattern' => '/^[A-Za-z0-9]{3,30}$/',
+    '_msg' => 'Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ',
+    'size' => 35,
+    '_nosave' => true,
+    'id' => 'password_conf',
+    'maxlength' => 15,
+        )
 );
 
 $f->Field(FORM_TEXT, 'WMR', 'wmr', array(
-		'_mandatory' => true,
-		'_pattern' => '/^[\S ]{1,50}$/',
-		'maxlength'=>15,
-		'id' => 'wmr',
-		'_msg' => 'Çàïîëíèòå ïîëå êîððåêòíî',
-		'size' => 35,
-	)
+    '_mandatory' => true,
+    '_pattern' => '/^[\S ]{1,50}$/',
+    'maxlength' => 15,
+    'id' => 'wmr',
+    '_msg' => 'Ð—Ð°Ð¿Ð¾Ð»Ð½Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾',
+    'size' => 35,
+        )
 );
-
 ?>
