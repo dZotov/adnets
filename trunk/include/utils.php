@@ -359,11 +359,11 @@ function file_upload($name, $destination, $options = array()) {
 	$filedata=$_FILES[$name];
 	
 	if (!is_array(get($_FILES, $name)) || get($filedata, 'error') != 0) {
-		$ERRORS[] = "Îøèáêà ïðè çàãðóçêå ôàéëà - {$file_name}";
+		$ERRORS[] = "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐµ Ñ„Ð°Ð¹Ð»Ð° - {$file_name}";
 	}
 	
 	if ($filedata['size'] > get($options, 'filesize', UPLOAD_MAX_SIZE))
-		$ERRORS[] = "Ôàéë ñëèøêîì áîëüøîé - {$file_name}";
+		$ERRORS[] = "Ð¤Ð°Ð¹Ð» ÑÐ»Ð¸ÑˆÐºÐ¾Ð¼ Ð±Ð¾Ð»ÑŒÑˆÐ¾Ð¹ - {$file_name}";
 		
 	$tmpname = $filedata['tmp_name'];
 	$chmod = get($options, 'chmod', 0640);
@@ -415,34 +415,34 @@ function dateformat($string, $format = "%e %b  %Y", $default_date = NULL) {
 	return smarty_modifier_date_format($string,  "%d.%m.%Y");
 }
 
- // ôóíêöèÿ ïðåâîäà òåêñòà ñ êèðèëëèöû â òðàñêðèïò
+ // Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð¿Ñ€ÐµÐ²Ð¾Ð´Ð° Ñ‚ÐµÐºÑÑ‚Ð° Ñ ÐºÐ¸Ñ€Ð¸Ð»Ð»Ð¸Ñ†Ñ‹ Ð² Ñ‚Ñ€Ð°ÑÐºÑ€Ð¸Ð¿Ñ‚
 function ru2en($st) {
-    // Ñíà÷àëà çàìåíÿåì "îäíîñèìâîëüíûå" ôîíåìû.
-    $st = strtr($st,"àáâãäå¸çèéêëìíîïðñòóôõúûý_ ", "abvgdeeziyklmnoprstufh'iei");
-    $st = strtr($st, "ÀÁÂÃÄÅ¨ÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÚÛÝ_ ", "ABVGDEEZIYKLMNOPRSTUFH'IEI");
+    // Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° Ð·Ð°Ð¼ÐµÐ½ÑÐµÐ¼ "Ð¾Ð´Ð½Ð¾ÑÐ¸Ð¼Ð²Ð¾Ð»ÑŒÐ½Ñ‹Ðµ" Ñ„Ð¾Ð½ÐµÐ¼Ñ‹.
+    $st = strtr($st,"Ð°Ð±Ð²Ð³Ð´ÐµÑ‘Ð·Ð¸Ð¹ÐºÐ»Ð¼Ð½Ð¾Ð¿Ñ€ÑÑ‚ÑƒÑ„Ñ…ÑŠÑ‹Ñ_ ", "abvgdeeziyklmnoprstufh'iei");
+    $st = strtr($st, "ÐÐ‘Ð’Ð“Ð”Ð•ÐÐ—Ð˜Ð™ÐšÐ›ÐœÐÐžÐŸÐ Ð¡Ð¢Ð£Ð¤Ð¥ÐªÐ«Ð­_ ", "ABVGDEEZIYKLMNOPRSTUFH'IEI");
 	
-	// Çàòåì - "ìíîãîñèìâîëüíûå".
+	// Ð—Ð°Ñ‚ÐµÐ¼ - "Ð¼Ð½Ð¾Ð³Ð¾ÑÐ¸Ð¼Ð²Ð¾Ð»ÑŒÐ½Ñ‹Ðµ".
 	$st = strtr($st, array(
-			"æ"=>"zh",
-			"ö"=>"ts",
-			"÷"=>"ch",
-			"ø"=>"sh",
-			"ù"=>"shch",
-			"ü"=>"",
-			"þ"=>"yu",
-			"ÿ"=>"ya",
-			"Æ"=>"ZH",
-			"Ö"=>"TS", 
-			"×"=>"CH",
-			"Ø"=>"SH",
-			"Ù"=>"SHCH",
-			"Ü"=>"",
-			"Þ"=>"YU",
-			"ß"=>"YA",
-			"¿"=>"i",
-			"¯"=>"Yi",
-			"º"=>"ie",
-			"ª"=>"Ye"
+			"Ð¶"=>"zh",
+			"Ñ†"=>"ts",
+			"Ñ‡"=>"ch",
+			"Ñˆ"=>"sh",
+			"Ñ‰"=>"shch",
+			"ÑŒ"=>"",
+			"ÑŽ"=>"yu",
+			"Ñ"=>"ya",
+			"Ð–"=>"ZH",
+			"Ð¦"=>"TS", 
+			"Ð§"=>"CH",
+			"Ð¨"=>"SH",
+			"Ð©"=>"SHCH",
+			"Ð¬"=>"",
+			"Ð®"=>"YU",
+			"Ð¯"=>"YA",
+			"Ñ—"=>"i",
+			"Ð‡"=>"Yi",
+			"Ñ”"=>"ie",
+			"Ð„"=>"Ye"
 		)
 	);
 	

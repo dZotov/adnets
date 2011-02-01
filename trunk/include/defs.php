@@ -1,4 +1,4 @@
-<?
+<?php
 
 define('TADWERTS', 'adwerts');
 define('TSITES', 'playgrounds');
@@ -15,42 +15,41 @@ define('TTEASERSTAT', 'stat_teaser');
 define('TREFSTAT', 'refstat');
 
 
-// Òàáëèöû
+// Ð¢Ð°Ð±Ð»Ð¸Ñ†Ñ‹
 $IMG_MIME_TYPE = array(
-	'image/bmp'  => 'bmp',
-	'image/gif'  => 'gif',
-	'image/pjpeg' => 'jpg',
-	'image/jpeg' => 'jpg',
-	'image/png'  => 'png',
-	'image/x-png' => 'png',
+    'image/bmp' => 'bmp',
+    'image/gif' => 'gif',
+    'image/pjpeg' => 'jpg',
+    'image/jpeg' => 'jpg',
+    'image/png' => 'png',
+    'image/x-png' => 'png',
 );
 
-define('STATE_ACTIVE', 1); // Àêòèâíûé 
-define('STATE_INACTIVE', -1); // Íå àêòèâíûé
-define('STATE_BAN', 2); // Íå àêòèâíûé
+define('STATE_ACTIVE', 1); // ÐÐºÑ‚Ð¸Ð²Ð½Ñ‹Ð¹ 
+define('STATE_INACTIVE', -1); // ÐÐµ Ð°ÐºÑ‚Ð¸Ð²Ð½Ñ‹Ð¹
+define('STATE_BAN', 2); // ÐÐµ Ð°ÐºÑ‚Ð¸Ð²Ð½Ñ‹Ð¹
 
 $STATUS_LIST = array(
-	STATE_INACTIVE => 'Íà ìîäåðàöèè',
-	STATE_ACTIVE => 'Àêòèâíàÿ',
-	STATE_BAN => 'Çàáàíåííàÿ',
+    STATE_INACTIVE => 'ÐÐ° Ð¼Ð¾Ð´ÐµÑ€Ð°Ñ†Ð¸Ð¸',
+    STATE_ACTIVE => 'ÐÐºÑ‚Ð¸Ð²Ð½Ð°Ñ',
+    STATE_BAN => 'Ð—Ð°Ð±Ð°Ð½ÐµÐ½Ð½Ð°Ñ',
 );
 
 $PAY_STATUS = array(
-	STATE_INACTIVE => 'Â îáðàáîòêå',
-	STATE_ACTIVE => 'Âûïëà÷åíî',
+    STATE_INACTIVE => 'Ð’ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐµ',
+    STATE_ACTIVE => 'Ð’Ñ‹Ð¿Ð»Ð°Ñ‡ÐµÐ½Ð¾',
 );
 
 $TYPE_LIST = array(
-	1 => 'Âåáìàñòåðàì',
-	2 => 'Ðåêëàìîäàòåëÿì',
+    1 => 'Ð’ÐµÐ±Ð¼Ð°ÑÑ‚ÐµÑ€Ð°Ð¼',
+    2 => 'Ð ÐµÐºÐ»Ð°Ð¼Ð¾Ð´Ð°Ñ‚ÐµÐ»ÑÐ¼',
 );
 
 $TEASER_TYPES = array(
-	1 => '50x50',
-	2 => '60x60',
-	3 => '700x70',
-	4 => '100x100',
-	5 => '120x120',
+    1 => '50x50',
+    2 => '60x60',
+    3 => '700x70',
+    4 => '100x100',
+    5 => '120x120',
 );
-
 ?>

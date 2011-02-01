@@ -1,68 +1,70 @@
-<?
+<?php
+
 session_start();
 Header("Content-type: text/html; charset=cp1251");
 
 $root_dir = str_replace("\\", "/", __FILE__);
 $root_dir = substr($root_dir, 0, strpos($root_dir, "/include/"));
-define("ROOT_PATH", $root_dir."/");
+define("ROOT_PATH", $root_dir . "/");
 
 function array_stripslashes($arr) {
-	if (is_array($arr)) {
-		foreach ($arr as $key => $value) {
-			if (!is_array($value)) {
-				$arr[$key] = stripslashes($value);
-			} else {
-				$arr[$key] = array_stripslashes($value);
-			}
-		}
-	}
-	return $arr;
+    if (is_array($arr)) {
+        foreach ($arr as $key => $value) {
+            if (!is_array($value)) {
+                $arr[$key] = stripslashes($value);
+            } else {
+                $arr[$key] = array_stripslashes($value);
+            }
+        }
+    }
+    return $arr;
 }
 
 if (get_magic_quotes_gpc()) {
-	$_GET = array_map('array_stripslashes',$_GET);
-	$_POST = array_map('array_stripslashes',$_POST);
-	$_COOKIE = array_map('array_stripslashes',$_COOKIE);
+    $_GET = array_map('array_stripslashes', $_GET);
+    $_POST = array_map('array_stripslashes', $_POST);
+    $_COOKIE = array_map('array_stripslashes', $_COOKIE);
 }
 
-require_once ROOT_PATH.'include/config.php';
+require_once ROOT_PATH . 'include/config.php';
 
 ini_set('display_errors', SHOW_PHP_ERRORS);
 ini_set('session.gc_maxlifetime', 1440 * 20);
 error_reporting(E_ALL);
 
-require_once ROOT_PATH.'include/utils.php';
-require_once ROOT_PATH.'include/defs.php';
-require_once ROOT_PATH.'include/db.php';
+require_once ROOT_PATH . 'include/utils.php';
+require_once ROOT_PATH . 'include/defs.php';
+require_once ROOT_PATH . 'include/db.php';
 
-require_once ROOT_PATH.'./include/smarty/Smarty.class.php';
+require_once ROOT_PATH . './include/smarty/Smarty.class.php';
 $smarty = new Smarty;
-$smarty->template_dir = ROOT_PATH."templates";
-$smarty->compile_dir = ROOT_PATH."templates_c";
-$smarty->cache_dir = ROOT_PATH."templates_c/cache";
-$smarty->cache_lifetime = 60 * 10; // 10 ìèí
+$smarty->template_dir = ROOT_PATH . "templates";
+$smarty->compile_dir = ROOT_PATH . "templates_c";
+$smarty->cache_dir = ROOT_PATH . "templates_c/cache";
+$smarty->cache_lifetime = 60 * 10; // 10 Ð¼Ð¸Ð½
 $smarty->plugins_dir = array('mysmarty', 'plugins');
 
-$DB_QUERY =  0; 
+$DB_QUERY = 0;
 
 $account_id = get($_SESSION, 'account_id');
 
-if (!isset($AUTH)) $AUTH = "member";
+if (!isset($AUTH))
+    $AUTH = "member";
 check_auth($AUTH);
 
 $user_type = get_get('user_type');
-if ($user_type) { // 1 - âåáìàñòåð, 2 - ðåêëàìîäàòåëü
-	SetCookie("user_type", $user_type, time() + 3600*360, "/");
-	redirect("index.php");
+if ($user_type) { // 1 - Ð²ÐµÐ±Ð¼Ð°ÑÑ‚ÐµÑ€, 2 - Ñ€ÐµÐºÐ»Ð°Ð¼Ð¾Ð´Ð°Ñ‚ÐµÐ»ÑŒ
+    SetCookie("user_type", $user_type, time() + 3600 * 360, "/");
+    redirect("index.php");
 }
 $USER_TYPE = (int) get($_COOKIE, 'user_type');
 if (!$USER_TYPE || !array_key_exists($USER_TYPE, $TYPE_LIST)) {
-	redirect("index.php?user_type=1");
+    redirect("index.php?user_type=1");
 }
 
 $SCRIPTNAME = substr(strrchr($_SERVER['SCRIPT_NAME'], '/'), 1);
-$SCRIPTPATH = substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/")+1);
-define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST'].$SCRIPTPATH);
+$SCRIPTPATH = substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/") + 1);
+define('SITE_URL', 'http://' . $_SERVER['HTTP_HOST'] . $SCRIPTPATH);
 $smarty->assign('SITE_URL', SITE_URL);
 
 $JS = array();
@@ -76,9 +78,9 @@ $JS[] = 'ui.datepicker.js';
 $JS[] = 'scripts.js';
 
 $ERRORS = array();
-$PAGE_TITLE = 'ADNets.ru - ñåðâèñ òèçåðíîé ðåêëàìû';
+$PAGE_TITLE = 'ADNets.ru - ÑÐµÑ€Ð²Ð¸Ñ Ñ‚Ð¸Ð·ÐµÑ€Ð½Ð¾Ð¹ Ñ€ÐµÐºÐ»Ð°Ð¼Ñ‹';
 $HEAD_TITLE = "";
-$PAGE_DESC = 'ADNets.ru - ñåðâèñ òèçåðíîé ðåêëàìû';
+$PAGE_DESC = 'ADNets.ru - ÑÐµÑ€Ð²Ð¸Ñ Ñ‚Ð¸Ð·ÐµÑ€Ð½Ð¾Ð¹ Ñ€ÐµÐºÐ»Ð°Ð¼Ñ‹';
 $smarty->assign_by_ref('ERRORS', $ERRORS);
 $smarty->assign_by_ref('PAGE_TITLE', $PAGE_TITLE);
 $smarty->assign_by_ref('HEAD_TITLE', $HEAD_TITLE);
@@ -87,53 +89,50 @@ $smarty->assign_by_ref('JS', $JS);
 $smarty->assign_by_ref('DB_QUERY', $DB_QUERY);
 
 $MENU_GUEST = array(
-	array('name' => 'logon', 'title' => 'Âîéòè', 'url' => 'logon.php'),
-	array('name' => 'register', 'title' => 'Ðåãèñòðàöèÿ', 'url' => 'registration.php'),
-	array('name' => 'forum', 'title' => 'Ôîðóì', 'url' => 'forum/'),
-	array('name' => 'about', 'title' => 'Î íàñ', 'url' => 'about.php'),
-	array('name' => 'faq', 'title' => 'FAQ', 'url' => 'faq.php'),
-	array('name' => 'contact', 'title' => 'Êîíòàêòû', 'url' => 'contact.php'),
+    array('name' => 'logon', 'title' => 'Ð’Ð¾Ð¹Ñ‚Ð¸', 'url' => 'logon.php'),
+    array('name' => 'register', 'title' => 'Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ', 'url' => 'registration.php'),
+    array('name' => 'forum', 'title' => 'Ð¤Ð¾Ñ€ÑƒÐ¼', 'url' => 'forum/'),
+    array('name' => 'about', 'title' => 'Ðž Ð½Ð°Ñ', 'url' => 'about.php'),
+    array('name' => 'faq', 'title' => 'FAQ', 'url' => 'faq.php'),
+    array('name' => 'contact', 'title' => 'ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ñ‹', 'url' => 'contact.php'),
 );
 $MENU_WEB = array(
-	array('name' => 'news', 'title' => 'Íîâîñòè', 'url' => 'news.php'),
-	array('name' => 'play_gr', 'title' => 'Ïëîùàäêè', 'url' => 'playgrounds.php'),
-	array('name' => 'stat', 'title' => 'Ñòàòèñòèêà', 'url' => 'statistic.php'),
-	array('name' => 'payments', 'title' => 'Âûïëàòû', 'url' => 'payments.php'),
-	array('name' => 'profile', 'title' => 'Ïðîôèëü', 'url' => 'profile.php'),
-	array('name' => 'top', 'title' => 'Òîï', 'url' => 'top.php'),
-	//array('name' => 'ticket', 'title' => 'Òèêåòû', 'url' => 'tickets.php'),
+    array('name' => 'news', 'title' => 'ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸', 'url' => 'news.php'),
+    array('name' => 'play_gr', 'title' => 'ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÐºÐ¸', 'url' => 'playgrounds.php'),
+    array('name' => 'stat', 'title' => 'Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ°', 'url' => 'statistic.php'),
+    array('name' => 'payments', 'title' => 'Ð’Ñ‹Ð¿Ð»Ð°Ñ‚Ñ‹', 'url' => 'payments.php'),
+    array('name' => 'profile', 'title' => 'ÐŸÑ€Ð¾Ñ„Ð¸Ð»ÑŒ', 'url' => 'profile.php'),
+    array('name' => 'top', 'title' => 'Ð¢Ð¾Ð¿', 'url' => 'top.php'),
+        //array('name' => 'ticket', 'title' => 'Ð¢Ð¸ÐºÐµÑ‚Ñ‹', 'url' => 'tickets.php'),
 );
 $MENU_ADV = array(
-	array('name' => 'news', 'title' => 'Íîâîñòè', 'url' => 'news.php'),
-	array('name' => 'company', 'title' => 'Êîìïàíèè', 'url' => 'companies.php'),
-	array('name' => 'stat', 'title' => 'Ñòàòèñòèêà', 'url' => 'advstat.php'),
-	array('name' => 'profile', 'title' => 'Ïðîôèëü', 'url' => 'advprofile.php'),
-	array('name' => 'balance', 'title' => 'Áàëàíñ', 'url' => 'balance.php'),
-	//array('name' => 'ticket', 'title' => 'Òèêåòû', 'url' => 'tickets.php'),
+    array('name' => 'news', 'title' => 'ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸', 'url' => 'news.php'),
+    array('name' => 'company', 'title' => 'ÐšÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸', 'url' => 'companies.php'),
+    array('name' => 'stat', 'title' => 'Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ°', 'url' => 'advstat.php'),
+    array('name' => 'profile', 'title' => 'ÐŸÑ€Ð¾Ñ„Ð¸Ð»ÑŒ', 'url' => 'advprofile.php'),
+    array('name' => 'balance', 'title' => 'Ð‘Ð°Ð»Ð°Ð½Ñ', 'url' => 'balance.php'),
+        //array('name' => 'ticket', 'title' => 'Ð¢Ð¸ÐºÐµÑ‚Ñ‹', 'url' => 'tickets.php'),
 );
 $MENU = $MENU_GUEST;
 if ($account_id) {
-	$MENU = $MENU_WEB;
-	if (IsAdv()) {
-		$MENU = $MENU_ADV;
-	}
+    $MENU = $MENU_WEB;
+    if (IsAdv()) {
+        $MENU = $MENU_ADV;
+    }
 
-	$c = new Cat();
-	$cats = $c->GetManyByCond("1");
-	$CATEGORY_LIST = array();
-	foreach($cats as $v) {
-		$CATEGORY_LIST[$v['id']] = $v['title'];
-	}
+    $c = new Cat();
+    $cats = $c->GetManyByCond("1");
+    $CATEGORY_LIST = array();
+    foreach ($cats as $v) {
+        $CATEGORY_LIST[$v['id']] = $v['title'];
+    }
 }
 
 foreach ($MENU as $k => $v) {
-	if (get($v, 'url') && strpos($_SERVER['REQUEST_URI'], '/'.$v['url']) !== false) {
-		$smarty->assign('MENU_SD', $v['name']);
-		$HEAD_TITLE = $v['title'];
-	}
+    if (get($v, 'url') && strpos($_SERVER['REQUEST_URI'], '/' . $v['url']) !== false) {
+        $smarty->assign('MENU_SD', $v['name']);
+        $HEAD_TITLE = $v['title'];
+    }
 }
 $smarty->assign('MENU', $MENU);
-
-
-
 ?>
