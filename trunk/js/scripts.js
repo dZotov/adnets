@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 function del_denay_cat(account_id,site_id,cat_id)
 {
-	if(confirm("Вы уверены что хотите удалить из списка фильтнов эту категорию?"))
+	if(confirm("Р’С‹ СѓРІРµСЂРµРЅС‹ С‡С‚Рѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ РёР· СЃРїРёСЃРєР° С„РёР»СЊС‚РЅРѕРІ СЌС‚Сѓ РєР°С‚РµРіРѕСЂРёСЋ?"))
 		redirect("playgrounds.php?&sid="+site_id+"&cat="+cat_id+"&act=del_cat");
 	
 }
@@ -60,7 +60,7 @@ function show_abs(block,pl)
 	$("#show_abs").css("width","100%");
 	$("#show_abs").show();
 	$("#show_block").show();
-	$("#show_block").append('<br /><a href="javascript:close_abs();" style="padding:0 0 0 10px">[Закрыть]</a><br /><br /><br /><iframe src="show_block.php?block='+block+'&plid='+pl+'" height="400px" width="700px" />');
+	$("#show_block").append('<br /><a href="javascript:close_abs();" style="padding:0 0 0 10px">[Р—Р°РєСЂС‹С‚СЊ]</a><br /><br /><br /><iframe src="show_block.php?block='+block+'&plid='+pl+'" height="400px" width="700px" />');
 }
 
 function show_block_result()
@@ -69,7 +69,7 @@ function show_block_result()
 	var tiser=$("#block_show_script").attr("value");
 	$("#show_block_result_id").empty();
 	$("#show_block_result_id").show();
-	$("#show_block_result_id").append("<a href='#' onclick='javascript: close_block();'>[Закрыть] <br /><br /></a>");
+	$("#show_block_result_id").append("<a href='#' onclick='javascript: close_block();'>[Р—Р°РєСЂС‹С‚СЊ] <br /><br /></a>");
 	$("#show_block_result_id").append(tiser);
 	//$("#block_footer_script").attr("value")
 	alert(tiser);
@@ -116,11 +116,11 @@ function add_playdround()
 		id='undefined';
 	var adid=$("#adid").attr('value');
 	if(!title)
-		error +="Нет названия площадки<br />";
+		error +="РќРµС‚ РЅР°Р·РІР°РЅРёСЏ РїР»РѕС‰Р°РґРєРё<br />";
 	if(!url)
-		error +="Введите URL площадки<br />";
+		error +="Р’РІРµРґРёС‚Рµ URL РїР»РѕС‰Р°РґРєРё<br />";
 	if(cat==0)
-		error +="Выберите категорию площадки<br />";
+		error +="Р’С‹Р±РµСЂРёС‚Рµ РєР°С‚РµРіРѕСЂРёСЋ РїР»РѕС‰Р°РґРєРё<br />";
 	if(error!='')
 		show_error(error);
 	else
@@ -139,7 +139,7 @@ function add_playdround()
 				$("#loader").hide();
 				if(data=='ok')
 				{
-					show_error('Информация изменена!');
+					show_error('РРЅС„РѕСЂРјР°С†РёСЏ РёР·РјРµРЅРµРЅР°!');
 					redirect('playgrounds.php');
 				}
 				else
@@ -165,7 +165,7 @@ function registration()
 	if(!email)
 	{
 		flag=0;
-		error_show("email_error","Заполните поле корректно <br />(пример: test@example.com)");
+		error_show("email_error","Р—Р°РїРѕР»РЅРёС‚Рµ РїРѕР»Рµ РєРѕСЂСЂРµРєС‚РЅРѕ <br />(РїСЂРёРјРµСЂ: test@example.com)");
 	}
 	else
 		$("#email_error").empty();
@@ -173,8 +173,8 @@ function registration()
 	if((!password || !re_password) || password!=re_password)
 	{
 			flag=0;
-			error_show("password_error","Заполните поля верно");
-			error_show("repeat_password_error","Пароли не совпадают");
+			error_show("password_error","Р—Р°РїРѕР»РЅРёС‚Рµ РїРѕР»СЏ РІРµСЂРЅРѕ");
+			error_show("repeat_password_error","РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚");
 	}
 	else
 	{
@@ -185,7 +185,7 @@ function registration()
 	if(!wmr || wmr=='R')
 	{
 		flag=0;
-		error_show("wmr_error","Введите Ваш WMR - кошелек <br />(пример: R123456789012)");
+		error_show("wmr_error","Р’РІРµРґРёС‚Рµ Р’Р°С€ WMR - РєРѕС€РµР»РµРє <br />(РїСЂРёРјРµСЂ: R123456789012)");
 	}
 	else
 		$("#wmr_error").empty();
@@ -215,7 +215,7 @@ function registration()
 				else
 				{
 					$("#registr").show();
-					error_show("reg_error","Ощибка регистрации. Пожалуйста повторите попытку или обратитесь в слубу поддержки");					
+					error_show("reg_error","РћС‰РёР±РєР° СЂРµРіРёСЃС‚СЂР°С†РёРё. РџРѕР¶Р°Р»СѓР№СЃС‚Р° РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ РёР»Рё РѕР±СЂР°С‚РёС‚РµСЃСЊ РІ СЃР»СѓР±Сѓ РїРѕРґРґРµСЂР¶РєРё");					
 				}
 			},
 			error: function() {return;}
@@ -235,9 +235,9 @@ function error_show(el,value)
 function show_hide(el)
 {
 	if($('#'+el).css('display')=='none')
-		$('#'+el).slideDown();
+		$('#'+el).slideDown("slow");
 	else
-		$('#'+el).fadeOut();
+		$('#'+el).slideUp("slow");
 	
 }	
 function Submit(form) {
@@ -251,7 +251,7 @@ function redirect(url) {
 }
 
 function if_confirm(url) {
-	if(confirm('Вы уверены?'))
+	if(confirm('Р’С‹ СѓРІРµСЂРµРЅС‹?'))
 		redirect(url);
 }
 
