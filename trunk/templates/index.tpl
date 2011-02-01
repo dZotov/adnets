@@ -2,8 +2,8 @@
 <div id="container">
 	<h1><span></span>Adnets.ru</h1>
 	<ul>
-		<li id="registration"><a href="registration.php">Регистрация</a></li>
-		<li id="enter"><a href="logon.php">Вход</a></li>
+		<li id="registration"><a href="registration.php">вЂ“РµРіРёСЃС‚СЂР°С†Рёв‚¬</a></li>
+		<li id="enter"><a href="logon.php">В¬С…РѕРґ</a></li>
 	</ul>	
 </div>
 {include file="layout/footer_l.tpl"}

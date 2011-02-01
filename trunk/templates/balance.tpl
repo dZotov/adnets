@@ -3,13 +3,13 @@
 
 
 {if !$BALANCE}
-Ваш баланс на текущий момент — {$ACCOUNT.balance} руб.
-<a href="javascript: show_hide('_balance_form');">Пополнить баланс</a>
+Р’Р°С€ Р±Р°Р»Р°РЅСЃ РЅР° С‚РµРєСѓС‰РёР№ РјРѕРјРµРЅС‚ вЂ” {$ACCOUNT.balance} СЂСѓР±.
+<a href="javascript: show_hide('_balance_form');">РџРѕРїРѕР»РЅРёС‚СЊ Р±Р°Р»Р°РЅСЃ</a>
 <div class="padt15" style="display: none;" id="_balance_form">
 	<form action="" method="post">
-	<input type="hidden" name="mode" value="pay" /> руб.
-	<input type="text" name="sum" value="3000" size="8" /> руб.
-	<input type="submit" value="Пополнить" />
+	<input type="hidden" name="mode" value="pay" /> СЂСѓР±.
+	<input type="text" name="sum" value="3000" size="8" /> СЂСѓР±.
+	<input type="submit" value="РџРѕРїРѕР»РЅРёС‚СЊ" />
 	</form>
 </div>
 
@@ -22,11 +22,11 @@
 	<input type="hidden" name="LMI_PAYEE_PURSE" value="R122684558758" />
 	<input type="hidden" name="LMI_SIM_MODE" value="0">
 	<p class="anotation">
-	Вы хотите выполнить платёж <br /><br />
-	Сумма платежа: {$BALANCE.sum} <br />
-	Назначение платежа: "Пополнение баланса для аккаунта {$ACCOUNT.email}"
+	Р’С‹ С…РѕС‚РёС‚Рµ РІС‹РїРѕР»РЅРёС‚СЊ РїР»Р°С‚С‘Р¶ <br /><br />
+	РЎСѓРјРјР° РїР»Р°С‚РµР¶Р°: {$BALANCE.sum} <br />
+	РќР°Р·РЅР°С‡РµРЅРёРµ РїР»Р°С‚РµР¶Р°: "РџРѕРїРѕР»РЅРµРЅРёРµ Р±Р°Р»Р°РЅСЃР° РґР»СЏ Р°РєРєР°СѓРЅС‚Р° {$ACCOUNT.email}"
 	</p>	
-	<input type="submit" value=" Перейти к оплате " />
+	<input type="submit" value=" РџРµСЂРµР№С‚Рё Рє РѕРїР»Р°С‚Рµ " />
 	</form>
 </div>
 {/if}

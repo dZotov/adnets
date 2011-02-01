@@ -1,27 +1,27 @@
 {include file="layout/header.tpl"}
-<h3>Добавление/редактирование блоков</h3>
+<h3>Р”РѕР±Р°РІР»РµРЅРёРµ/СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ Р±Р»РѕРєРѕРІ</h3>
 <div class="ed_blocks">
 <form action="" method="post">
 	<div class="m10">
-		<label for="title">Название блока</label>
-			<input type="text" name="block_titile" id="block_titile" value="{$PARAM.block_titile|default:'Блок'}" size="30%">
+		<label for="title">РќР°Р·РІР°РЅРёРµ Р±Р»РѕРєР°</label>
+			<input type="text" name="block_titile" id="block_titile" value="{$PARAM.block_titile|default:'Р‘Р»РѕРє'}" size="30%">
 		<div class="clear"></div>
 		<input type="hidden" name="block_id" value="{$smarty.get.id}">
 		<input type="hidden" name="site_id" value="{$smarty.get.sid}">
 		<table>
 			<tr>
 				<td>
-					<span>Количество тизеров</span>
+					<span>РљРѕР»РёС‡РµСЃС‚РІРѕ С‚РёР·РµСЂРѕРІ</span>
 				</td>
 				<td>
-					<span>По вертикали</span>
+					<span>РџРѕ РІРµСЂС‚РёРєР°Р»Рё</span>
 					<select name="hor_tiser_count">
 						{foreach from=$TISER_COUNT item=i}
 							<option value="{$i}" {if $PARAM.hor_tiser_count==$i}selected{/if}>{$i}</option>
 						{/foreach}
 					</select>
 					
-					<span>По горизонтали</span>
+					<span>РџРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё</span>
 					<select name="vert_tiser_count">
 						{foreach from=$TISER_COUNT item=i}
 							<option value="{$i}" {if $PARAM.vert_tiser_count==$i}selected{/if}>{$i}</option>
@@ -31,7 +31,7 @@
 			</tr>
 			<tr>
 				<td>
-					<span>Длинна</span>
+					<span>Р”Р»РёРЅРЅР°</span>
 				</td>
 				<td>
 					<input type="text" name="width" id="width" value="{$PARAM.width|default:100}">
@@ -43,7 +43,7 @@
 			</tr>
 			<tr>
 				<td>
-					<span>Цвет фона</span>
+					<span>Р¦РІРµС‚ С„РѕРЅР°</span>
 				</td>
 				<td>
 					<div class="color_block">
@@ -56,7 +56,7 @@
 			</tr>
 			<tr>
 				<td>
-					<span>Граница</span>
+					<span>Р“СЂР°РЅРёС†Р°</span>
 				</td>
 				<td>
 					<div class="color_block">
@@ -67,9 +67,9 @@
 						</select>
 						<span>px</span>
 						<select name="tiser_border_line">
-							<option value="solid" {if $PARAM.tiser_border_line=='solid'}selected{/if}>сплошная</option>
-							<option value="dashed" {if $PARAM.tiser_border_line=='dashed'}selected{/if}>пунктир</option>
-							<option value="dotted" {if $PARAM.tiser_border_line=='dotted'}selected{/if}>точки</option>
+							<option value="solid" {if $PARAM.tiser_border_line=='solid'}selected{/if}>СЃРїР»РѕС€РЅР°СЏ</option>
+							<option value="dashed" {if $PARAM.tiser_border_line=='dashed'}selected{/if}>РїСѓРЅРєС‚РёСЂ</option>
+							<option value="dotted" {if $PARAM.tiser_border_line=='dotted'}selected{/if}>С‚РѕС‡РєРё</option>
 						</select>
 					</div>
 					<div class="color_block">
@@ -85,12 +85,12 @@
 		<table>
 			<tr>
 				<td>
-					<label for="title">Блок</label>
+					<label for="title">Р‘Р»РѕРє</label>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<span>Цвет фона</span>
+					<span>Р¦РІРµС‚ С„РѕРЅР°</span>
 				</td>
 				<td>
 					<div class="color_block">
@@ -103,7 +103,7 @@
 			</tr>
 			<tr>
 				<td>
-					<span>Граница</span>
+					<span>Р“СЂР°РЅРёС†Р°</span>
 				</td>
 				<td>
 					<div class="color_block">
@@ -114,9 +114,9 @@
 						</select>
 						<span>px</span>
 						<select name="block_line">
-							<option value="solid" {if $PARAM.block_line=='solid'}selected{/if}>сплошная</option>
-							<option value="dashed" {if $PARAM.block_line=='dashed'}selected{/if}>пунктир</option>
-							<option value="dotted" {if $PARAM.block_line=='dotted'}selected{/if}>точки</option>
+							<option value="solid" {if $PARAM.block_line=='solid'}selected{/if}>СЃРїР»РѕС€РЅР°СЏ</option>
+							<option value="dashed" {if $PARAM.block_line=='dashed'}selected{/if}>РїСѓРЅРєС‚РёСЂ</option>
+							<option value="dotted" {if $PARAM.block_line=='dotted'}selected{/if}>С‚РѕС‡РєРё</option>
 						</select>
 					</div>
 					<div class="color_block">
@@ -129,23 +129,23 @@
 			</tr>
 			<tr>
 				<td>
-					<label for="title">Картинка</label>
+					<label for="title">РљР°СЂС‚РёРЅРєР°</label>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<span>Положение</span>
+					<span>РџРѕР»РѕР¶РµРЅРёРµ</span>
 				</td>
 				<td>
 					<select name="block_text_align">
-						<option value="under_text" {if $PARAM.block_text_align=='under_text'}selected{/if}>Над текстом</option>
-						<option value="left_text" {if $PARAM.block_text_align=='left_text'}selected{/if}>Слева от текста</option>
+						<option value="under_text" {if $PARAM.block_text_align=='under_text'}selected{/if}>РќР°Рґ С‚РµРєСЃС‚РѕРј</option>
+						<option value="left_text" {if $PARAM.block_text_align=='left_text'}selected{/if}>РЎР»РµРІР° РѕС‚ С‚РµРєСЃС‚Р°</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<span>Размеры, px</span>
+					<span>Р Р°Р·РјРµСЂС‹, px</span>
 				</td>
 				<td>
 					<select name="block_text_size">
@@ -161,15 +161,15 @@
 			</tr>
 			<tr>
 				<td>
-					<label for="title">Шрифт</label>
+					<label for="title">РЁСЂРёС„С‚</label>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<span>Заголовок</span>
+					<span>Р—Р°РіРѕР»РѕРІРѕРє</span>
 				</td>
 				<td>
-					<span>Обычный</span>
+					<span>РћР±С‹С‡РЅС‹Р№</span>
 					<div class="clear"></div>
 					<div class="color_block">
 						<input type="text" class="pxtext" value="{$PARAM.block_font_size|default:'10'}" name="block_font_size">
@@ -186,7 +186,7 @@
 						<div class="color_block_s" id="norm" onclick="javascript:colorselector('norm','{$PARAM.field_norm|default:'#f0f0f0'}')"></div>
 					</div>
 					<div class="clear"></div>
-					<span>При наведении</span>
+					<span>РџСЂРё РЅР°РІРµРґРµРЅРёРё</span>
 					<div class="clear"></div>
 					<div class="color_block">
 						<input type="text" class="pxtext" value="{$PARAM.block_font_size_naved|default:'10'}" name="block_font_size_naved">
@@ -206,7 +206,7 @@
 			</tr>
 			<tr>
 				<td>
-					<span>Описание</span>
+					<span>РћРїРёСЃР°РЅРёРµ</span>
 				</td>
 				<td>
 					<div class="color_block">
@@ -227,18 +227,18 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="checkbox" name="only_my_pl" id="only_my_pl" {if $PARAM.show_mine}checked{/if}> &nbsp;&nbsp;<span>Показывать только свои площадки</span>
+					<input type="checkbox" name="only_my_pl" id="only_my_pl" {if $PARAM.show_mine}checked{/if}> &nbsp;&nbsp;<span>РџРѕРєР°Р·С‹РІР°С‚СЊ С‚РѕР»СЊРєРѕ СЃРІРѕРё РїР»РѕС‰Р°РґРєРё</span>
 				</td>
 				
 			</tr>
 		</table>
-		<input type="submit" value="{if $smarty.get.id}Изменить{else}Добавить{/if} блок">
+		<input type="submit" value="{if $smarty.get.id}РР·РјРµРЅРёС‚СЊ{else}Р”РѕР±Р°РІРёС‚СЊ{/if} Р±Р»РѕРє">
 	</div>
 </form>	
 </div>
 <div style="padding-left:10px;float:left; width:1%">&nbsp;</div>
 <div class="code_block">
-		<p class="anotation">Разместите этот код там, где хотите чтобы обображался ваш блок:</p>
+		<p class="anotation">Р Р°Р·РјРµСЃС‚РёС‚Рµ СЌС‚РѕС‚ РєРѕРґ С‚Р°Рј, РіРґРµ С…РѕС‚РёС‚Рµ С‡С‚РѕР±С‹ РѕР±РѕР±СЂР°Р¶Р°Р»СЃСЏ РІР°С€ Р±Р»РѕРє:</p>
 		<textarea cols="38" rows="8" id="block_show_script">
 			<script type="text/javascript">
 				if (typeof adnets == 'undefined') {ldelim}
@@ -254,7 +254,7 @@
 			</script> 
 		</textarea>
 		
-		<p class="anotation">Разместите этот код внизу странице:</p>
+		<p class="anotation">Р Р°Р·РјРµСЃС‚РёС‚Рµ СЌС‚РѕС‚ РєРѕРґ РІРЅРёР·Сѓ СЃС‚СЂР°РЅРёС†Рµ:</p>
 		<textarea cols="38" rows="8" id="block_footer_script">
 			<script type="text/javascript">
 			{literal}
@@ -269,6 +269,6 @@
 			{/literal}
 			</script> 
 		</textarea>
-		<p> <a href="javascript:show_abs('{$smarty.get.id}','{$PLID}');">Посмотреть блок</a></p>
+		<p> <a href="javascript:show_abs('{$smarty.get.id}','{$PLID}');">РџРѕСЃРјРѕС‚СЂРµС‚СЊ Р±Р»РѕРє</a></p>
 	</div>
 {include file="layout/footer.tpl"}

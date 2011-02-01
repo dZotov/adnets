@@ -9,33 +9,33 @@
 	</script>
 {/literal}	
 <ul id="types_of_statistic">
-	<li><a href="statistic.php?act=ref_stat" {if $smarty.get.act=='ref_stat'}class="inactive"{/if}>Рефералы</a></li>
+	<li><a href="statistic.php?act=ref_stat" {if $smarty.get.act=='ref_stat'}class="inactive"{/if}>Р РµС„РµСЂР°Р»С‹</a></li>
 </ul>
 
 <form id="choose_period">
 	<label for="from_date">c </label><input type="text" name="from_date" id="from_date" value="{$PRE_DATE}" />
-	<label for="to_date">до </label><input type="text" name="to_date" id="to_date" value="{$DATE_NOW}" />
+	<label for="to_date">РґРѕ </label><input type="text" name="to_date" id="to_date" value="{$DATE_NOW}" />
 	<input type="hidden" name="act" value="{$smarty.get.act}">
-	<input type="submit" value="Применить" />
+	<input type="submit" value="РџСЂРёРјРµРЅРёС‚СЊ" />
 </form>	
 
 <ul id="switch_type">
-	<li {if !$smarty.get.act}class="active"{/if}><a href="statistic.php">Общая</a> {if !$smarty.get.act}<a href="statistic.php">>>>></a>{/if}</li>
-	<li {if $smarty.get.act=='block_stat'}class="active"{/if}><a href="statistic.php?act=block_stat">По блокам</a> {if $smarty.get.act=='block_stat'}<a href="statistic.php?act=block_stat">>>>></a>{/if}</li>
-	<li {if $smarty.get.act=='pl_stat'}class="active"{/if}><a href="statistic.php?act=pl_stat">По площадкам</a> {if $smarty.get.act=='pl_stat'}<a href="pl_stat">>>>></a>{/if}</li>
+	<li {if !$smarty.get.act}class="active"{/if}><a href="statistic.php">РћР±С‰Р°СЏ</a> {if !$smarty.get.act}<a href="statistic.php">>>>></a>{/if}</li>
+	<li {if $smarty.get.act=='block_stat'}class="active"{/if}><a href="statistic.php?act=block_stat">РџРѕ Р±Р»РѕРєР°Рј</a> {if $smarty.get.act=='block_stat'}<a href="statistic.php?act=block_stat">>>>></a>{/if}</li>
+	<li {if $smarty.get.act=='pl_stat'}class="active"{/if}><a href="statistic.php?act=pl_stat">РџРѕ РїР»РѕС‰Р°РґРєР°Рј</a> {if $smarty.get.act=='pl_stat'}<a href="pl_stat">>>>></a>{/if}</li>
 	
 </ul>
 {if  !$smarty.get.act}
 	<table id="stat">
 		<thead>
 			<tr>
-				<th class="date"><a href="#n">Дата</a></th>
-				<th class="views_blocks">Показов блоков</th>
-				<th class="views_ads">Показов объявлений</th>
-				<th class="clicks">Клики</th>
-				<th class="ctr_blocks">CTR блока</th>
-				<th class="ctr_ads">CTR объявления</th>
-				<th class="money">Сумма</th>
+				<th class="date"><a href="#n">Р”Р°С‚Р°</a></th>
+				<th class="views_blocks">РџРѕРєР°Р·РѕРІ Р±Р»РѕРєРѕРІ</th>
+				<th class="views_ads">РџРѕРєР°Р·РѕРІ РѕР±СЉСЏРІР»РµРЅРёР№</th>
+				<th class="clicks">РљР»РёРєРё</th>
+				<th class="ctr_blocks">CTR Р±Р»РѕРєР°</th>
+				<th class="ctr_ads">CTR РѕР±СЉСЏРІР»РµРЅРёСЏ</th>
+				<th class="money">РЎСѓРјРјР°</th>
 			</tr>
 		</thead>
 		{foreach from=$RES.items item=i name=stat key=k}
@@ -54,11 +54,11 @@
 	<table id="stat">
 		<thead>
 			<tr>
-				<th class="date"><a href="#n">Дата</a></th>
-				<th class="views_blocks">Имя блока</th>
-				<th class="views_ads">Показов</th>
-				<th class="clicks">Клики</th>
-				<th class="ctr_blocks">CTR блока</th>
+				<th class="date"><a href="#n">Р”Р°С‚Р°</a></th>
+				<th class="views_blocks">РРјСЏ Р±Р»РѕРєР°</th>
+				<th class="views_ads">РџРѕРєР°Р·РѕРІ</th>
+				<th class="clicks">РљР»РёРєРё</th>
+				<th class="ctr_blocks">CTR Р±Р»РѕРєР°</th>
 			</tr>
 		</thead>
 		{foreach from=$RES item=i name=stat key=k}
@@ -75,8 +75,8 @@
 	<table id="stat">
 		<thead>
 			<tr>
-				<th class="date"><a href="#n">Дата</a></th>
-				<th class="views_blocks">Сумма (руб.)</th>
+				<th class="date"><a href="#n">Р”Р°С‚Р°</a></th>
+				<th class="views_blocks">РЎСѓРјРјР° (СЂСѓР±.)</th>
 			</tr>
 		</thead>
 		{foreach from=$RES.items item=i name=stat key=k}
@@ -90,8 +90,8 @@
 	<table id="stat">
 		<thead>
 			<tr>
-				<th class="date"><a href="#n">Название</a></th>
-				<th class="views_blocks">Сумма (руб.)</th>
+				<th class="date"><a href="#n">РќР°Р·РІР°РЅРёРµ</a></th>
+				<th class="views_blocks">РЎСѓРјРјР° (СЂСѓР±.)</th>
 			</tr>
 		</thead>
 		{foreach from=$RES item=i name=stat key=k}

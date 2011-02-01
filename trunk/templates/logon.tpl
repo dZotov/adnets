@@ -2,16 +2,16 @@
 <div id="container_registr_logon">
 <div id="corner">
 	<h1><a href="index.php"><span></span>Adnets.ru</a></h1>
-	<h2>Вход</h2> <span class="errors" id="log_error">{$ERROR}</span>
+	<h2>Р’С…РѕРґ</h2> <span class="errors" id="log_error">{$ERROR}</span>
 	
 <form id="registration" action="" method="post">
 	<div id="logon">
-		<label for="email">Адрес электронной почты </label>
+		<label for="email">РђРґСЂРµСЃ СЌР»РµРєС‚СЂРѕРЅРЅРѕР№ РїРѕС‡С‚С‹ </label>
 		<input type="text" name="email" id="email" value="" />
 		
-		<label for="password">Пароль </label>
+		<label for="password">РџР°СЂРѕР»СЊ </label>
 		<input type="password" name="password" id="password" value="" />
-		<a href="javascript: Submit('registration');" id="registr"><span>Войти</span></a>
+		<a href="javascript: Submit('registration');" id="registr"><span>Р’РѕР№С‚Рё</span></a>
 	</div>
 </form>	
 </div>		

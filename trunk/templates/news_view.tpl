@@ -1,8 +1,8 @@
 {include file="layout/header.tpl"}
 
-<h3>Новости {$DATA.title}</h3>
+<h3>РќРѕРІРѕСЃС‚Рё {$DATA.title}</h3>
 {if !$DATA}
-	<p class="anotation"><strong>Новостей нет</strong></p>	
+	<p class="anotation"><strong>РќРѕРІРѕСЃС‚РµР№ РЅРµС‚</strong></p>	
 {else}
 	<p class="anotation"><strong>{$DATA.date|date}</strong></p>
 	<p class="anotation">{$DATA.full}</p>

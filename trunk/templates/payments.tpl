@@ -1,24 +1,24 @@
 {include file="layout/header.tpl"}
 
-<p class="anotation">Ваш баланс на текущий момент - <strong>{$ACCOUNT.balance} руб.</strong></p>
+<p class="anotation">Р’Р°С€ Р±Р°Р»Р°РЅСЃ РЅР° С‚РµРєСѓС‰РёР№ РјРѕРјРµРЅС‚ - <strong>{$ACCOUNT.balance} СЂСѓР±.</strong></p>
 <p class="anotation">
-	Не производить выплаты: <input type="checkbox" {if $ACCOUNT.hold}checked{/if}> 
+	РќРµ РїСЂРѕРёР·РІРѕРґРёС‚СЊ РІС‹РїР»Р°С‚С‹: <input type="checkbox" {if $ACCOUNT.hold}checked{/if}> 
 	{if $ACCOUNT.hold}
-		<a href="javascript:if_confirm('payments.php?act=payment_on')">Включить выплаты</a>
+		<a href="javascript:if_confirm('payments.php?act=payment_on')">Р’РєР»СЋС‡РёС‚СЊ РІС‹РїР»Р°С‚С‹</a>
 	{else}
-		<a href="javascript:if_confirm('payments.php?act=payment_off')">Отключить выплаты</a>
+		<a href="javascript:if_confirm('payments.php?act=payment_off')">РћС‚РєР»СЋС‡РёС‚СЊ РІС‹РїР»Р°С‚С‹</a>
 	{/if}
 </p>
 
 {if !$DATA}
-<p class="anotation"><strong>Выплаты не проводились</strong></p>	
+<p class="anotation"><strong>Р’С‹РїР»Р°С‚С‹ РЅРµ РїСЂРѕРІРѕРґРёР»РёСЃСЊ</strong></p>	
 {else}
 <table>
 	<tr>
-		<th class="blocks">Дата</th>
-		<th class="blocks">Аккаунт</th>
-		<th class="blocks">Сумма, руб.</th>
-		<th class="blocks">Статус</th>
+		<th class="blocks">Р”Р°С‚Р°</th>
+		<th class="blocks">РђРєРєР°СѓРЅС‚</th>
+		<th class="blocks">РЎСѓРјРјР°, СЂСѓР±.</th>
+		<th class="blocks">РЎС‚Р°С‚СѓСЃ</th>
 	</tr>
 	{foreach from=$DATA item=i key=k name=data}
 		<tr {if $smarty.foreach.data.iteration %2==0}class="invert"{/if}>

@@ -13,61 +13,51 @@
 	</div>
 	
 	<div>
-		<input type="checkbox" name="type_ero" /> эро-кампания
+		<input type="checkbox" name="type_ero" /> СЌСЂРѕ-РєР°РјРїР°РЅРёСЏ
 	</div>
 	
 	<br />
 	
 	<div class="padt8 anotation">
-		<div><a href="javascript: show_hide('_time_settings');">Временной таргетинг</a></div>
+		<div><a href="javascript: show_hide('_time_settings');">Р’СЂРµРјРµРЅРЅРѕР№ С‚Р°СЂРіРµС‚РёРЅРі</a></div>
 		<div id="_time_settings" style="display: none;">
-			<table>
-				<tr>
-					<td>По дням</td>
-				</tr>
-				<tr>
-					<td>
-						<table>
-							<tr>
-								<td>{$FORM.days.field}</td> 
-								<td>
-									<a href="javascript: SelectMulti('_form_days', 0, 7);">Выделить все</a> <br />
-									<a href="javascript: SelectMulti('_form_days', 0, 5);">Будни</a> <br />
-									<a href="javascript: SelectMulti('_form_days', 5, 7);">Выходные</a> <br />
-									<a href="javascript: ClearMulti('_form_days');">Очистить</a> <br />
-								</td>
-							</tr>
-						</table>	
-					</td>
-				</tr>
-				<tr>
-					<td>По часам</td>
-				</tr>
-				<tr>
-					<td>
-						<table>
-							<tr>
-								<td>{$FORM.hours.field}</td> 
-								<td>
-									<a href="javascript: SelectMulti('_form_hours', 0, 24);">Выделить все</a> <br />
-									<a href="javascript: SelectMulti('_form_hours', 9, 20);">Рабочие</a> <br />
-									<a href="javascript: SelectMulti('_form_hours', 0, 10, 19, 24);">Не рабочие</a> <br />
-									<a href="javascript: SelectMulti('_form_hours', 7, 12);">Утро</a> <br />
-									<a href="javascript: SelectMulti('_form_hours', 12, 16);">Обед</a> <br />
-									<a href="javascript: SelectMulti('_form_hours', 18, 24);">Вечер</a> <br />
-									<a href="javascript: SelectMulti('_form_hours', 0, 8);">Ночь</a> <br />
-									<a href="javascript: ClearMulti('_form_hours');">Очистить</a> <br />
-								</td>
-							</tr>
-						</table>	
-					</td>
-				</tr>
-			</table>	
+			<div style="float:left;width:49%">
+				<label>РџРѕ РґРЅСЏРј</label>
+				<table>
+					<tr>
+						<td>{$FORM.days.field}</td> 
+						<td style="padding-left:15px">
+							<a href="javascript: SelectMulti('_form_days', 0, 7);">Р’С‹РґРµР»РёС‚СЊ РІСЃРµ</a> <br />
+							<a href="javascript: SelectMulti('_form_days', 0, 5);">Р‘СѓРґРЅРё</a> <br />
+							<a href="javascript: SelectMulti('_form_days', 5, 7);">Р’С‹С…РѕРґРЅС‹Рµ</a> <br />
+							<a href="javascript: ClearMulti('_form_days');">РћС‡РёСЃС‚РёС‚СЊ</a> <br />
+						</td>
+					</tr>
+				</table>	
+			</div>
+			<div style="float:left;width:49%">
+				<label>РџРѕ С‡Р°СЃР°Рј</label>
+				<table>
+					<tr>
+						<td>{$FORM.hours.field}</td> 
+						<td style="padding-left:15px">
+							<a href="javascript: SelectMulti('_form_hours', 0, 24);">Р’С‹РґРµР»РёС‚СЊ РІСЃРµ</a> <br />
+							<a href="javascript: SelectMulti('_form_hours', 9, 20);">Р Р°Р±РѕС‡РёРµ</a> <br />
+							<a href="javascript: SelectMulti('_form_hours', 0, 10, 19, 24);">РќРµ СЂР°Р±РѕС‡РёРµ</a> <br />
+							<a href="javascript: SelectMulti('_form_hours', 7, 12);">РЈС‚СЂРѕ</a> <br />
+							<a href="javascript: SelectMulti('_form_hours', 12, 16);">РћР±РµРґ</a> <br />
+							<a href="javascript: SelectMulti('_form_hours', 18, 24);">Р’РµС‡РµСЂ</a> <br />
+							<a href="javascript: SelectMulti('_form_hours', 0, 8);">РќРѕС‡СЊ</a> <br />
+							<a href="javascript: ClearMulti('_form_hours');">РћС‡РёСЃС‚РёС‚СЊ</a> <br />
+						</td>
+					</tr>
+				</table>	
+			</div>
 		</div>	
 	</div>
 	
 	<div class="padt8 anotation">
-		<div><a href="javascript: show_hide('_limit_settings');">Лимиты</a></div>
+		<div><a href="javascript: show_hide('_limit_settings');">Р›РёРјРёС‚С‹</a></div>
 			
 		<div id="_limit_settings" style="display: none;">
 			<table>
@@ -94,7 +84,7 @@
 	</div>
 	
 	<div class="padt8 anotation">
-		<div><a href="javascript: show_hide('_category_settings');">Категории</a></div>
+		<div><a href="javascript: show_hide('_category_settings');">РљР°С‚РµРіРѕСЂРёРё</a></div>
 			
 		<div id="_category_settings" style="display: none;">
 			<table>
@@ -107,14 +97,14 @@
 	</div>
 	
 	<div class="padt8 anotation">
-		<div><a href="javascript: show_hide('_exceptions_settings');">Исключения</a></div>
+		<div><a href="javascript: show_hide('_exceptions_settings');">РСЃРєР»СЋС‡РµРЅРёСЏ</a></div>
 			
 		<div id="_exceptions_settings" style="display: none;">
 			<table>
 				<tr>
 					<td>{$FORM.exceptions.title}</td> 	
 					<td>
-						Исключить показ на площадках(каждая площадка с новой строки)
+						РСЃРєР»СЋС‡РёС‚СЊ РїРѕРєР°Р· РЅР° РїР»РѕС‰Р°РґРєР°С…(РєР°Р¶РґР°СЏ РїР»РѕС‰Р°РґРєР° СЃ РЅРѕРІРѕР№ СЃС‚СЂРѕРєРё)
 						{$FORM.exceptions.field}
 						<div>
 						
@@ -133,9 +123,9 @@
 	
 	
 	<div class="padt15">
-		<a class="button" href="companies.php">Отменить</a> &nbsp;
-		<a class="button" href="javascript: Submit('company');">Сохранить</a> &nbsp;
-		{if $smarty.get.id}<a class="button" href="teasers.php?id={$smarty.get.id}">Перейти к тизерам</a>{/if}
+		<a class="button" href="companies.php">РћС‚РјРµРЅРёС‚СЊ</a> &nbsp;
+		<a class="button" href="javascript: Submit('company');">РЎРѕС…СЂР°РЅРёС‚СЊ</a> &nbsp;
+		{if $smarty.get.id}<a class="button" href="teasers.php?id={$smarty.get.id}">РџРµСЂРµР№С‚Рё Рє С‚РёР·РµСЂР°Рј</a>{/if}
 	</div>
 	
 	</form>

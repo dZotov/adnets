@@ -1,7 +1,7 @@
 {include file="layout/header.tpl"}
 
 {if !$DATA}
-<p class="anotation"><strong>Новостей нет</strong></p>	
+<p class="anotation"><strong>РќРѕРІРѕСЃС‚РµР№ РЅРµС‚</strong></p>	
 {else}
 	{foreach from=$DATA item=i key=k name=data}
 		<div {if $smarty.foreach.data.iteration %2==0}class="invert"{/if} >

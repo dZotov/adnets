@@ -1,14 +1,14 @@
 {include file="layout/header.tpl"}
 {if !$DATA}
-<p class="anotation"><strong>Тот вебмастеров еще не сформирован!</strong></p>	
+<p class="anotation"><strong>РўРѕС‚ РІРµР±РјР°СЃС‚РµСЂРѕРІ РµС‰Рµ РЅРµ СЃС„РѕСЂРјРёСЂРѕРІР°РЅ!</strong></p>	
 {else}
 <table>
 	<tr>
-		<th class="blocks">Вебмастер</th>
-		<th class="blocks">Показы</th>
-		<th class="blocks">Клики</th>
+		<th class="blocks">Р’РµР±РјР°СЃС‚РµСЂ</th>
+		<th class="blocks">РџРѕРєР°Р·С‹</th>
+		<th class="blocks">РљР»РёРєРё</th>
 		<th class="blocks">CRT</th>
-		<th class="blocks">Заработано, руб.</th>
+		<th class="blocks">Р—Р°СЂР°Р±РѕС‚Р°РЅРѕ, СЂСѓР±.</th>
 	</tr>
 	{foreach from=$DATA item=i key=k name=data}
 		<tr {if $smarty.foreach.data.iteration %2==0}class="invert"{/if}>
