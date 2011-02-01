@@ -7,7 +7,7 @@ $attr=get_get("attr");
 $array=explode("|",base64_decode($attr));
 $date=date("Y-m-d");
 
-SetCookie("check", md5($array[0].$array[1].$array[2].$array[3].$HASH), time() + 86400, "/"); // Проверочная кука(от ботов)
+SetCookie("check", md5($array[0].$array[1].$array[2].$array[3].$HASH), time() + 86400, "/"); // С•СЂРѕРІРµСЂРѕС‡РЅР°в‚¬ РєСѓРєР°(РѕС‚ Р±РѕС‚РѕРІ)
 $_COOKIE['check'] = md5($array[0].$array[1].$array[2].$array[3].$HASH);
 if (get($_COOKIE, 'check')) {
 
@@ -36,8 +36,8 @@ if (get($_COOKIE, 'check')) {
 		if($company->GetId())
 		{
 			$price=$company->Get("price");
-			$amdst=$price*0.80;//площадкам
-			$amsrc=$price+($price*0.20);//рекламсам
+			$amdst=$price*0.80;//РїР»РѕС‰Р°РґРєР°Рј
+			$amsrc=$price+($price*0.20);//СЂРµРєР»Р°РјСЃР°Рј
 			$refstat=$amdst*0.05;
 		}
 		else
