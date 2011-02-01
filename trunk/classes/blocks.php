@@ -1,9 +1,8 @@
-<?
+<?php
 
-class Blocks extends Entity
-{
+class Blocks extends Entity {
 
-	var $table = TBLOCKS;
+    var $table = TBLOCKS;
 
 }
 

@@ -1,6 +1,9 @@
-<?
-class Playgrounds extends Entity
-{
-var $table = TSITES;
+<?php
+
+class Playgrounds extends Entity {
+
+    var $table = TSITES;
+
 }
+
 ?>

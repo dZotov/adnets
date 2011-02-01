@@ -1,9 +1,8 @@
-<?
+<?php
 
-class Teaser extends Entity
-{
+class Teaser extends Entity {
 
-	var $table = TTEASER;
+    var $table = TTEASER;
 
 }
 

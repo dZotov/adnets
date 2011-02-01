@@ -1,9 +1,8 @@
-<?
+<?php
 
-class Blockstat extends Entity
-{
+class Blockstat extends Entity {
 
-	var $table = TBLOCKSTAT;
+    var $table = TBLOCKSTAT;
 
 }
 

@@ -1,9 +1,8 @@
-<?
+<?php
 
-class Balance extends Entity
-{
+class Balance extends Entity {
 
-	var $table = TBALANCE;
+    var $table = TBALANCE;
 
 }
 

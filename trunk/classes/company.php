@@ -1,9 +1,8 @@
-<?
+<?php
 
-class Company extends Entity
-{
+class Company extends Entity {
 
-	var $table = TCOMPANY;
+    var $table = TCOMPANY;
 
 }
 

@@ -1,9 +1,8 @@
-<?
+<?php
 
-class Adwerts extends Entity
-{
+class Adwerts extends Entity {
 
-	var $table = TADWERTS;
+    var $table = TADWERTS;
 
 }
 

@@ -1,9 +1,8 @@
-<?
+<?php
 
-class Refstat extends Entity
-{
+class Refstat extends Entity {
 
-	var $table = TREFSTAT;
+    var $table = TREFSTAT;
 
 }
 
