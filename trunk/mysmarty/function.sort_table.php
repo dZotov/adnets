@@ -18,7 +18,7 @@ function smarty_function_sort_table($params) {
 		$url = '<a href="'.self_url(array('_sort' => '')).'&sort='.$attr[1].'">'.$attr[0].'</a>';
 	}	
 	
-	$str = '<center><table class="sort_table" border="0"><tr><td class="padt3">'.$url.'</td><td class="padt2 padl3">'.$img.'</td></tr></table></center>';
+	$str = $url.$img;
 	return $str;
 }
 

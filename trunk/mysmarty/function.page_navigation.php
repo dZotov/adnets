@@ -24,24 +24,21 @@ function smarty_function_page_navigation($params, &$smarty) {
 		$end = $start + 20;
 	}
 	
-	$html = '<table border="0" class="sort_table"><tr>';
+	$html = '';
 	
 	for($i = $start; $i <= $end; $i++) {
 		$opts['page'] = $i;
 		if ($page == $i)
-			$html .= '<td class="pad3"><div class="b ac">'.$i.'</></td>';
+			$html .= '<span>'.$i.'</span>';
 		else
-			$html .= '<td class="pad3"><a href="'.make_self_url($opts).'">'.$i.'</a></td>';
-		if($i != $end) 
-			$html .= '<td class="pad3">|</td>';	
+			$html .= '<a href="'.make_self_url($opts).'">'.$i.'</a>';
+		
 	}
 	
 	if ($end < $last) {
-		$html .= ' <td>...</td>';
+		$html .= ' <span>...</span>';
 	}
 	
-	
-	$html .= '</tr></table>';
 	
 	$opts['page'] = $page+1;
 	
