@@ -12,7 +12,7 @@ if (count($_POST)) {
 		$_SESSION['account_id'] = 1;
 		redirect('index.php');
 	} else {
-		$ERRORS[] = 'Œ¯Ë·Í‡';
+		$ERRORS[] = '—ú—à–∏–±–∫–∞';
 	}
 }
 

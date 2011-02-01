@@ -16,7 +16,7 @@
 		<tr>
 			<td></td>
 			<td colspan="2" class="b green">
-				Сохранено
+				РЎРѕС…СЂР°РЅРµРЅРѕ
 			</td>
 		</tr>
 		{/if}

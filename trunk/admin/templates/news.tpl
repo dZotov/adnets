@@ -12,15 +12,15 @@
 			<td>{$i.id}.</td>
 			<td>{$i.title}</td>
 			<td>{$i.preview|truncate:50}</td>
-			<td>{if $i.type==1}<span style="color:blue">Вебмастерам</span>{else}<span style="color:green">Рекламодателям</span>{/if}</td>
+			<td>{if $i.type==1}<span style="color:blue">Р’РµР±РјР°СЃС‚РµСЂР°Рј</span>{else}<span style="color:green">Р РµРєР»Р°РјРѕРґР°С‚РµР»СЏРј</span>{/if}</td>
 			<td>
 				{if $i.status==$smarty.const.STATE_ACTIVE}
 					<span class="green">
-						Активный
+						РђРєС‚РёРІРЅС‹Р№
 					</span>
 				{elseif $i.status==$smarty.const.STATE_INACTIVE}
 					<span class="red">
-						Неактивный
+						РќРµР°РєС‚РёРІРЅС‹Р№
 					</span>
 				{/if}
 			</td>
@@ -28,7 +28,7 @@
 				{$i.date|date}
 			</td>
 			<td>
-				<a href="edit_news.php?id={$i.id}">редакт.</a>
+				<a href="edit_news.php?id={$i.id}">СЂРµРґР°РєС‚.</a>
 			</td>
 		</tr>
 		{/foreach}

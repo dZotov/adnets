@@ -8,9 +8,9 @@ $cols = array(
 	1 => 'ID|id',
 	2 => 'WID',
 	3 => 'WMR',
-	4 => 'Ñóììà',
-	5 => 'Ñòàòóñ|status',
-	6 => 'Äàòà'.'|date',
+	4 => 'Ğ¡ÑƒĞ¼Ğ¼Ğ°',
+	5 => 'Ğ¡Ñ‚Ğ°Ñ‚ÑƒÑ|status',
+	6 => 'Ğ”Ğ°Ñ‚Ğ°'.'|date',
 );
 
 $p=$pay->GetSortTable("1",$cols, get_get('sort', 1), get_get('page', 1), get_get('perpage', 25));

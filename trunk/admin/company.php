@@ -1,7 +1,7 @@
 <?
 include("./include/init.php");	
 
-$PAGE_TITLE = $HEAD_TITLE = "Íîâàÿ ðåêëàìíàÿ êîìïàíèÿ";
+$PAGE_TITLE = $HEAD_TITLE = "ÐÐ¾Ð²Ð°Ñ Ñ€ÐµÐºÐ»Ð°Ð¼Ð½Ð°Ñ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ñ";
 
 $id = (int) get_get('id');
 $c = new Company($id);

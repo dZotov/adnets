@@ -7,11 +7,11 @@ $site= new Playgrounds();
 $cols = array(
 	1 => 'ID|id',
 	2 => 'WID',
-	3 => 'Íàçâàíèå|name',
+	3 => 'ĞĞ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ|name',
 	4 => 'URL',
-	5 => 'Ñòàòóñ|status',
-	6 => 'Äàòà'.'|date',
-	7 => 'Äåéñòâèå',
+	5 => 'Ğ¡Ñ‚Ğ°Ñ‚ÑƒÑ|status',
+	6 => 'Ğ”Ğ°Ñ‚Ğ°'.'|date',
+	7 => 'Ğ”ĞµĞ¹ÑÑ‚Ğ²Ğ¸Ğµ',
 );
 
 $s=$site->GetSortTable("1",$cols, get_get('sort', 1), get_get('page', 1), get_get('perpage', 25));

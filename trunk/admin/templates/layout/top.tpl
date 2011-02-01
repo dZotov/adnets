@@ -3,13 +3,13 @@
 		<table width="70%">
 			<tr>
 				<td class="vat">
-					<a href="#" id="wmm">Вебмастер</a>
+					<a href="#" id="wmm">Р’РµР±РјР°СЃС‚РµСЂ</a>
 				</td>
 				<td class="vat" style="padding-left:100px;">
-					<a href="#" id="recm">Рекламодатель</a>
+					<a href="#" id="recm">Р РµРєР»Р°РјРѕРґР°С‚РµР»СЊ</a>
 				</td>
 				<td class="vat">
-					<a href="loguot.php">Выход</td>
+					<a href="loguot.php">Р’С‹С…РѕРґ</td>
 				</td>
 			</tr>
 		</table>

@@ -2,19 +2,19 @@
 $AUTH = 'member';
 include("./include/init.php");	
 
-$PAGE_TITLE = "Ğåêëàìíûå êîìïàíèè";
+$PAGE_TITLE = "Ğ ĞµĞºĞ»Ğ°Ğ¼Ğ½Ñ‹Ğµ ĞºĞ¾Ğ¼Ğ¿Ğ°Ğ½Ğ¸Ğ¸";
 
 $c = new Company();
 $cond = "id IS NOT NULL";
 $cols = array(
-	1 => 'Êîìïàíèÿ|title',
-	2 => 'Òåìàòèêà|category',
-	3 => 'Òèçåğû',
-	4 => 'Ïîêàçû|view',
-	5 => 'Êëèêè|click',
+	1 => 'ĞšĞ¾Ğ¼Ğ¿Ğ°Ğ½Ğ¸Ñ|title',
+	2 => 'Ğ¢ĞµĞ¼Ğ°Ñ‚Ğ¸ĞºĞ°|category',
+	3 => 'Ğ¢Ğ¸Ğ·ĞµÑ€Ñ‹',
+	4 => 'ĞŸĞ¾ĞºĞ°Ğ·Ñ‹|view',
+	5 => 'ĞšĞ»Ğ¸ĞºĞ¸|click',
 	6 => 'CTR|ctr',
-	7 => 'Äåíüãè|money',
-	8 => 'Äàòà|date',
+	7 => 'Ğ”ĞµĞ½ÑŒĞ³Ğ¸|money',
+	8 => 'Ğ”Ğ°Ñ‚Ğ°|date',
 );
 $t = $c->GetSortTable($cond, $cols, get_get('sort', -8), get_get('page', 1), get_get('perpage', 20));
 

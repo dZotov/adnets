@@ -7,11 +7,11 @@
 	{include file="layout/errors.tpl"}
 	<table class="pad2">
 		<tr>
-			<td>Логин:</td>
+			<td>Р‹РѕРіРёРЅ:</td>
 			<td><input type="text" name="login" size="30" /></td>
 		</tr>	
 		<tr>
-			<td>Пароль:</td>
+			<td>С•Р°СЂРѕР»СЊ:</td>
 			<td><input type="password" name="password" size="30" /></td>
 		</tr>	
 		<tr>

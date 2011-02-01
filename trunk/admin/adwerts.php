@@ -7,10 +7,10 @@ $ad= new Adwerts();
 $cols = array(
 	1 => 'ID|id',
 	2 => 'Email|email',
-	3 => 'Ñòàòóñ|status',
-	4 => 'Äàòà ğåãèñòğàöèè'.'|regdate',
-	5 => 'Áàëàíñ'.'|balance',
-	6 => 'Äåéñòâèå',
+	3 => 'Ğ¡Ñ‚Ğ°Ñ‚ÑƒÑ|status',
+	4 => 'Ğ”Ğ°Ñ‚Ğ° Ñ€ĞµĞ³Ğ¸ÑÑ‚Ñ€Ğ°Ñ†Ğ¸Ğ¸'.'|regdate',
+	5 => 'Ğ‘Ğ°Ğ»Ğ°Ğ½Ñ'.'|balance',
+	6 => 'Ğ”ĞµĞ¹ÑÑ‚Ğ²Ğ¸Ğµ',
 );
 
 $a=$ad->GetSortTable("1",$cols, get_get('sort', 1), get_get('page', 1), get_get('perpage', 25));

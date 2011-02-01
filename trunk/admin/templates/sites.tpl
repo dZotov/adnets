@@ -16,11 +16,11 @@
 			<td>
 				{if $i.status==$smarty.const.STATE_ACTIVE}
 					<span class="green">
-						Активный
+						РђРєС‚РёРІРЅС‹Р№
 					</span>
 				{elseif $i.status==$smarty.const.STATE_INACTIVE}
 					<span class="red">
-						Неактивный
+						РќРµР°РєС‚РёРІРЅС‹Р№
 					</span>
 				{/if}
 			</td>
@@ -28,7 +28,7 @@
 				{$i.date|date}
 			</td>
 			<td>
-				<a href="edit_site.php?id={$i.id}">редакт.</a>
+				<a href="edit_site.php?id={$i.id}">СЂРµРґР°РєС‚.</a>
 			</td>
 		</tr>
 		{/foreach}

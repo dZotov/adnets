@@ -6,12 +6,12 @@ $news= new News();
 
 $cols = array(
 	1 => 'ID|id',
-	2 => 'Íàçâàíèå|title',
-	3 => 'Ïğåâüş|preview',
-	4 => 'Òèï|type',
-	5 => 'Ñòàòóñ|status',
-	6 => 'Äàòà'.'|date',
-	7 => 'Äåéñòâèå',
+	2 => 'ĞĞ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ|title',
+	3 => 'ĞŸÑ€ĞµĞ²ÑŒÑ|preview',
+	4 => 'Ğ¢Ğ¸Ğ¿|type',
+	5 => 'Ğ¡Ñ‚Ğ°Ñ‚ÑƒÑ|status',
+	6 => 'Ğ”Ğ°Ñ‚Ğ°'.'|date',
+	7 => 'Ğ”ĞµĞ¹ÑÑ‚Ğ²Ğ¸Ğµ',
 );
 
 $n=$news->GetSortTable("1",$cols, get_get('sort', 1), get_get('page', 1), get_get('perpage', 25));

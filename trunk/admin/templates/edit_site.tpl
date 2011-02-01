@@ -13,7 +13,7 @@
 		</tr>
 		{/foreach}
 		<tr>
-			<td class="padt5">Вебмастер:</td>
+			<td class="padt5">Р’РµР±РјР°СЃС‚РµСЂ:</td>
 			<td class="padt5 b"><a href="edit_adw.php?id={$ADWERT.id}">{$ADWERT.email}</td>
 		</tr>
 		{if $smarty.get.save=='ok'}
